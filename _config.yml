@@ -1,0 +1,8 @@
+title: Eli Smith
+email: dwightsmth@gmail.com
+description: Eli Smith (@iimeli), personal website &amp; portfolio. Software developer, open source enthusiast.
+
+exclude: [
+  'LICENSE.md',
+  'README.md'
+]

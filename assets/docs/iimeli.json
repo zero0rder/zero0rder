@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "name": "Eli Smith",
+    "email": "dwightsmth@gmail.com",
+    "location": "Brooklyn, New York",
+    "title": [
+      "developer"
+    ]
+  },
+  "education": {
+    "school": "Cleveland State University",
+    "major": "Environmental Studies"
+  },
+  "projects": [
+    {
+      "name": "spur.js",
+      "description": "HTTP Get Request Helper.",
+      "link": [
+        "https://npmjs.com/package/spur.js",
+        "https://github.com/imelismith/spur.js"
+      ],
+      "technology": [
+        "Node.js"
+      ]
+    },
+    {
+      "name": "NYT Bestsellers Desktop Application",
+      "description": "A Preact app to view real-time lists of New York Times Best Sellers.",
+      "link": [
+        "https://github.com/imelismith/nyt-bestseller"
+      ],
+      "technology": [
+        "Preact",
+        "Node.js"
+      ]
+    },
+    {
+      "name": "NYT Bestsellers Mobile Application",
+      "description": "A React Native app to view real-time lists of New York Times Best Sellers.",
+      "link": [
+        "https://github.com/imelismith/nyt-bestseller-mobile",
+        "https://exp.host/@iimeli/nyt-bestsellers-mobile"
+      ],
+      "technology": [
+        "React Native",
+        "Node.js",
+        "Expo"
+      ]
+    },
+    {
+      "name": "lexicon.js",
+      "description": "A Tiny CLI utility for word definition queries.",
+      "link": [
+        "https://npmjs.com/package/lexicon.js",
+        "https://github.com/imelismith/lexicon.js"
+      ],
+      "technology": [
+        "Node.js"
+      ]
+    },
+    {
+      "name": "twitgo",
+      "description": "A Tiny CLI utility to send and read tweets.",
+      "link": [
+        "https://github.com/imelismith/twitgo"
+      ],
+      "technology": [
+        "Golang"
+      ]
+    }
+  ],
+  "resume": "./assets/docs/resume.pdf",
+  "links": {
+    "github": "https://github.com/imelismith",
+    "linkedin": "https://linkedin.com/in/iimeli",
+    "twitter": "https://twitter.com/oldsoul_eli",
+    "keybase": "https://keybase.io/iimeli"
+  }
+}
