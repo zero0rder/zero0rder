@@ -14,7 +14,7 @@
   "projects": [
     {
       "name": "spur.js",
-      "description": "HTTP Get Request Helper.",
+      "description": "🛰 XHR wrapper to make server requests easier",
       "link": [
         "https://npmjs.com/package/spur.js",
         "https://github.com/imelismith/spur.js"
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "name": "NYT Bestsellers Desktop Application",
+      "name": "📚 NYT Bestsellers Desktop Application",
       "description": "A Preact app to view real-time lists of New York Times Best Sellers.",
       "link": [
         "https://github.com/imelismith/nyt-bestseller"
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "name": "NYT Bestsellers Mobile Application",
+      "name": "📚 NYT Bestsellers Mobile Application",
       "description": "A React Native app to view real-time lists of New York Times Best Sellers.",
       "link": [
         "https://github.com/imelismith/nyt-bestseller-mobile",
