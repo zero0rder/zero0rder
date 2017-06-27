@@ -24,8 +24,8 @@
       ]
     },
     {
-      "name": "📚 NYT Bestsellers Desktop Application",
-      "description": "A Preact app to view real-time lists of New York Times Best Sellers.",
+      "name": "NYT Bestsellers Desktop Application",
+      "description": "📚 A Preact app to view real-time lists of New York Times Best Sellers.",
       "link": [
         "https://github.com/imelismith/nyt-bestseller"
       ],
@@ -35,8 +35,8 @@
       ]
     },
     {
-      "name": "📚 NYT Bestsellers Mobile Application",
-      "description": "A React Native app to view real-time lists of New York Times Best Sellers.",
+      "name": "NYT Bestsellers Mobile Application",
+      "description": "📚 A React Native app to view real-time lists of New York Times Best Sellers.",
       "link": [
         "https://github.com/imelismith/nyt-bestseller-mobile",
         "https://exp.host/@iimeli/nyt-bestsellers-mobile"
