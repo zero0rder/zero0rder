@@ -16,8 +16,8 @@
       "name": "spur.js",
       "description": "🛰 XHR wrapper to make server requests easier",
       "link": [
-        "https://npmjs.com/package/spur.js",
-        "https://github.com/imelismith/spur.js"
+        "https://github.com/imelismith/spur.js",
+        "https://npmjs.com/package/spur.js"
       ],
       "technology": [
         "Node.js"
@@ -27,7 +27,7 @@
       "name": "NYT Bestsellers Desktop Application",
       "description": "📚 A Preact app to view real-time lists of New York Times Best Sellers.",
       "link": [
-        "https://github.com/imelismith/nyt-bestseller"
+        "https://nyt-bestsellers.herokuapp.com/"
       ],
       "technology": [
         "Preact",
@@ -38,7 +38,6 @@
       "name": "NYT Bestsellers Mobile Application",
       "description": "📚 A React Native app to view real-time lists of New York Times Best Sellers.",
       "link": [
-        "https://github.com/imelismith/nyt-bestseller-mobile",
         "https://exp.host/@iimeli/nyt-bestsellers-mobile"
       ],
       "technology": [
@@ -51,8 +50,8 @@
       "name": "lexicon.js",
       "description": "A Tiny CLI utility for word definition queries.",
       "link": [
-        "https://npmjs.com/package/lexicon.js",
-        "https://github.com/imelismith/lexicon.js"
+        "https://github.com/imelismith/lexicon.js",
+        "https://npmjs.com/package/lexicon.js"
       ],
       "technology": [
         "Node.js"
@@ -60,7 +59,7 @@
     },
     {
       "name": "twitgo",
-      "description": "A Tiny CLI utility to send and read tweets.",
+      "description": "A CLI utility to read and write personal tweets.",
       "link": [
         "https://github.com/imelismith/twitgo"
       ],
