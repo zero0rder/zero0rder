@@ -24,7 +24,7 @@
       ]
     },
     {
-      "name": "NYT Bestsellers Desktop Application",
+      "name": "NYT Bestsellers PWA",
       "description": "📚 A Preact app to view real-time lists of New York Times Best Sellers.",
       "link": [
         "https://nyt-bestsellers.herokuapp.com/"
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "name": "NYT Bestsellers Mobile Application",
+      "name": "NYT Bestsellers Mobile",
       "description": "📚 A React Native app to view real-time lists of New York Times Best Sellers.",
       "link": [
         "https://exp.host/@iimeli/nyt-bestsellers-mobile"
