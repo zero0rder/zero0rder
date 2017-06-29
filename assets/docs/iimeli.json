@@ -1,12 +1,12 @@
 {
   "meta": {
-    "name": "Dwight Eli Smith",
+    "name": "Eli Smith",
     "email": "dwightsmth@gmail.com",
     "location": "Brooklyn, New York",
     "title": [
       "developer"
     ],
-    "year": 2
+    "years exp": 2
   },
   "education": {
     "school": "Cleveland State University",
@@ -56,16 +56,6 @@
       ],
       "technology": [
         "Node.js"
-      ]
-    },
-    {
-      "name": "twitgo",
-      "description": "A CLI utility to read and write personal tweets.",
-      "link": [
-        "https://github.com/imelismith/twitgo"
-      ],
-      "technology": [
-        "Golang"
       ]
     }
   ],
