@@ -1,6 +1,6 @@
 {
   "meta": {
-    "name": "Dwight Eli Smith",
+    "name": "Eli Smith",
     "email": "dwightsmth@gmail.com",
     "location": "Brooklyn, New York",
     "title": [
@@ -58,7 +58,6 @@
       ]
     }
   ],
-  "resume": "./assets/docs/resume.pdf",
   "links": {
     "github": "https://github.com/imelismith",
     "linkedin": "https://linkedin.com/in/iimeli",
