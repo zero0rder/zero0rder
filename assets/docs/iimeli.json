@@ -1,15 +1,13 @@
 {
   "meta": {
     "name": "Eli Smith",
-    "email": "dwightsmth@gmail.com",
-    "location": "Brooklyn, New York",
+    "location": "Brooklyn, New York, USA",
     "title": [
-      "developer"
+      "frontend developer"
     ]
   },
   "education": {
-    "school": "Cleveland State University",
-    "major": "Environmental Studies"
+    "school": "Cleveland State University"
   },
   "projects": [
     {
@@ -45,7 +43,7 @@
         "Node.js",
         "Expo"
       ]
-    },
+    }, 
     {
       "name": "lexicon.js",
       "description": "A Tiny CLI utility for word definition queries.",

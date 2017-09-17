@@ -16,7 +16,7 @@ function loadJson(uri, cb) {
     }
   };
   xhr.send();
-}
+} 
 
 function replacer(match, indent, key, val, end) {
   var body = '';
@@ -97,6 +97,16 @@ function toggle() {
   });
 }
 
+function toggleMin() {
+  if (document.querySelector('.terminal').style.display !== 'block' || !document.querySelector('.code'))
+    return;
+
+    // FIGURE OUT HOW TO MINIMIZE TERMINAL AND PLACE IN BOTTOM LEFT CORNER
+
+}
+
+
+
 function init() {
   loadJson('./assets/docs/iimeli.json', function(err, res) {
     if (err || !res) {
@@ -110,8 +120,9 @@ function init() {
 
     document.querySelector('.terminal').style.display = 'block';
 
-    document.querySelector('.close').addEventListener('click', hide, false);
-    document.querySelector('.maximize').addEventListener('click', toggle, false);
+    document.querySelector('.close').addEventListener('click', hide, false); // terminal close
+    document.querySelector('.maximize').addEventListener('click', toggle, false); // terminal maximization
+    document.querySelector('.minimize').addEventListener('click', toggleMin, false); // terminal minimization
   });
 }
 
