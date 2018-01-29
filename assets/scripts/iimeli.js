@@ -16,7 +16,7 @@ function loadJson(uri, cb) {
     }
   };
   xhr.send();
-} 
+}
 
 function replacer(match, indent, key, val, end) {
   var body = '';
@@ -72,7 +72,7 @@ function hide() {
   if (document.querySelector('.terminal').style.maxWidth === '100vw')
     toggle();
 
-  document.querySelector('.preload').style.display = shown ? 'block' : 'none';
+  document.querySelector('.activateBtn').style.display = shown ? 'block' : 'none';
   document.querySelector('.terminal').style.display = shown ? 'none' : 'block';
 }
 
@@ -81,7 +81,7 @@ function toggle() {
     return;
 
   var elements = [
-    { selector: '.container', declarations: { padding: '10px' } },
+    { selector: '.container', declarations: { padding: '0px' } },
     { selector: 'main', declarations: { paddingTop: '0px', paddingBottom: '0px' } },
     { selector: 'header', declarations: { display: 'none' } },
     { selector: '.terminal', declarations: { maxWidth: '100vw' } },
@@ -101,28 +101,67 @@ function toggleMin() {
   if (document.querySelector('.terminal').style.display !== 'block' || !document.querySelector('.code'))
     return;
 
-    // FIGURE OUT HOW TO MINIMIZE TERMINAL AND PLACE IN BOTTOM LEFT CORNER
+    var elements = [
+      { selector: '.terminal', declarations: { maxWidth: '25vw', position: 'absolute', bottom: '0', marginBottom: '10px' } },
+      { selector: '.code', declarations: { display: 'none' } }
+    ];
+  
+    elements.forEach(function(o) {
+      var el = document.querySelector(o.selector);
+      var declarations = o.declarations;
+  
+      for (var d in declarations)
+        el.style[d] = el.style[d] === declarations[d] ? '' : declarations[d];
+    });
 
+    if (document.querySelector('.terminal').style.bottom == '0' || document.querySelector('.code').style.display == 'none'){
+      let removeTog = document.getElementById('max').removeEventListener('click', toggle);
+      let removeHide = document.getElementById('close').removeEventListener('click', hide);
+      let hideBtn = document.querySelector('.activateBtn').style.display = 'none';
+
+      return {
+        removeTog,
+        removeHide,
+        hideBtn
+      };
+
+    } else {
+      let addTog = document.getElementById('max').addEventListener('click', toggle);
+      let addHide = document.getElementById('close').addEventListener('click', hide);
+
+      return {
+        addTog,
+        addHide
+      };
+    }
 }
 
-
+function activateTerminal() {
+  let shown = document.querySelector('.terminal').style.display = 'block';
+  let hideBtn = document.querySelector('.activateBtn').style.display = 'none';
+  
+  return {
+    shown,
+    hideBtn
+  };
+}
 
 function init() {
   loadJson('./assets/docs/iimeli.json', function(err, res) {
     if (err || !res) {
-      document.querySelector('.preload').style.display = 'block';
+      document.querySelector('.activateBtn').style.display = 'block';
       document.querySelector('.terminal').style.display = 'none';
       return;
     }
 
     for (var k in res)
-      document.getElementById(k + '-json').innerHTML = prettyPrint(res[k]);
-
+    document.getElementById(k + '-json').innerHTML = prettyPrint(res[k]);
     document.querySelector('.terminal').style.display = 'block';
 
-    document.querySelector('.close').addEventListener('click', hide, false); // terminal close
-    document.querySelector('.maximize').addEventListener('click', toggle, false); // terminal maximization
-    document.querySelector('.minimize').addEventListener('click', toggleMin, false); // terminal minimization
+    document.querySelector('.close').addEventListener('click', hide, false); 
+    document.querySelector('.maximize').addEventListener('click', toggle, false);
+    document.querySelector('.minimize').addEventListener('click', toggleMin, false);
+    document.querySelector('button').addEventListener('click', activateTerminal, false);
   });
 }
 

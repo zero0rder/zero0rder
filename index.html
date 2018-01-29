@@ -1,18 +1,17 @@
 ---
 links:
-  - name: LinkedIn
-    href: https://linkedin.com/in/iimeli
+  - name: Twitter
+    href: https://twitter.com/oldsoul_eli
     slug: connect
   - name: GitHub
     href: https://github.com/imelismith
     slug: code
   - name: Email
-    href: mailto:dwightsmth@gmail.com
+    href: mailto:iimeli2020@gmail.com
     slug: contact
 categories:
   - name: meta
-  - name: education
-  - name: projects
+  - name: oss
   - name: links
 ---
 
@@ -20,35 +19,33 @@ categories:
 <html lang="en">
   {% include head.html %}
   <body>
+    <div class="stars">
+    <div class="twinkling">
+    <div class="clouds">
     <div class="container">
       <header>
-        <h1 id="name"><a href="/">Eli Smith</a></h1>
         <div id="links">
           {% for link in page.links %}
-          <a href="{{ link.href }}" title="{{ link.name }}">{{ link.slug | capitalize }}</a>
+          <span>
+            <a href="{{ link.href }}" title="{{ link.name }}">{{ link.slug | capitalize }}</a>
+          </span>
           {% endfor %}
         </div>
       </header>
       <main>
-        <div class="preload">
-          <p>I'm Eli.</p>
-          <p>A frontend developer passionate about JavaScript, OSS, and technology in general.
-            My story is a long and complicated one that has lead me unexpectedly into a life of computer science,
-            for which I am equally overjoyed and overworked but I wouldn't have it any other way.</p>
-          <p>I'm a huge fan of open source so take a look at my <a href="https://github.com/imelismith">GitHub</a> profile to see what I've been hacking together..</p>
-          <p>In the meantime I'm always open to building interesting and challenging experiences. Be it legacy code rewrite or a UX/UI upgrade.. Let's chat!</p>
-          <p><a href="https://github.com/imelismith">GitHub</a> / <a href="http://linkedin.com/in/iimeli">LinkedIn</a> / <a href="https://twitter.com/oldsoul_eli">Twitter</a> / <a href="mailto:dwightsmth@gmail.com">Email</a></p>
+        <div class="activateBtn pulse">
+          <button type="button">Open Terminal</button>
         </div>
-        <div class="terminal pulse">
+         <div class="terminal pulse">
           <div class="taskbar">
-            <a href="javascript:void(0)" class="close"></a>
+            <a href="javascript:void(0)" class="close" id="close"></a>
             <a href="javascript:void(0)" class="minimize"></a>
-            <a href="javascript:void(0)" class="maximize"></a>
+            <a href="javascript:void(0)" class="maximize" id="max"></a>
           </div>
           <div class="code">
             {% for category in page.categories %}
             <div class="block" id="{{ category.name }}-block">
-              <div class="input">eli.{% if category.slug %}{{ category.slug }}{% else %}{{ category.name }}{% endif %}</div>
+              <div class="input">{% if category.slug %}{{ category.slug }}{% else %}{{ category.name }}{% endif %}</div>
               <div class="result">
                 <pre class="json"><code id="{{ category.name }}-json"></code></pre>
               </div>
@@ -59,5 +56,8 @@ categories:
       </main>
     </div>
     {% include foot.html %}
+    </div>
+    </div>
+    </div>
   </body>
 </html>

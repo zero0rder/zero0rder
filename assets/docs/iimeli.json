@@ -1,15 +1,11 @@
 {
   "meta": {
-    "name": "Eli Smith",
     "location": "Brooklyn, New York, USA",
     "title": [
-      "frontend developer"
+      "front end developer"
     ]
   },
-  "education": {
-    "school": "Cleveland State University"
-  },
-  "projects": [
+  "oss": [
     {
       "name": "spur.js",
       "description": "🛰 XHR wrapper to make server requests easier",
@@ -58,7 +54,6 @@
   ],
   "links": {
     "github": "https://github.com/imelismith",
-    "linkedin": "https://linkedin.com/in/iimeli",
     "twitter": "https://twitter.com/oldsoul_eli",
     "keybase": "https://keybase.io/iimeli"
   }
