@@ -96,6 +96,7 @@ a {
   display: none;
   text-align: center;
   margin-top: 125px;
+  animation: floating 4s ease-in-out infinite;
 
   button {
     color:  #10ad37;
@@ -119,7 +120,6 @@ header {
   font-family: $serif;
   padding: 22px 0;
   text-align: center;
-  animation: floating 4s ease-in-out infinite;
   overflow: hidden;
 
   a {
