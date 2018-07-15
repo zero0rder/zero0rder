@@ -1,0 +1,273 @@
+---
+---
+
+$serif: 'Merriweather', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+$sans-serif: 'Merriweather Sans', 'Open Sans', 'Helvetica', Arial, Verdana;
+$mono: 'Droid Sans Mono', 'Lucida Console', Monaco, monospace;
+$orbitron: 'Orbitron';
+
+$break-small: 550px;
+$break-medium: 750px;
+$break-large: 1060px;
+
+$fonty: .75rem;
+
+$maxHeight: 100vh;
+$maxWidth: 100vw;
+
+$black: rgba(0,0,0,.5);
+$grey: rgba(139, 139, 139, 0.699);
+
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure,
+footer, {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  height: $maxHeight;
+  font-size: 16px;
+}
+
+body {
+  height: $maxHeight;
+  font-family: $orbitron;
+  color: $grey !important;
+}
+
+
+/****       BANNER       ****/
+
+.main-banner {
+  height: 55px;
+  width: $maxWidth;
+  margin-bottom: 50px;
+  display: flex;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  border-bottom: .75px solid rgba(0, 0, 0, 0.082);
+
+  &__header {
+    font-size: 1em;
+    letter-spacing: 1em;
+    text-shadow: rgba(32, 32, 32, 0.432) 1px 0 8px;
+  }
+}
+
+
+/****       MAIN CONTAINER       ****/
+
+.main-container {
+  height: $maxHeight;
+  display: inline-block;
+  overflow: auto;
+
+  // @supports(display: grid){
+  //   display: grid;
+  //   grid-template-columns: minmax(1fr, auto) minmax(1fr, auto) 
+  //                          minmax(1fr, auto)  minmax(1fr, auto) 
+  //                          minmax(1fr, auto) minmax(1fr, 2fr);
+  // }
+
+}
+
+
+/****       CARDS       ****/
+
+.main-container__card {
+  height: 25vh;
+  width: 55vw;
+  margin: 0 auto 50px;
+  text-transform: uppercase;
+  transition: transform 300ms;
+  box-shadow: 0 5px 20px $black;
+  border-radius: 8px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px $black;
+  }
+
+}
+
+.main-container__card-desc-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+
+  p {
+    letter-spacing: .5em;
+    color: $grey;
+  }
+}
+
+@media screen and (min-width: $break-medium) {
+  .main-container {
+    display: flex;
+    flex-wrap: wrap
+  }
+
+  .main-container__card {
+    width: 35vw;
+  }
+}
+
+
+/****       FOOTER      ****/
+
+footer {
+  div {
+    height: 100%;
+    font-size: $fonty;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.mainFooter {
+  border-top: .75px solid rgba(0, 0, 0, 0.075);
+  position: relative;
+  bottom: 0;
+  height: 55px;
+  max-height: 55px;
+  width: $maxWidth;
+  text-transform: uppercase;
+  display: inline-flex;
+
+  &__location {
+    width: 30vw;
+  }
+
+  &__median {
+    width: 40vw;
+  }
+
+  &__copyright {
+    width: 30vw;
+  }
+  
+}
+
+// screen has to be atleast $break-small wide or below...
+@media screen and (max-width: $break-small) {
+  .mainFooter {
+    font-size: .5rem;
+
+    &__copyright {
+      width: $maxWidth;
+    }
+
+    &__location,
+    &__median {
+      display: none;
+    }
+  }
+}
+
+
+
+/****       SVG IMAGES       ****/
+
+.github-icon, .keybase-icon, 
+.twitter-icon, .gmail-icon, 
+.shop-icon, .blog-icon {
+  width: 65px;
+  height: 65px;
+  padding: 10px 15px;
+  stroke: #000;
+  stroke-width: .5;
+}
+
+.k-seg {
+  fill: rgb(255, 51, 0);
+}
+
+.k-seg3 {
+  fill: green;
+  stroke: green;
+}
+
+.k-seg2 {
+  stroke: #000;
+  stroke-width: .5;
+}
+
+.about {
+  .keybase-icon .k-seg2 {
+   fill: red;
+  }
+}
+
+.oss {
+  .github-icon {
+    fill: #ebd13d;
+  }
+}
+
+.social {
+  .twitter-icon {
+    fill: #2aa1fc;
+  }
+}
+
+.contact {
+  .gmail-icon {
+    fill: rgb(238, 24, 24);
+  }
+}
+
+.shop {
+  .shop-icon {
+    fill: rgb(163, 241, 45);
+  }
+}
+
+.blog {
+  .blog-icon {
+    fill: rgb(245, 18, 245);
+  }
+}
+
+#hidden-svgs {
+  position: absolute; 
+  left: -9999px; 
+  top: -9999px;
+}
