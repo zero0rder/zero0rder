@@ -1,0 +1,94 @@
+/* Navigation Styles */
+nav.navigation-container {
+  min-height: 65px;
+  color: #fff;
+  background-color: rgb(14, 17, 22);
+}
+
+.navigation-container svg {
+  font-size: 1.5em;
+}
+
+.intro-img-wrapper {
+  width: 75px;
+  height: 75px;
+}
+
+.intro-text-wrapper {
+  letter-spacing: 1px;
+}
+
+.tag-emblem {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  margin-right: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: #f1e05a;
+}
+
+.menu-panel {
+  position: absolute;
+  background-color: #fff;
+  height: 400px;
+  /* width: 50%; */
+  z-index: -1;
+}
+
+section.content-section {
+  background-color: #fff;
+  transition: all 1s;
+}
+
+.is-nav-open > section {
+  transform: translateX(40%);
+  transition: all 1s;
+}
+
+.modal-overlay {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 25px;
+  color: #000;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  width: 250px;
+  height: 250px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* 
+@media (prefers-reduced-motion: no-preference) {
+  .spinner-icon_global {
+    animation: Icon-logo-spin infinite 2s linear;
+  }
+}
+
+@keyframes Icon-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
