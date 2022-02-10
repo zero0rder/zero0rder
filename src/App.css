@@ -31,19 +31,29 @@ nav.navigation-container {
 .menu-panel {
   position: absolute;
   background-color: #fff;
-  height: 400px;
-  /* width: 50%; */
-  z-index: -1;
+}
+
+.menu-panel .menu-item a {
+  display: flex;
+  align-items: center;
+}
+
+.menu-panel .menu-item span:last-child {
+  padding-left: 5px;
 }
 
 section.content-section {
+  position: relative;
+  height: 100vh;
+  z-index: 1;
   background-color: #fff;
-  transition: all 1s;
+  border-left: 0.5px solid;
+  transition: all 0.5s;
 }
 
 .is-nav-open > section {
   transform: translateX(40%);
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 .modal-overlay {
