@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from './App';
+import LandingPage from './components/pages/landingPage';
+import Projects from './components/pages/projects';
+import AboutPage from './components/pages/about';
+import ContactPage from './components/pages/contact';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+          <Route path='/' element={<App/>}>
+            <Route index element={<LandingPage />} />
+            <Route path='projects' element={<Projects />} />
+            <Route path='about' element={<AboutPage />} />
+            <Route path='contact' element={<ContactPage />} />
+          </Route>
+        </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LandingPage from './components/pages/landingPage';
+import { Outlet } from "react-router-dom";
 import NavigationBar from './components/navigation/navigationBar';
 import MenuPanel from './components/navigation/menuPanel';
 import './App.css';
@@ -17,13 +17,13 @@ class App extends Component {
   
   render(){
     return (
-      <div ref={this.containerRef} className='app'>
-        <MenuPanel />
-        <section className='content-section'>
-          <NavigationBar toggleMenu={this.toggleMenu}/>
-          <LandingPage />
-        </section>
-      </div>
+        <div ref={this.containerRef} className='app'>
+          <MenuPanel />
+          <section className='content-section'>
+            <NavigationBar toggleMenu={this.toggleMenu}/>
+            <Outlet />
+          </section>
+        </div>
     )
   }
 }
