@@ -74,17 +74,52 @@ section.content-section {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 25px;
   color: #000;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  width: 250px;
-  height: 250px;
+  width: 75%;
+  height: auto;
   background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+.modal-content > section {
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+}
+
+.modal-content form > label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-content form > label > input,
+.modal-content form > label > textarea {
+  border: 1px solid;
+  background-color: lightblue;
+}
+
+.submit-container {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.submit-container > input {
+  border: 1px solid;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.modal-title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
 }
 
 /* 
