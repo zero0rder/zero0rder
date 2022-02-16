@@ -1,11 +1,25 @@
 import { useState } from "react";
+import{ init, send } from '@emailjs/browser';
+import apiData from '../../data/emailData';
+init(apiData.UserID);
 
 const Modal = ({setIsOpen}) => {
     const [emailData, setEmailData] = useState({name: '', email: '', message: ''});
 
-    const handleSubmit = (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
-        //send email using provided emailData 
+
+        send(apiData.ServiceID, apiData.TemplateID, {
+            from_name: emailData.name,
+            to_name: "Eli Smith",
+            message: emailData.message,
+            reply_to: emailData.email,
+        }, apiData.UserID).then((result) => {
+            console.log('success', result.text);
+        }, (error) => {
+            console.log('oops, something went wrong', error.text);
+        });
+
         clear();
     }
 
@@ -27,7 +41,7 @@ const Modal = ({setIsOpen}) => {
             <div className="modal-content">
                 <section>
                     <div className='modal-title'>Contact Me!</div>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={ sendEmail }>
                         <label>
                             <span>Name:</span>
                             <input value={ emailData.name } onChange={ handleChange } type='text' name='name' />
