@@ -1,22 +1,54 @@
-import React, { useState } from 'react';
-import { HiOutlineMenu } from 'react-icons/hi';
-import { BiCommentDetail } from 'react-icons/bi';
-import Modal from './modal';
+import React from 'react';
+import styled from 'styled-components';
+import { HiMail, HiSearch } from 'react-icons/hi'
+import { BsBatteryCharging } from 'react-icons/bs';
+import { dateTime } from '../../utils/datetime';
 
-const NavigationBar = ({toggleMenu}) => {
-    const [isOpen, setIsOpen] = useState(false);
+const MainHeader = styled.header`
+    display: flex;
+    justify-content: space-between;
+    background-color: #427BD2;
+    color: #fff;
+`;
 
+const NavList = styled.ul`
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
+    list-style: none;
+`;
+
+const NavListItem = styled.li`
+    padding: 0 0.35rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+`;
+
+//  REMEMBER: Hooks handle biz logic, which are imported here
+const NavigationBar = () => {
+    
     return (
-        <nav className='navigation-container flex justify-between items-center'>
-            <span className='p-4'>
-                <HiOutlineMenu className='menu_burger' onClick={() => toggleMenu()}/>
-            </span> 
-            <span className='p-4'>
-                <BiCommentDetail className='contact_bubble' onClick={() => setIsOpen(true)}/>
-            </span>
-            {isOpen && <Modal setIsOpen={setIsOpen}/>}
-        </nav>
+        <MainHeader>
+            <NavList>
+                <NavListItem>File</NavListItem>
+                <NavListItem>Settings</NavListItem>
+                <NavListItem>Contact</NavListItem>
+            </NavList>
+            <NavList>
+                <NavListItem>
+                    <HiSearch style={{fontSize: '1rem'}}/>
+                </NavListItem>
+                <NavListItem>
+                    <HiMail style={{fontSize: '1rem'}}/>
+                </NavListItem>
+                <NavListItem>
+                    <BsBatteryCharging style={{fontSize: '1rem'}}/>
+                </NavListItem>
+                <NavListItem>{ dateTime }</NavListItem>
+            </NavList>
+        </MainHeader>
     )
 }
-
+    
 export default NavigationBar;
