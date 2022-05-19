@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { HiMail, HiSearch } from 'react-icons/hi'
 import { BsBatteryCharging } from 'react-icons/bs';
-import { dateTime } from '../../utils/datetime';
+// import anime from 'animejs/lib/anime.es.js';
+import { useDateTimeHook } from '../../hooks/datetimeHook';
 
 const MainHeader = styled.header`
     display: flex;
@@ -23,29 +24,90 @@ const NavListItem = styled.li`
     font-size: 0.75rem;
     font-weight: bold;
     cursor: pointer;
+    &:hover {
+        text-shadow: 0 0 0.25rem #51D8FF;
+    }
+
+    > div {
+        position: absolute;
+        top: 3.2rem;
+        height: 75px;
+        width: 108px;
+        border: 1px solid grey;
+        opacity: 0;
+        transform: translateX(-7rem);
+        background-color: green;
+    }
 `;
+
+const SvgIcon = styled.span`
+    font-size: 1rem;
+`;
+
+const mouseEnter = ({target}) => {
+    //console.log(target.lastElementChild)
+    // anime({
+    //     targets: target.lastElementChild,
+    //     // translateY: ['-60px', '20px'],
+    //     translateX: ['-7rem', '0'],
+    //     opacity: [0, 1],
+    //     easing: 'easeInQuad',
+    //     duration: 600
+    // })
+}
+
+const mouseOut = ({ target }) => {
+    // anime({
+    //     targets: target.lastElementChild,
+    //     // translateY: ['20px', '-60px'],
+    //     translateX: ['0', '-7rem'],
+    //     opacity: [1, 0],
+    //     easing: 'easeOutQuad',
+    //     duration: 300
+    // })
+}
 
 //  REMEMBER: Hooks handle biz logic, which are imported here
 const NavigationBar = () => {
-    
+    const datetime = useDateTimeHook();
+
     return (
         <MainHeader>
             <NavList>
-                <NavListItem>File</NavListItem>
-                <NavListItem>Settings</NavListItem>
-                <NavListItem>Contact</NavListItem>
+                <NavListItem onMouseEnter={ mouseEnter } onMouseOut={ mouseOut } >
+                    File
+                    <div>
+                       <ul>
+                           <li>About</li>
+                           <li>Projects</li>
+                           <li>Info</li>
+                       </ul>
+                    </div>
+                </NavListItem>
+                <NavListItem onMouseEnter={ mouseEnter } onMouseOut={ mouseOut } >
+                    Contact
+                    <div>
+                        <ul>
+                            <li>Email</li>
+                            <li>LinkedIn</li>
+                        </ul>
+                    </div>
+                </NavListItem>
+                <NavListItem>
+                    Settings
+                </NavListItem>
             </NavList>
             <NavList>
                 <NavListItem>
-                    <HiSearch style={{fontSize: '1rem'}}/>
+                    <SvgIcon><HiSearch/></SvgIcon>
                 </NavListItem>
                 <NavListItem>
-                    <HiMail style={{fontSize: '1rem'}}/>
+                    <SvgIcon><HiMail/></SvgIcon>
                 </NavListItem>
                 <NavListItem>
-                    <BsBatteryCharging style={{fontSize: '1rem'}}/>
+                    <SvgIcon><BsBatteryCharging/></SvgIcon>
                 </NavListItem>
-                <NavListItem>{ dateTime }</NavListItem>
+                <NavListItem>{ datetime }</NavListItem>
             </NavList>
         </MainHeader>
     )
