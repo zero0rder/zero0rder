@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HiMail, HiSearch } from 'react-icons/hi'
-import { BsBatteryCharging } from 'react-icons/bs';
-// import anime from 'animejs/lib/anime.es.js';
-import { useDateTimeHook } from '../../hooks/datetimeHook';
+import { useDateTimeHook } from '../../hooks/useDateTime';
+//import anime from 'animejs/lib/anime.es.js';
 
 const MainHeader = styled.header`
     display: flex;
     justify-content: space-between;
-    background-color: #427BD2;
+    background-color: #3E9E9E;
+    border-bottom: 2px solid #000;
     color: #fff;
 `;
 
@@ -17,6 +16,10 @@ const NavList = styled.ul`
     padding: 0.5rem 1.5rem;
     margin: 0.5rem;
     list-style: none;
+
+    &.right-nav-list li:last-child {
+        line-height: 1.1rem;
+    }
 `;
 
 const NavListItem = styled.li`
@@ -24,50 +27,83 @@ const NavListItem = styled.li`
     font-size: 0.75rem;
     font-weight: bold;
     cursor: pointer;
-    &:hover {
+
+    > span:hover {
         text-shadow: 0 0 0.25rem #51D8FF;
+    }
+
+    &:hover {
+        > div {
+            opacity: 1;
+            z-index: 1;
+        }
     }
 
     > div {
         position: absolute;
         top: 3.2rem;
-        height: 75px;
-        width: 108px;
-        border: 1px solid grey;
-        opacity: 0;
-        transform: translateX(-7rem);
-        background-color: green;
+        height: auto;
+        width: 9rem;
+        background-color: #2DA0ED;
+        transition: all 0.3s;
+        opacity: -1;
+        z-index: -1;
+    }
+`;
+
+const NestedNavList = styled.ul`
+    list-style: none;
+    padding: 0;
+`;
+
+const NestedListItem = styled.li`
+    padding: 0.25rem;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: orange;
     }
 `;
 
 const SvgIcon = styled.span`
-    font-size: 1rem;
+    svg {
+        width: 1.2rem;
+        height: 1.2rem;
+
+        path {
+            fill: #D15A5A;
+        }
+
+        &[data-icon="icon-park:mail"] {
+            path:nth-child(2){
+                stroke: #000;
+            }
+        }
+    }
+
 `;
 
 const mouseEnter = ({target}) => {
     //console.log(target.lastElementChild)
     // anime({
     //     targets: target.lastElementChild,
-    //     // translateY: ['-60px', '20px'],
-    //     translateX: ['-7rem', '0'],
-    //     opacity: [0, 1],
+    //     zIndex: 1,
+    //     opacity: 1,
     //     easing: 'easeInQuad',
-    //     duration: 600
+    //     duration: 250
     // })
 }
 
-const mouseOut = ({ target }) => {
+const mouseOut = (e) => {
     // anime({
     //     targets: target.lastElementChild,
-    //     // translateY: ['20px', '-60px'],
-    //     translateX: ['0', '-7rem'],
-    //     opacity: [1, 0],
-    //     easing: 'easeOutQuad',
-    //     duration: 300
+    //     zIndex: -1,
+    //     opacity: 0,
+    //     easing: 'easeInQuad',
+    //     duration: 250
     // })
 }
 
-//  REMEMBER: Hooks handle biz logic, which are imported here
 const NavigationBar = () => {
     const datetime = useDateTimeHook();
 
@@ -75,37 +111,38 @@ const NavigationBar = () => {
         <MainHeader>
             <NavList>
                 <NavListItem onMouseEnter={ mouseEnter } onMouseOut={ mouseOut } >
-                    File
+                    <span>File</span>
                     <div>
-                       <ul>
-                           <li>About</li>
-                           <li>Projects</li>
-                           <li>Info</li>
-                       </ul>
+                       <NestedNavList>
+                           <NestedListItem>About</NestedListItem>
+                           <NestedListItem>Projects</NestedListItem>
+                           <NestedListItem>Info</NestedListItem>
+                       </NestedNavList>
                     </div>
                 </NavListItem>
                 <NavListItem onMouseEnter={ mouseEnter } onMouseOut={ mouseOut } >
-                    Contact
+                    <span>Contact</span>
                     <div>
-                        <ul>
-                            <li>Email</li>
-                            <li>LinkedIn</li>
-                        </ul>
+                        <NestedNavList>
+                            <NestedListItem>Email</NestedListItem>
+                            <NestedListItem>LinkedIn</NestedListItem>
+                        </NestedNavList>
                     </div>
                 </NavListItem>
                 <NavListItem>
-                    Settings
+                    <span>Settings</span>
                 </NavListItem>
             </NavList>
-            <NavList>
+            <NavList className='right-nav-list'>
                 <NavListItem>
-                    <SvgIcon><HiSearch/></SvgIcon>
+                    <SvgIcon>
+                        <span className="iconify" data-icon="icon-park:search"></span>
+                    </SvgIcon>
                 </NavListItem>
                 <NavListItem>
-                    <SvgIcon><HiMail/></SvgIcon>
-                </NavListItem>
-                <NavListItem>
-                    <SvgIcon><BsBatteryCharging/></SvgIcon>
+                    <SvgIcon>
+                        <span className="iconify" data-icon="icon-park:mail"></span>
+                    </SvgIcon>
                 </NavListItem>
                 <NavListItem>{ datetime }</NavListItem>
             </NavList>
