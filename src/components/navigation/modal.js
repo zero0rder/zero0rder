@@ -1,9 +1,9 @@
 import { useState } from "react";
 import{ init, send } from '@emailjs/browser';
-import apiData from '../../data/emailData';
+import apiData from '../../utils/email/emailData';
 init(apiData.UserID);
 
-const Modal = ({setIsOpen}) => {
+const Modal = ({ setEmailShow }) => {
     const [emailData, setEmailData] = useState({name: '', email: '', message: ''});
 
     const sendEmail = (e) => {
@@ -37,21 +37,28 @@ const Modal = ({setIsOpen}) => {
     
     return (
         <>
-            <div className="modal-overlay" onClick={() => setIsOpen(false)}></div>
-            <div className="modal-content">
+            <div className='modal-overlay' onClick={() => setEmailShow(false)}></div>
+            <div className='modal-content'>
                 <section>
-                    <div className='modal-title'>Contact Me!</div>
+                    <div className='email-modal-header'>
+                        <span>New Message</span>
+                        <div>
+                            <span className='minimize-email'>
+                                <span class="iconify" data-icon="icon-park:minus"></span>
+                            </span>
+                            <span className='close-email' onClick={() => setEmailShow(false)}>
+                                <span class="iconify" data-icon="icon-park:close-small"></span>
+                            </span>
+                        </div>
+                    </div>
                     <form onSubmit={ sendEmail }>
                         <label>
-                            <span>Name:</span>
-                            <input value={ emailData.name } onChange={ handleChange } type='text' name='name' />
+                            <input placeholder='Your Email' value={ emailData.email } onChange={ handleChange } type='email' name='email' />
                         </label>
                         <label>
-                            <span>Email:</span>
-                            <input value={ emailData.email } onChange={ handleChange } type='email' name='email' />
+                            <input placeholder='Subject' value={ emailData.name } onChange={ handleChange } type='text' name='name' />
                         </label>
                         <label>
-                            <span>Message:</span>
                             <textarea value={ emailData.message } onChange={ handleChange } type='message' name='message' />
                         </label>
                         <div className='submit-container'>
