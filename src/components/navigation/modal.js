@@ -44,10 +44,10 @@ const Modal = ({ setEmailShow }) => {
                         <span>New Message</span>
                         <div>
                             <span className='minimize-email'>
-                                <span class="iconify" data-icon="icon-park:minus"></span>
+                                <span className="iconify" data-icon="icon-park:minus"></span>
                             </span>
                             <span className='close-email' onClick={() => setEmailShow(false)}>
-                                <span class="iconify" data-icon="icon-park:close-small"></span>
+                                <span className="iconify" data-icon="icon-park:close-small"></span>
                             </span>
                         </div>
                     </div>

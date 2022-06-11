@@ -56,6 +56,10 @@ section.content-section {
   outline: none;
 }
 
+textarea {
+  resize: none;
+}
+
 .modal-content form > label input {
   height: 1.75rem;
   border-bottom: 0.02rem solid #c3c3c3;

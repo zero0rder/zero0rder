@@ -55,25 +55,40 @@ export const DesktopItem = styled.div`
 
 `;
 
-export const DesktopProjectsPopup = styled.section`
+export const DesktopModal = styled.section`
     box-sizing: border-box;
     position: absolute;
-    left: 6rem;
-    top: 6rem;
-    width: 38rem;
-    height: 33.4rem;
     box-shadow: -0.6rem 0.6rem 0 rgb(29 30 28 / 26%);
-    z-index: 2;
+    z-index: 1;
+
+    &.about-modal {
+        height: 22rem;
+        width: 38rem;
+        background-color: #DADAD3;
+        right: 9rem;
+        top: 5rem;
+    }
+
+    &.projects-modal {
+        width: 30rem;
+        height: 28rem;
+        left: 6rem;
+        top: 8rem;
+    }
+
+    &.active-modal {
+        z-index: 2;
+    }
 
 `;
 
-export const DesktopProjectsPopupHeader = styled.header`
+export const DesktopModalHeader = styled.header`
     box-sizing: border-box;
     margin: 0;
-    padding: 0.5rem 5rem 0.82rem 6rem;
+    padding: 0.5rem 5rem 0.5rem 6rem;;
     width: 100%;
-    font-size: 0.9rem;
-    font-weight: normal;
+    font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 1px;
     text-align: center;
     background-color: #DADAD3;
@@ -82,10 +97,10 @@ export const DesktopProjectsPopupHeader = styled.header`
 
 `;
 
-export const DesktopProjectsPopupCloseButton = styled.button`
+export const DesktopModalCloseButton = styled.button`
     position: absolute;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     padding: 0.3rem;
     border: 2px solid black;
     background-color: #C1C1BF;
@@ -99,9 +114,9 @@ export const DesktopProjectsPopupCloseButton = styled.button`
     }
 `;
 
-export const DesktopProjectsRepos = styled.section`
+export const DesktopRepos = styled.section`
     border: 2px solid #1d1e1c;
-    height: 30.8rem;
+    height: 25.8rem;
     border-top: 0;
     background-color: white;
     overflow-y: scroll;
@@ -133,7 +148,6 @@ export const DesktopProjectsRepos = styled.section`
         }
     }
 
-
     &::-webkit-scrollbar {
         width: 1rem;
         background-color: #DADAD3;
@@ -150,4 +164,11 @@ export const DesktopProjectsRepos = styled.section`
         border-top: none;
         border-right: none;
     }
+`;
+
+export const DesktopModalAboutBody = styled.section`
+    height: 19.75rem;
+    border: 2px solid #1d1e1c;
+    border-top: none;
+
 `;
