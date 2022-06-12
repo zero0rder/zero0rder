@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useDateTimeHook } from '../../hooks/useDateTime';
-import { MainHeader, NavList, NavListItem, NestedNavList, NestedListItem, SvgIcon } from './styled';
-import Modal from './modal';
+import React, {useState} from 'react';
+import {useDateTimeHook} from '../../hooks/useDateTime';
+import {MainHeader, NavList, NavListItem, NestedNavList, NestedListItem, SvgIcon} from './styled';
+import EmailModal from './emailModal';
 
-const NavigationBar = () => {
+const NavigationBar = ({toggle}) => {
     const datetime = useDateTimeHook();
     const [searchShow, setSearchShow] = useState(false);
     const [emailShow, setEmailShow] = useState(false);
@@ -16,9 +16,9 @@ const NavigationBar = () => {
                         <span>File</span>
                         <div>
                             <NestedNavList>
-                                <NestedListItem>About</NestedListItem>
-                                <NestedListItem >Projects</NestedListItem>
-                                <NestedListItem >Info</NestedListItem>
+                                <NestedListItem onClick={() => toggle('aboutModalOpen')}>About</NestedListItem>
+                                <NestedListItem onClick={() => toggle('projectsModalOpen')}>Projects</NestedListItem>
+                                <NestedListItem>Info</NestedListItem>
                             </NestedNavList>
                         </div>
                     </NavListItem>
@@ -26,7 +26,7 @@ const NavigationBar = () => {
                         <span>Contact</span>
                         <div>
                             <NestedNavList>
-                                <NestedListItem >Email</NestedListItem>
+                                <NestedListItem onClick={() => setEmailShow(s => !s)}>Email</NestedListItem>
                                 <NestedListItem>LinkedIn</NestedListItem>
                             </NestedNavList>
                         </div>
@@ -41,7 +41,7 @@ const NavigationBar = () => {
                             <span onClick={() => setSearchShow(!searchShow)}>
                                 <span className="iconify" data-icon="icon-park:search"></span>
                             </span>
-                            <div className='extended-searchbar' style={ searchShow ? { transform: 'translateY(0)' } : { transform: 'translateY(3.5rem)' }}>
+                            <div className='extended-searchbar' style={searchShow ? {transform: 'translateY(0)'} : {transform: 'translateY(3.5rem)'}}>
                                 <input type='search' />
                                 <span onClick={() => setSearchShow(!searchShow)}>
                                     <span className="iconify" data-icon="icon-park:close-one" data-width="256" data-height="256"></span>
@@ -56,10 +56,10 @@ const NavigationBar = () => {
                             </span>
                         </SvgIcon>
                     </NavListItem>
-                    <NavListItem>{ datetime }</NavListItem>
+                    <NavListItem>{datetime}</NavListItem>
                 </NavList>
             </MainHeader>
-            { emailShow && <Modal setEmailShow={ setEmailShow }/> }
+            {emailShow && <EmailModal setEmailShow={setEmailShow}/>}
         </>
     )
 }
