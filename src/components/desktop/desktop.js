@@ -15,14 +15,14 @@ const Desktop = ({toggle, flags}) => {
                 <span className="iconify" data-icon="icon-park:folder-code"></span>
             </DesktopItem>
             {
-                flags.aboutModalOpen ? (
+                flags[0] ? (
                     <DesktopModalPopup title='About' className='about-modal' toggle={toggle}>
                         <DesktopModalAboutBody></DesktopModalAboutBody>
                     </DesktopModalPopup>
                 ) : <div className='hidden-block'></div>
             }
             {
-                flags.projectsModalOpen ? (
+                flags[1] ? (
                     <DesktopModalPopup title='Projects' className='projects-modal' toggle={toggle}>
                         <DesktopRepos>
                             <ul>{new Array(10).fill('').map((e, i) => <li key={i}><img alt='project' src='' /><span>project name</span></li>)}</ul>
