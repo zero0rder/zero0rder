@@ -127,20 +127,21 @@ export const DesktopRepos = styled.section`
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        gap: 2rem 1rem;
         list-style: none;
-        padding: 0;
+        padding: 0 1rem;
 
         li {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 25%;
-
-            img {
-                width: 9rem;
+            width: 22%;
+            height: 7.5rem;
+            text-align: center;
+            cursor: pointer;
+            
+            > div {
+                height: 6rem;
+                background-color: #000;
             }
-
+            
             span {
                 font-size: 0.75rem;
                 font-weight: 600;
@@ -167,8 +168,21 @@ export const DesktopRepos = styled.section`
 `;
 
 export const DesktopModalAboutBody = styled.section`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 19.75rem;
     border: 2px solid #1d1e1c;
     border-top: none;
+    background-color: #fff;
+
+    p {
+        margin: 0;
+        font-weight: 700;
+    }
+
+    svg path {
+        fill: #D15A5A;
+    }
 
 `;

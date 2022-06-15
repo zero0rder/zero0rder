@@ -1,10 +1,12 @@
 // import { useState } from 'react';
-import {DesktopContainer, DesktopItem, DesktopModalAboutBody, DesktopRepos} from './styled/index';
-import {DesktopModalPopup} from './desktopModal';     
+import { DesktopContainer, DesktopItem, DesktopModalAboutBody, DesktopRepos } from './styled/index';
+import { DesktopModalPopup } from './desktopModal';  
+import { repos } from '../../utils/repos/repoData';
 
 const Desktop = ({toggle, flags}) => {
+    //todo: add 'active-modal' class to newly opened modal, removing all others
     return (
-        <DesktopContainer>
+        <DesktopContainer className='dsktp-container'>
             <DesktopItem onClick={() => toggle('aboutModalOpen')} name='about' className='about-avatar'>
                 <div className='about-inner-wrap'>
                     <img alt='about' src='https://avatars.githubusercontent.com/u/11478868?v=4'/>
@@ -17,7 +19,10 @@ const Desktop = ({toggle, flags}) => {
             {
                 flags[0] ? (
                     <DesktopModalPopup title='About' className='about-modal' toggle={toggle}>
-                        <DesktopModalAboutBody></DesktopModalAboutBody>
+                        <DesktopModalAboutBody>
+                            <p>Software Developer, NYC</p>
+                            <span className="iconify" data-icon="icon-park:local-two"></span>
+                        </DesktopModalAboutBody>
                     </DesktopModalPopup>
                 ) : <div className='hidden-block'></div>
             }
@@ -25,7 +30,7 @@ const Desktop = ({toggle, flags}) => {
                 flags[1] ? (
                     <DesktopModalPopup title='Projects' className='projects-modal' toggle={toggle}>
                         <DesktopRepos>
-                            <ul>{new Array(10).fill('').map((e, i) => <li key={i}><img alt='project' src='' /><span>project name</span></li>)}</ul>
+                            <ul>{repos.map((e, i) => <li key={i}><div>{/*<img alt={'proj-' + e.id} />*/}</div><span>{e.name}</span></li>)}</ul>
                         </DesktopRepos>
                     </DesktopModalPopup>
                 ) : <div className='hidden-block'></div>
