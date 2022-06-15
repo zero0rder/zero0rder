@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {useDateTimeHook} from '../../hooks/useDateTime';
-import {MainHeader, NavList, NavListItem, NestedNavList, NestedListItem, SvgIcon} from './styled';
+import React, { useState } from 'react';
+import { useDateTimeHook } from '../../hooks/useDateTime';
+import { MainHeader, NavList, NavListItem, NestedNavList, NestedListItem, SvgIcon } from './styled';
 import EmailModal from './emailModal';
 
 const NavigationBar = ({toggle}) => {
@@ -18,7 +18,6 @@ const NavigationBar = ({toggle}) => {
                             <NestedNavList>
                                 <NestedListItem onClick={() => toggle('aboutModalOpen')}>About</NestedListItem>
                                 <NestedListItem onClick={() => toggle('projectsModalOpen')}>Projects</NestedListItem>
-                                <NestedListItem>Info</NestedListItem>
                             </NestedNavList>
                         </div>
                     </NavListItem>
@@ -28,6 +27,7 @@ const NavigationBar = ({toggle}) => {
                             <NestedNavList>
                                 <NestedListItem onClick={() => setEmailShow(s => !s)}>Email</NestedListItem>
                                 <NestedListItem>LinkedIn</NestedListItem>
+                                <NestedListItem>Github</NestedListItem>
                             </NestedNavList>
                         </div>
                     </NavListItem>
