@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from './App';
-import LandingPage from './components/pages/landingPage';
-import Projects from './components/pages/projects';
-import AboutPage from './components/pages/about';
-import ContactPage from './components/pages/contact';
+import { MobileOverview } from './components/mobile/views/overview';
+import { MobileProjects } from './components/mobile/views/projects';
+import { MobileAbout } from './components/mobile/views/about';
+import { MobileEmail } from './components/mobile/views/email';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
@@ -14,10 +14,11 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
           <Route path='/' element={<App/>}>
-            <Route index element={<LandingPage />} />
-            <Route path='projects' element={<Projects />} />
-            <Route path='about' element={<AboutPage />} />
-            <Route path='contact' element={<ContactPage />} />
+            {/* <Route index element={<LandingPage />} /> */}
+            <Route path='overview' element={<MobileOverview />} />
+            <Route path='projects' element={<MobileProjects />} />
+            <Route path='about' element={<MobileAbout />} />
+            <Route path='email' element={<MobileEmail />} />
           </Route>
         </Routes>
     </BrowserRouter>
