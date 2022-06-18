@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Outlet } from "react-router-dom";
 import NavigationBar from './components/navigation/navigationBar';
 import Desktop from './components/desktop/desktop';
 import { MobileLanding } from './components/mobile/landing';
@@ -47,7 +46,6 @@ class App extends Component {
                 </>
             )
           }
-          {/* <Outlet /> */}
         </section>
       </div>
     )
