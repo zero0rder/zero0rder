@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
-export const MobileView = styled.section``;
+export const MobileView = styled.section`
+    width: 100%;
+    height: 100%;
+`;
 
 export const MobileNavContainer = styled.div`
     position: absolute;
     bottom: 1rem;
     width: 100%;
+    z-index: 3;
 `;
 
 export const MobileHeaderContainer = styled.header`
@@ -24,7 +28,7 @@ export const MobileAvatar = styled.div`
     overflow: hidden;
 
     img {
-        width: 3.25rem;
+        width: 2.5rem;
     }
 `;
 
@@ -100,4 +104,33 @@ export const MobileNavLi = styled.li`
             }
         }
     } 
+`;
+
+export const MobileOverviewContainer = styled.section`
+    width: inherit;
+    height: inherit;
+
+    .swiper {
+        width: inherit;
+        height: inherit;
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #fff;
+
+            img {
+                display: block;
+                object-fit: cover;
+                height: inherit;
+                width: inherit;
+            }
+        }
+    }
+`;
+
+export const MobileProjectContainer = styled.section`
+
 `;
