@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
-import { MobileOverviewContainer } from './../styled';
+import { MobileOverviewContainer } from '../styled';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -12,7 +12,7 @@ export const MobileOverview = () => {
                 direction={'vertical'}
                 onSlideChange={(slide) => console.log('slide change', slide)}
                 onSwiper={(swiper) => console.log(swiper)}
-                pagination={{clickable: true, }}
+                pagination={{clickable: true}}
                 modules={[Pagination]}
                 className='mobile-swiper'>
                 <SwiperSlide>Slide 1</SwiperSlide>

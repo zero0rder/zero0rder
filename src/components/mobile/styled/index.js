@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const MobileView = styled.section`
     width: 100%;
     height: 100%;
+    overflow: hidden;
 `;
 
 export const MobileNavContainer = styled.div`
@@ -132,5 +133,88 @@ export const MobileOverviewContainer = styled.section`
 `;
 
 export const MobileProjectContainer = styled.section`
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    h2 {
+        text-align: center;
+    }
+
+    > .proj-items-wrap {
+        display: flex;
+        flex-wrap: wrap;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 50%;
+    
+            img {
+                width: 12rem;
+            }
+
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+    
+`;
+
+export const MobileAboutContainer = styled.section`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    height: 100%;
+
+    svg {
+        margin-left: 0.25rem;
+    }
+`;
+
+export const MobileEmailContainer = styled.section`
+    h2 {
+        text-align: center;
+    }
+
+    form {
+        padding: 0 0.75rem;
+
+        label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            input,
+            textarea {
+                border: 0.02rem solid #c3c3c3;
+                width: 100%;
+                outline: none;
+            }
+
+            input {
+                height: 2.75rem;
+                margin-bottom: 0.5rem;
+                padding: 0 0.5rem;
+            }
+
+            textarea {
+                height: 14rem;
+                padding: 0.5rem;
+            }
+        }
+
+        .submit-container {
+            margin-top: 0.5rem;
+
+            > input {
+                padding: 0.75rem 2.75rem;
+            }
+        }
+    }
 
 `;
