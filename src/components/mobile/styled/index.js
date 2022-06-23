@@ -18,6 +18,7 @@ export const MobileHeaderContainer = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
+    border-bottom: 2px solid #000;
 `;
 
 export const MobileAvatar = styled.div`
@@ -108,12 +109,12 @@ export const MobileNavLi = styled.li`
 `;
 
 export const MobileOverviewContainer = styled.section`
-    width: inherit;
-    height: inherit;
+    height: 82%;
+    width: 100%;
 
     .swiper {
-        width: inherit;
-        height: inherit;
+        width: 100%;
+        height: 100%;
 
         .swiper-slide {
             display: flex;
@@ -129,13 +130,21 @@ export const MobileOverviewContainer = styled.section`
                 width: inherit;
             }
         }
+
+        .swiper-pagination-bullet-active {
+            height: 2rem;
+            border-radius: 0.75rem;
+            background: #3E9E9E;
+            transition: height 0.3s;
+        }
     }
 `;
 
 export const MobileProjectContainer = styled.section`
-    height: 100%;
+    height: 82%;
     overflow-y: scroll;
     overflow-x: hidden;
+    background-color: #fff;
 
     h2 {
         text-align: center;
@@ -144,6 +153,7 @@ export const MobileProjectContainer = styled.section`
     > .proj-items-wrap {
         display: flex;
         flex-wrap: wrap;
+        padding-bottom: 1rem;
 
         div {
             display: flex;
@@ -169,7 +179,7 @@ export const MobileAboutContainer = styled.section`
     justify-content: center;
     align-items: center;
     font-weight: 700;
-    height: 100%;
+    height: 82%;
 
     svg {
         margin-left: 0.25rem;
@@ -217,4 +227,11 @@ export const MobileEmailContainer = styled.section`
         }
     }
 
+`;
+
+export const SlideContentWrap = styled.div`
+    &.slide-1-container {
+        height: 100%;
+        width: 100%;
+    }
 `;
