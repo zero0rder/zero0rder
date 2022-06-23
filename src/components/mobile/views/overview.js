@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
-import { MobileOverviewContainer } from '../styled';
+import { MobileOverviewContainer, SlideCard } from '../styled';
+import { repos } from '../../../utils/repos/repoData';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -15,10 +17,24 @@ export const MobileOverview = () => {
                 pagination={{clickable: true}}
                 modules={[Pagination]}
                 className='mobile-swiper'>
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
+                {
+                    repos.map((e, i) => {
+                        if(i < 5)
+                            return (
+                                <SwiperSlide key={i}>
+                                    <SlideCard className={`slide-${e.id}`}>
+                                        <header>{e.name}</header>
+                                        <div>
+                                            <p>{e.desc}</p>
+                                            <span>{e.link}</span>
+                                        </div>
+                                    </SlideCard>
+                                </SwiperSlide>
+                            );
+
+                        return null;
+                    })
+                }
             </Swiper>
         </MobileOverviewContainer>
     )
