@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavigationBar from './components/navigation/navigationBar';
 import Desktop from './components/desktop/desktop';
 import { MobileLanding } from './components/mobile/landing';
+import { AppContainer, ContentSection } from './styled';
 import './App.css';
 //this.containerRef = React.createRef();
 // toggleMenu = () => {
@@ -16,7 +17,7 @@ class App extends Component {
     super(props);
     this.state = {
       aboutModalOpen: false,
-      projectsModalOpen: false,
+      projectsModalOpen: true,
       isMobile: viewportQuery.matches
     };
     
@@ -36,8 +37,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className='app'>
-        <section className='content-section'>
+      <AppContainer className='app'>
+        <ContentSection className='content-section' mobile={this.state.isMobile}>
           {
             this.state.isMobile ? (<MobileLanding/>) : (
                 <>
@@ -46,8 +47,8 @@ class App extends Component {
                 </>
             )
           }
-        </section>
-      </div>
+        </ContentSection>
+      </AppContainer>
     )
   }
 }
