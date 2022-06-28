@@ -1,10 +1,10 @@
 // import { useState } from 'react';
 import { DesktopContainer, DesktopItem, DesktopModalAboutBody, DesktopRepos } from './styled/index';
-import { DesktopModalPopup } from './desktopModal';  
+import { DesktopModalPopup } from './desktopModal'; 
+import { Dock } from './dock';
 import { repos } from '../../utils/repos/repoData';
 
 const Desktop = ({toggle, flags}) => {
-    //todo: add 'active-modal' class to newly opened modal, removing all others
     return (
         <DesktopContainer className='dsktp-container'>
             <DesktopItem onClick={() => toggle('aboutModalOpen')} name='about' className='about-avatar'>
@@ -15,6 +15,9 @@ const Desktop = ({toggle, flags}) => {
             </DesktopItem>
             <DesktopItem onClick={() => toggle('projectsModalOpen')} className='projects-folder' name='projects'>
                 <span className="iconify" data-icon="icon-park:folder-code"></span>
+            </DesktopItem>
+            <DesktopItem className='clear-desktop' name='trash'>
+                <span className="iconify" data-icon="icon-park:delete-themes"></span>
             </DesktopItem>
             {
                 flags[0] ? (
@@ -30,12 +33,13 @@ const Desktop = ({toggle, flags}) => {
                 flags[1] ? (
                     <DesktopModalPopup title='Projects' className='projects-modal' toggle={toggle}>
                         <DesktopRepos>
-                            <ul>{repos.map((e, i) => <li key={i}><div>{/*<img alt={'proj-' + e.id} />*/}</div><span>{e.name}</span></li>)}</ul>
+                            <ul>{repos.map((e, i) => <li key={i}><div>{e.src}</div><span>{e.name}</span></li>)}</ul>
                         </DesktopRepos>
                     </DesktopModalPopup>
                 ) : <div className='hidden-block'></div>
                 
             }
+            <Dock />
         </DesktopContainer>
     )
 
