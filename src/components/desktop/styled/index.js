@@ -15,7 +15,7 @@ export const DesktopItem = styled.div`
         .about-inner-wrap {
             position: relative;
             border-radius: 3.125rem;
-            border: 1px solid;
+            border: 2px solid;
             overflow: hidden;
             height: inherit;
             
@@ -33,20 +33,35 @@ export const DesktopItem = styled.div`
             }
         }
     }
-    
-    &.projects-folder {
-        top: 15rem;
 
+    &.projects-folder, 
+    &.clear-desktop {
         svg {
             width: 6rem;
             height: 6rem;
             cursor: pointer;
-    
-            path {
-                fill: #D15A5A;
+
+            g {
+                stroke-width: 2px;
+
+                path {
+                    fill: #FFE54C;
+                    stroke: #000;
+                }
             }
         }
-        
+    }
+    
+    &.projects-folder {
+        top: 15rem;
+    }
+
+    &.clear-desktop {
+        top: 23rem;
+
+        svg path:last-child {
+            fill: #fff;
+        }
     }
 
     &:hover {
@@ -67,6 +82,7 @@ export const DesktopModal = styled.section`
         background-color: #DADAD3;
         right: 9rem;
         top: 5rem;
+        border-radius: 0.32rem;
     }
 
     &.projects-modal {
@@ -74,6 +90,7 @@ export const DesktopModal = styled.section`
         height: 28rem;
         left: 6rem;
         top: 8rem;
+        border-radius: 0.32rem;
     }
 
     &.active-modal {
@@ -94,7 +111,9 @@ export const DesktopModalHeader = styled.header`
     background-color: #DADAD3;
     border: 2px solid #1d1e1c;
     z-index: 1;
-
+    cursor: move;
+    border-top-right-radius: 0.32rem;
+    border-top-left-radius: 0.32rem;
 `;
 
 export const DesktopModalCloseButton = styled.button`
@@ -107,6 +126,7 @@ export const DesktopModalCloseButton = styled.button`
     cursor: pointer;
     top: 0;
     border-bottom: 0;
+    border-top-left-radius: 0.32rem;
 
     > svg {
         width: 100%;
@@ -118,33 +138,55 @@ export const DesktopRepos = styled.section`
     border: 2px solid #1d1e1c;
     height: 25.8rem;
     border-top: 0;
-    background-color: white;
+    background-color: #fff;
     overflow-y: scroll;
     overflow-x: hidden;
+    border-bottom-right-radius: 0.32rem;
+    border-bottom-left-radius: 0.32rem;
 
     > ul {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        gap: 2rem 1rem;
+        gap: 1rem;
         list-style: none;
-        padding: 0 1rem;
+        padding: 1rem;
+        margin: 0;
 
         li {
-            width: 22%;
-            height: 7.5rem;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30.3%;
+            height: 8rem;
             cursor: pointer;
+            border: 1px solid #000;
+            background-color: #f3f3f3;
+            border-radius: 0.32rem;
+
+            &:hover {
+                background-color: #DADAD3;
+            }
             
             > div {
-                height: 6rem;
-                background-color: #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 3rem;
+
+                svg {
+                    path, circle {
+                        stroke-width: 2px;
+                    }
+                }
             }
             
             span {
                 font-size: 0.75rem;
                 font-weight: 600;
+                padding-top: 1rem;
             }
         }
     }
@@ -175,6 +217,9 @@ export const DesktopModalAboutBody = styled.section`
     border: 2px solid #1d1e1c;
     border-top: none;
     background-color: #fff;
+    border-bottom-right-radius: 0.32rem;
+    border-bottom-left-radius: 0.32rem;
+
 
     p {
         margin: 0;
@@ -185,4 +230,40 @@ export const DesktopModalAboutBody = styled.section`
         fill: #D15A5A;
     }
 
+`;
+
+export const DockContainer = styled.div`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    bottom: 3rem;
+    z-index: 3;
+`;
+
+export const DockContentWrap = styled.div`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: inherit;
+    width: 25rem;
+    border-radius: 5px;
+    overflow: hidden;
+    background: inherit;
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0; 
+        right: 0; 
+        bottom: 0; 
+        left: 0;
+        background: inherit;
+        box-shadow: inset 0 0 300px rgba(255,255,255,.5);
+        filter: blur(10px);
+        margin: -20px;
+    }
 `;
