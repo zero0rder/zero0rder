@@ -43,7 +43,7 @@ const EmailModal = ({ setEmailShow }) => {
             <EmailModalContent className='modal-content'>
                 <EmailContentSection>
                     <EmailModalHeader>
-                        <span>New Message</span>
+                        <span>{ emailData.name === '' ? 'New Message' : emailData.name }</span>
                         <div>
                             <span className='minimize-email'>
                                 <span className="iconify" data-icon="icon-park:minus"></span>
