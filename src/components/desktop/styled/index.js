@@ -247,12 +247,26 @@ export const DockContentWrap = styled.div`
     position: absolute;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: inherit;
     width: 25rem;
     border-radius: 5px;
     overflow: hidden;
     background: inherit;
 
+    > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 100%;
+        font-size: 2rem;
+
+        > svg {
+            cursor: pointer;
+        }
+    }
+    
     &:before {
         content: "";
         position: absolute;
