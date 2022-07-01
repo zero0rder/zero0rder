@@ -12,5 +12,4 @@ export const MobileLanding = () => {
             <MobileNav />
         </MobileView>
     )
-
 }

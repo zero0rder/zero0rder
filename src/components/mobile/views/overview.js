@@ -1,8 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
-import { MobileOverviewContainer, SlideCard } from '../styled';
+import { MobileOverviewContainer, SlideCard, SlideBanner } from '../styled';
 import { repos } from '../../../utils/repos/repoData';
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -23,10 +22,13 @@ export const MobileOverview = () => {
                             return (
                                 <SwiperSlide key={i}>
                                     <SlideCard className={`slide-${e.id}`}>
-                                        <header>{e.name}</header>
-                                        <div>
+                                        <SlideBanner source={e.src} />
+                                        <div className='slide-body'>
+                                            <span>{e.name}</span>
                                             <p>{e.desc}</p>
-                                            <span>{e.link}</span>
+                                            <div>
+                                                <a href={e.link}><span>Open App</span></a>
+                                            </div>
                                         </div>
                                     </SlideCard>
                                 </SwiperSlide>
@@ -36,6 +38,12 @@ export const MobileOverview = () => {
                     })
                 }
             </Swiper>
+            {/* <MobileSwipeDown>
+                <span>Swipe Down</span>
+                <span>
+                    <span className="iconify" data-icon="ph:caret-down-thin"></span>
+                </span>
+            </MobileSwipeDown> */}
         </MobileOverviewContainer>
     )
 }

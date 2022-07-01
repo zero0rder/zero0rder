@@ -19,6 +19,7 @@ export const MobileHeaderContainer = styled.header`
     align-items: center;
     padding: 0.5rem;
     border-bottom: 2px solid #000;
+    background-color: #3E9E9E;
 `;
 
 export const MobileAvatar = styled.div`
@@ -26,7 +27,7 @@ export const MobileAvatar = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 3.125rem;
-    border: 2px solid #000;
+    border: 1px solid #000;
     overflow: hidden;
 
     img {
@@ -117,11 +118,7 @@ export const MobileOverviewContainer = styled.section`
         height: 100%;
 
         .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             text-align: center;
-            background: #fff;
 
             img {
                 display: block;
@@ -134,10 +131,58 @@ export const MobileOverviewContainer = styled.section`
         .swiper-pagination-bullet-active {
             height: 2rem;
             border-radius: 0.75rem;
-            background: #3E9E9E;
+            background: #D15A5A;
             transition: height 0.3s;
         }
     }
+`;
+
+export const SlideCard = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: inherit;
+
+    .slide-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 50%;
+        width: 100%;
+
+        > span {
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        > div {
+            margin-top: 1rem;
+
+            a {
+                text-decoration: none;
+
+                > span {
+                    color: #fff;
+                    background-color: #3E9E9E;
+                    padding: 0.75rem 2rem;
+                    border-radius: 5px;
+                    border: 2px solid #000;
+                    font-weight: 600;
+                    font-size: 0.85rem;
+                }
+            }
+        }
+    }
+`;
+
+export const SlideBanner = styled.div`
+    height: 40%;
+    width: 100%;
+    background-image: url(${props => props.source});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 `;
 
 export const MobileProjectContainer = styled.section`
@@ -153,21 +198,38 @@ export const MobileProjectContainer = styled.section`
     > .proj-items-wrap {
         display: flex;
         flex-wrap: wrap;
-        padding-bottom: 1rem;
+        gap: 1rem;
+        justify-content: flex-start;
+        padding: 0.75rem;
 
         div {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            width: 50%;
-    
-            img {
-                width: 12rem;
-            }
+            width: 47.2%;
+            height: 10rem;
+            cursor: pointer;
+            border: 1px solid #000;
+            background-color: #f3f3f3;
+            border-radius: 0.32rem;
 
             span {
-                font-weight: 700;
+                &:first-child {
+                    font-size: 2rem;
+
+                    svg {
+                        path, circle {
+                            stroke-width: 2px;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    font-size: 0.85rem;
+                    padding-top: 0.25rem;
+                    font-weight: 600;
+                }
             }
         }
     }
@@ -229,9 +291,23 @@ export const MobileEmailContainer = styled.section`
 
 `;
 
-export const SlideContentWrap = styled.div`
-    &.slide-1-container {
-        height: 100%;
-        width: 100%;
+export const MobileSwipeDown = styled.div`
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 4rem;
+    line-height: 0.4rem;
+    color: grey;
+
+    span:first-child {
+        letter-spacing: 0.2rem;
+        font-size: 0.85rem;
+    }
+
+    span:last-child {
+        font-size: 1.5rem;
     }
 `;

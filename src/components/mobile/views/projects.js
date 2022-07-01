@@ -10,7 +10,7 @@ export const MobileProjects = () => {
                 {
                     repos.map((e, i) => (
                         <div key={i}>
-                            <img alt='project' src=''/>
+                            <span>{e.icon}</span>
                             <span>{e.name}</span>
                         </div>
                     ))
