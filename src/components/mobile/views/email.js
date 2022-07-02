@@ -4,7 +4,7 @@ export const MobileEmail = () => {
 
     return (
         <MobileEmailContainer>
-            <h2>Contact</h2>
+            <h2>Email Me!</h2>
             <form>
                 <label>
                     <input placeholder='Your Email' type='email' name='email' />

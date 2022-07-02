@@ -153,7 +153,13 @@ export const SlideCard = styled.div`
 
         > span {
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.95rem;
+        }
+
+        > p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0.75rem;
         }
 
         > div {
@@ -169,7 +175,7 @@ export const SlideCard = styled.div`
                     border-radius: 5px;
                     border: 2px solid #000;
                     font-weight: 600;
-                    font-size: 0.85rem;
+                    font-size: 0.95rem;
                 }
             }
         }
@@ -189,10 +195,20 @@ export const MobileProjectContainer = styled.section`
     height: 82%;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: #fff;
+
+    &:after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 2rem;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #DADAD3 100%);
+        bottom: 4rem;
+    }
 
     h2 {
         text-align: center;
+        font-size: 1.75rem;
+        text-decoration: underline;
     }
 
     > .proj-items-wrap {
@@ -221,6 +237,16 @@ export const MobileProjectContainer = styled.section`
                     svg {
                         path, circle {
                             stroke-width: 2px;
+                        }
+                        
+                        &[data-icon='icon-park:bitcoin'] g,
+                        &[data-icon='icon-park:bitcoin'] circle,
+                        &[data-icon='icon-park:handle-x'] circle, 
+                        &[data-icon='icon-park:plan'] path:first-child,
+                        &[data-icon='icon-park:planet'] path:first-child,
+                        &[data-icon='icon-park:database-code'] path:nth-child(2),
+                        &[data-icon='icon-park:database-code'] path:nth-child(5) {
+                            fill: #D15A5A;
                         }
                     }
                 }
@@ -251,6 +277,9 @@ export const MobileAboutContainer = styled.section`
 export const MobileEmailContainer = styled.section`
     h2 {
         text-align: center;
+        font-size: 1.75rem;
+        letter-spacing: 0.15rem;
+        text-decoration: underline;
     }
 
     form {
@@ -269,22 +298,31 @@ export const MobileEmailContainer = styled.section`
             }
 
             input {
-                height: 2.75rem;
+                height: 3.5rem;
                 margin-bottom: 0.5rem;
                 padding: 0 0.5rem;
+                font-size: 1rem;
             }
 
             textarea {
-                height: 14rem;
+                height: 16rem;
                 padding: 0.5rem;
+                font-size: 1rem;
             }
         }
 
         .submit-container {
-            margin-top: 0.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
 
             > input {
-                padding: 0.75rem 2.75rem;
+                padding: 0.85rem 3rem;
+                font-size: 0.95rem;
+                font-weight: 600;
+                color: #fff;
+                background-color: #3E9E9E;
+                border-radius: 5px;
+                border: 2px solid #000;
             }
         }
     }
