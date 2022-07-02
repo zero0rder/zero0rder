@@ -33,7 +33,7 @@ const Desktop = ({toggle, flags}) => {
                 flags[1] ? (
                     <DesktopModalPopup title='Projects' className='projects-modal' toggle={toggle}>
                         <DesktopRepos>
-                            <ul>{repos.map((e, i) => <li key={i}><div>{e.src}</div><span>{e.name}</span></li>)}</ul>
+                            <ul>{repos.map((e, i) => <li key={i}><div><span className="iconify" data-icon={e.icon}></span></div><span>{e.name}</span></li>)}</ul>
                         </DesktopRepos>
                     </DesktopModalPopup>
                 ) : <div className='hidden-block'></div>

@@ -88,8 +88,8 @@ export const DesktopModal = styled.section`
     &.projects-modal {
         width: 30rem;
         height: 28rem;
-        left: 6rem;
-        top: 8rem;
+        left: 7rem;
+        top: 5rem;
         border-radius: 0.32rem;
     }
 
@@ -138,7 +138,7 @@ export const DesktopRepos = styled.section`
     border: 2px solid #1d1e1c;
     height: 25.8rem;
     border-top: 0;
-    background-color: #fff;
+    background-color: #DADAD3;
     overflow-y: scroll;
     overflow-x: hidden;
     border-bottom-right-radius: 0.32rem;
@@ -163,11 +163,11 @@ export const DesktopRepos = styled.section`
             height: 8rem;
             cursor: pointer;
             border: 1px solid #000;
-            background-color: #f3f3f3;
+            background-color: #fff;
             border-radius: 0.32rem;
 
             &:hover {
-                background-color: #DADAD3;
+                background-color: #f3f3f3;
             }
             
             > div {
@@ -179,6 +179,16 @@ export const DesktopRepos = styled.section`
                 svg {
                     path, circle {
                         stroke-width: 2px;
+                    }
+                   
+                    &[data-icon='icon-park:bitcoin'] g,
+                    &[data-icon='icon-park:bitcoin'] circle,
+                    &[data-icon='icon-park:handle-x'] circle, 
+                    &[data-icon='icon-park:plan'] path:first-child,
+                    &[data-icon='icon-park:planet'] path:first-child,
+                    &[data-icon='icon-park:database-code'] path:nth-child(2),
+                    &[data-icon='icon-park:database-code'] path:nth-child(5) {
+                        fill: #D15A5A;
                     }
                 }
             }
@@ -253,6 +263,7 @@ export const DockContentWrap = styled.div`
     border-radius: 5px;
     overflow: hidden;
     background: inherit;
+    box-shadow: -0.4rem 0.4rem 0 rgb(29 30 28 / 26%);
 
     > span {
         display: flex;
@@ -264,6 +275,31 @@ export const DockContentWrap = styled.div`
 
         > svg {
             cursor: pointer;
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: scale(1.25);
+            }
+
+            &[data-icon="typcn:social-twitter"]:hover path {
+                fill: #1DA1F2;
+            }
+            
+            &[data-icon="foundation:social-linkedin"]:hover path {
+                fill: #0e76a8;
+            }
+            
+            &[data-icon="foundation:social-stack-overflow"]:hover {
+                path {
+                    &:first-child {
+                        fill: #DADAD3;
+                    }
+
+                    &:last-child {
+                        fill: orange;
+                    }
+                }
+            }
         }
     }
     
