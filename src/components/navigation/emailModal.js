@@ -40,7 +40,7 @@ const EmailModal = ({ setEmailShow }) => {
     return (
         <>
             <ModalOverlay onClick={() => setEmailShow(false)}></ModalOverlay>
-            <EmailModalContent className='modal-content'>
+            <EmailModalContent>
                 <EmailContentSection>
                     <EmailModalHeader>
                         <span>{ emailData.name === '' ? 'New Message' : emailData.name }</span>
