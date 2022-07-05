@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/zero0rder/zero0rder/static/css/main.d8feb810.css",
+    "main.js": "/zero0rder/zero0rder/static/js/main.04136076.js",
+    "static/js/787.1ed0c42c.chunk.js": "/zero0rder/zero0rder/static/js/787.1ed0c42c.chunk.js",
+    "index.html": "/zero0rder/zero0rder/index.html",
+    "main.d8feb810.css.map": "/zero0rder/zero0rder/static/css/main.d8feb810.css.map",
+    "main.04136076.js.map": "/zero0rder/zero0rder/static/js/main.04136076.js.map",
+    "787.1ed0c42c.chunk.js.map": "/zero0rder/zero0rder/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8feb810.css",
+    "static/js/main.04136076.js"
+  ]
+}
