@@ -163,22 +163,35 @@ export const SlideCard = styled.div`
         }
 
         > div {
-            margin-top: 1rem;
+            &.open-app-btn {
+                margin-top: 1rem;
+    
+                a {
+                    text-decoration: none;
+    
+                    > span {
+                        color: #fff;
+                        background-color: #3E9E9E;
+                        padding: 0.75rem 2rem;
+                        border-radius: 5px;
+                        border: 2px solid #000;
+                        font-weight: 600;
+                        font-size: 0.95rem;
+                    }
+                }
+            }
 
-            a {
-                text-decoration: none;
+            &:last-child {
+                margin-top: 2rem;
 
-                > span {
-                    color: #fff;
-                    background-color: #3E9E9E;
-                    padding: 0.75rem 2rem;
-                    border-radius: 5px;
-                    border: 2px solid #000;
+                a {
+                    margin-top: 2rem;
+                    color: #000;
                     font-weight: 600;
-                    font-size: 0.95rem;
                 }
             }
         }
+
     }
 `;
 
@@ -295,6 +308,7 @@ export const MobileEmailContainer = styled.section`
                 border: 0.02rem solid #c3c3c3;
                 width: 100%;
                 outline: none;
+                border-radius: 5px;
             }
 
             input {
@@ -308,6 +322,7 @@ export const MobileEmailContainer = styled.section`
                 height: 16rem;
                 padding: 0.5rem;
                 font-size: 1rem;
+                resize: none;
             }
         }
 

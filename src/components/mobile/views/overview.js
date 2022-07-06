@@ -26,8 +26,11 @@ export const MobileOverview = () => {
                                         <div className='slide-body'>
                                             <span>{e.name}</span>
                                             <p>{e.desc}</p>
-                                            <div>
+                                            <div className='open-app-btn'>
                                                 <a href={e.link}><span>Open App</span></a>
+                                            </div>
+                                            <div>
+                                                <a href={e.repo} target='_blank' rel='noopener noreferrer'><span>More Info</span></a>
                                             </div>
                                         </div>
                                     </SlideCard>
