@@ -317,3 +317,108 @@ export const DockContentWrap = styled.div`
         margin: -20px;
     }
 `;
+
+export const DesktopProjectCard = styled.section`
+    position: absolute;
+    width: 25rem;
+    height: auto;
+    left: 6rem;
+    top: 12rem;
+
+
+    header {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.25rem 5rem 0.5rem 6rem;
+        width: 100%;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-align: center;
+        background-color: #DADAD3;
+        border: 2px solid #1d1e1c;
+        z-index: 1;
+        cursor: move;
+        border-top-right-radius: 0.32rem;
+        border-top-left-radius: 0.32rem;
+    }
+
+
+    button {
+        position: absolute;
+        width: 1.64rem;
+        height: 1.64rem;
+        padding: 0.3rem;
+        border: 2px solid black;
+        background-color: #C1C1BF;
+        cursor: pointer;
+        top: 0;
+        border-bottom: 0;
+        border-top-left-radius: 0.32rem;
+
+        > svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    > section {
+        border: 2px solid #1d1e1c;
+        height: 15rem;
+        text-align: center;
+        border-top: 0;
+        background-color: #fff;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        border-bottom-right-radius: 0.32rem;
+        border-bottom-left-radius: 0.32rem;
+
+        > img {
+            width: 65%;
+            height: 8rem;
+            display: block;
+            margin: auto;
+            margin-bottom: 0.5rem;
+            border: 2px solid #000;
+            border-top: none;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        > span {
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        > p {
+            margin: 0.25rem 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-evenly;
+            width: 75%;
+            margin: auto;
+
+            .open-app-btn, div:last-child  {
+                span {
+                    padding: 0.5rem 2rem;
+                    background-color: #FFE54C;
+                    color: #000;
+                    border-radius: 5px;
+                    border: 2px solid #000;
+                    font-weight: 600;
+                    font-size: 0.7rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #D15A5A;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+`;
