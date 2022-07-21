@@ -1,10 +1,18 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import { DesktopContainer, DesktopItem, DesktopModalAboutBody, DesktopRepos } from './styled/index';
+import ProjectCard from './projectCard';
 import { DesktopModalPopup } from './desktopModal'; 
 import { Dock } from './dock';
 import { repos } from '../../utils/repos/repoData';
 
 const Desktop = ({toggle, flags}) => {
+    const [cardData, setCardData] = useState(repos[0]);
+
+    const openProjectCard = (id) => {
+        let repo = repos.filter(r => r.id === id)[0];
+        setCardData(() => repo);
+    }
+
     return (
         <DesktopContainer className='dsktp-container'>
             <DesktopItem onClick={() => toggle('aboutModalOpen')} name='about' className='about-avatar'>
@@ -31,14 +39,18 @@ const Desktop = ({toggle, flags}) => {
             }
             {
                 flags[1] ? (
-                    <DesktopModalPopup title='Projects' className='projects-modal' toggle={toggle}>
-                        <DesktopRepos>
-                            <ul>{repos.map((e, i) => <li key={i}><div><span className="iconify" data-icon={e.icon}></span></div><span>{e.name}</span></li>)}</ul>
-                        </DesktopRepos>
-                    </DesktopModalPopup>
+                    <>
+                        <DesktopModalPopup title='Projects' className='projects-modal' toggle={toggle}>
+                            <DesktopRepos>
+                                <ul>{repos.map((e, i) => <li onClick={() => openProjectCard(e.id)} key={i}><div><span className="iconify" data-icon={e.icon}></span></div><span>{e.name}</span></li>)}</ul>
+                            </DesktopRepos>
+                        </DesktopModalPopup>
+                    </>
                 ) : <div className='hidden-block'></div>
                 
             }
+
+            <ProjectCard data={cardData} />
             <Dock />
         </DesktopContainer>
     )

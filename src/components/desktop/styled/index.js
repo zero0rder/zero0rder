@@ -86,9 +86,9 @@ export const DesktopModal = styled.section`
     }
 
     &.projects-modal {
-        width: 30rem;
+        width: 38rem;
         height: 28rem;
-        left: 7rem;
+        left: 35rem;
         top: 5rem;
         border-radius: 0.32rem;
     }
@@ -259,8 +259,8 @@ export const DockContentWrap = styled.div`
     justify-content: center;
     align-items: center;
     height: inherit;
-    width: 25rem;
-    border-radius: 5px;
+    width: 30rem;
+    border-radius: 0.32rem;
     overflow: hidden;
     background: inherit;
     box-shadow: -0.4rem 0.4rem 0 rgb(29 30 28 / 26%);
@@ -269,7 +269,7 @@ export const DockContentWrap = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 25%;
+        width: 20%;
         height: 100%;
         font-size: 2rem;
 
@@ -322,8 +322,11 @@ export const DesktopProjectCard = styled.section`
     position: absolute;
     width: 25rem;
     height: auto;
-    left: 6rem;
-    top: 12rem;
+    left: 13rem;
+    top: 14rem;
+    z-index: 3;
+    box-shadow: -0.6rem 0.6rem 0 rgb(29 30 28 / 26%);
+    border-radius: 0.32rem;
 
 
     header {
@@ -400,6 +403,10 @@ export const DesktopProjectCard = styled.section`
             justify-content: space-evenly;
             width: 75%;
             margin: auto;
+
+            a {
+                text-decoration: none;
+            }
 
             .open-app-btn, div:last-child  {
                 span {
