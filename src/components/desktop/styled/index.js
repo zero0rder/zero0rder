@@ -74,7 +74,6 @@ export const DesktopModal = styled.section`
     box-sizing: border-box;
     position: absolute;
     box-shadow: -0.6rem 0.6rem 0 rgb(29 30 28 / 26%);
-    z-index: 1;
 
     &.about-modal {
         height: 22rem;
@@ -93,8 +92,12 @@ export const DesktopModal = styled.section`
         border-radius: 0.32rem;
     }
 
-    &.active-modal {
-        z-index: 2;
+    &.projects-modal {
+       z-index: ${props => props.order};
+    }
+
+    &.about-modal {
+        z-index: ${props => props.order};
     }
 
 `;
@@ -114,6 +117,7 @@ export const DesktopModalHeader = styled.header`
     cursor: move;
     border-top-right-radius: 0.32rem;
     border-top-left-radius: 0.32rem;
+    text-transform: capitalize;
 `;
 
 export const DesktopModalCloseButton = styled.button`
@@ -324,7 +328,7 @@ export const DesktopProjectCard = styled.section`
     height: auto;
     left: 13rem;
     top: 14rem;
-    z-index: 3;
+    z-index: ${props => props.order};
     box-shadow: -0.6rem 0.6rem 0 rgb(29 30 28 / 26%);
     border-radius: 0.32rem;
 

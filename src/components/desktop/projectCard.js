@@ -1,18 +1,19 @@
 import { useRef } from 'react';
 import Draggable from 'react-draggable';
 import { DesktopProjectCard } from './styled';
+import DesktopModalCloseBtn from './desktopModalCloseBtn';
 
-const ProjectCard = ({data}) => {
+const ProjectCard = ({ data, closeCard, setZIndex, order, title}) => {
     const cardRef = useRef();
-
+    
     return (
         <Draggable
             handle='.card-header'
             nodeRef={cardRef}
             bounds='body'>
-            <DesktopProjectCard ref={cardRef}>
+            <DesktopProjectCard id={title} ref={cardRef} className='dsk-modal' onClick={() => setZIndex(cardRef.current, title)} order={order}>
                 <header className='card-header'>{data.name}</header>
-                <button><span className="iconify" data-icon="icon-park:close" data-width="256" data-height="256"></span></button>
+                <DesktopModalCloseBtn close={closeCard}/>
                 <section>
                     <img alt={data.name} src={data.src}/>
                     <span>{data.name}</span>
