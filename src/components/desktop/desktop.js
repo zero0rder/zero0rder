@@ -1,16 +1,23 @@
 import { useState } from 'react';
-import { DesktopContainer, DesktopItem, DesktopModalAboutBody, DesktopRepos } from './styled/index';
+import { DesktopContainer, DesktopItem, DesktopRepos } from './styled/index';
 import NavigationBar from './navigation/navigationBar';
 import ProjectCard from './projectCard';
 import { DesktopModalPopup } from './desktopModal'; 
 import { Dock } from './dock';
 import { repos } from '../../utils/repos/repoData';
+import DesktopModalAbout from './desktopModalAbout';
+
+const initialState = {
+    card: repos[0],
+    modal: { about: false, projects: true },
+    zIndex: { about: '1', projects: '2', card: '3' }
+}
 
 const Desktop = () => {
-    const [cardData, setCardData] = useState(repos[0]);
     const [cardVisible, setCardVisible] = useState(true);
-    const [modalState, setModalState] = useState({about: false, projects: true});
-    const [zIndexOrder, setZIndexOrder] = useState({about: '1', projects: '2', card: '3'});
+    const [cardData, setCardData] = useState(initialState.card);
+    const [modalState, setModalState] = useState(initialState.modal);
+    const [zIndexOrder, setZIndexOrder] = useState(initialState.zIndex);
     const closeProjectCard = () => setCardVisible(() => false);
 
     const modalToggle = (modalType) => {
@@ -24,7 +31,7 @@ const Desktop = () => {
     const configZIndex = (modalType) => {
         let container = document.getElementsByClassName('dsktp-container')[0];
         let modals = Array.from(container.childNodes).filter((e) => e.classList.contains('dsk-modal'));
-        zIndex(modals.find(e => e.id === modalType), modalType);
+        zIndex(modals.find(e => e.id === modalType));
     }
 
     const openProjectCard = (e, id) => {
@@ -39,21 +46,28 @@ const Desktop = () => {
         configZIndex('card');
     }
 
-    const zIndex = (currElem, currName) => {
-        let container = document.getElementsByClassName('dsktp-container')[0];
-        let modals = Array.from(container.childNodes).filter((e) => e.classList.contains('dsk-modal'));
-        let indx3 = modals.find(e => e.attributes.order?.value === '3'), indx2 = modals.find(e => e.attributes.order?.value === '2');
-        let currIndex = currElem?.attributes.order?.value;
+    const zIndex = (currElem) => {
+        const type = currElem?.id;
+        const currIndex = currElem?.attributes?.order?.value;
+
+        let indx3, indx2;
+        for(const [key, value] of Object.entries(zIndexOrder)){
+            if(value === '3')
+                indx3 = key;
+
+            if(value === '2')
+                indx2 = key;
+
+        }
+
+        if(currIndex === '3') return;
 
         switch(currIndex){
-            case '3':
-                setZIndexOrder((prev) => ({...prev}));
-                break;
             case '2':
-                setZIndexOrder((prev) => ({...prev, [currName]: '3', [indx3?.id]: '2'}));
+                setZIndexOrder((prev) => ({...prev, [type]: '3', [indx3]: '2'}));
                 break;
             case '1':
-                setZIndexOrder(() => ({[currName]: '3', [indx2?.id]: '1', [indx3?.id]: '2'}));
+                setZIndexOrder({[type]: '3', [indx2]: '1', [indx3]: '2'});
                 break;
         }
     }
@@ -76,10 +90,7 @@ const Desktop = () => {
             {
                 modalState.about ? (
                     <DesktopModalPopup title='about' className='about-modal' order={zIndexOrder.about} setZIndex={zIndex} toggle={modalToggle}>
-                        <DesktopModalAboutBody>
-                            <p>Software Developer, NYC</p>
-                            <span className="iconify" data-icon="icon-park:local-two"></span>
-                        </DesktopModalAboutBody>
+                        <DesktopModalAbout/>
                     </DesktopModalPopup>
                 ) : <div className='hidden-block'></div>
             }

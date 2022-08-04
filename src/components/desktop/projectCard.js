@@ -11,7 +11,7 @@ const ProjectCard = ({ data, closeCard, setZIndex, order, title}) => {
             handle='.card-header'
             nodeRef={cardRef}
             bounds='body'>
-            <DesktopProjectCard id={title} ref={cardRef} className='dsk-modal' onClick={() => setZIndex(cardRef.current, title)} order={order}>
+            <DesktopProjectCard id={title} ref={cardRef} className='dsk-modal' onClick={() => setZIndex(cardRef.current)} order={order}>
                 <header className='card-header'>{data.name}</header>
                 <DesktopModalCloseBtn close={closeCard}/>
                 <section>

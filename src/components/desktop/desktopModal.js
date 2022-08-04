@@ -12,7 +12,7 @@ export const DesktopModalPopup = (props) => {
             handle='.modal-header'
             nodeRef={modalRef}
             bounds='body'>
-            <DesktopModal id={props.title} ref={modalRef} className={props.className + ' dsk-modal'} onClick={() => props.setZIndex(modalRef.current, props.title)} order={props.order}>
+            <DesktopModal id={props.title} ref={modalRef} className={props.className + ' dsk-modal'} onClick={() => props.setZIndex(modalRef.current)} order={props.order}>
                 <DesktopModalHeader className='modal-header'>{props.title}</DesktopModalHeader>
                 <DesktopModalCloseBtn close={closeModal} />
                 {props.children}
