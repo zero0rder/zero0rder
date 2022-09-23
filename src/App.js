@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
-import Desktop from './components/desktop/desktop';
-import { MobileLanding } from './components/mobile/mobileLanding';
-import { AppContainer, ContentSection } from './styled';
-import { viewportQuery, isMobileViewport } from './index';
-import './App.css';
-
+import React, { Component } from 'react'
+import Desktop from './components/desktop/desktop'
+import { MobileLanding } from './components/mobile/mobileLanding'
+import { AppContainer, ContentSection } from './styled'
+import { viewportQuery, isMobileViewport } from './index'
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { isMobile: isMobileViewport };
+    this.state = { isMobile: isMobileViewport }
   }
 
   componentDidMount(){
     viewportQuery.onchange = () => this.setState(state => ({...state, isMobile: viewportQuery.matches}))
+
   }
 
   componentWillUnmount(){
-    viewportQuery.removeEventListener(viewportQuery.onchange)
+    viewportQuery.removeEventListener('change', viewportQuery.onchange)
   }
 
   // componentDidUpdate(){}
@@ -33,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
