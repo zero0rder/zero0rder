@@ -6,33 +6,27 @@ export const MobileView = styled.section`
     overflow: hidden;
 `;
 
-export const MobileNavContainer = styled.div`
-    position: absolute;
-    bottom: 1rem;
-    width: 100%;
-    z-index: 3;
-`;
-
 export const MobileHeaderContainer = styled.header`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    min-height: 2.5rem;
     align-items: center;
     padding: 0.5rem;
     border-bottom: 2px solid #000;
-    background-color: #3E9E9E;
+
+    > span {
+        font-weight: bold;
+        font-size: 1.25rem;
+        text-transform: Capitalize;
+    }
+
 `;
 
-export const MobileAvatar = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3.125rem;
-    border: 1px solid #000;
-    overflow: hidden;
-
-    img {
-        width: 2.5rem;
-    }
+export const MobileNavContainer = styled.div`
+    position: absolute;
+    bottom: 1.75rem;
+    width: 100%;
+    z-index: 3;
 `;
 
 export const MobileNavUl = styled.ul`
@@ -53,10 +47,12 @@ export const MobileNavLi = styled.li`
     align-items: center;
     width: 25%;
     padding: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 
     > a {
-        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        height: 1.75rem;
     }
 
     &:nth-child(1){
@@ -214,7 +210,7 @@ export const MobileProjectContainer = styled.section`
         content: '';
         width: 100%;
         height: 2rem;
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #DADAD3 100%);
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
         bottom: 4rem;
     }
 
@@ -232,44 +228,27 @@ export const MobileProjectContainer = styled.section`
         padding: 0.75rem;
 
         div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: 47.2%;
             height: 10rem;
+            width: 47.2%;
             cursor: pointer;
             border: 1px solid #000;
             background-color: #f3f3f3;
             border-radius: 0.32rem;
+            
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
 
-            span {
-                &:first-child {
-                    font-size: 2rem;
-
-                    svg {
-                        path, circle {
-                            stroke-width: 2px;
-                        }
-                        
-                        &[data-icon='icon-park:bitcoin'] g,
-                        &[data-icon='icon-park:bitcoin'] circle,
-                        &[data-icon='icon-park:handle-x'] circle, 
-                        &[data-icon='icon-park:plan'] path:first-child,
-                        &[data-icon='icon-park:planet'] path:first-child,
-                        &[data-icon='icon-park:database-code'] path:nth-child(2),
-                        &[data-icon='icon-park:database-code'] path:nth-child(5) {
-                            fill: #D15A5A;
-                        }
-                    }
-                }
-
-                &:last-child {
-                    font-size: 0.85rem;
-                    padding-top: 0.25rem;
+                span {
+                    font-size: 0.9rem;
                     font-weight: 600;
                 }
             }
+
         }
     }
     
@@ -279,33 +258,102 @@ export const MobileAboutContainer = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-weight: 700;
     height: 82%;
 
-    svg {
-        margin-left: 0.25rem;
+    .bio-socials {
+        width: 100%;
+        height: 3rem;
+        padding: 1rem;
+
+        > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            margin: auto;
+
+            > span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 33%;
+                height: 100%;
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .avatar-wrap {
+        position: relative;
+        height: 10.5rem;
+        border: 3px solid;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-top: 2rem;
+        
+        img {
+            width: 10.5rem;
+            height: 10.5rem;
+            cursor: pointer;
+        }
+    }
+    
+    .bio-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem; 
+
+        h3 {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+        }
+
+        .bio-text {
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    .bio-bottom {
+        margin: 1.5rem 0;
+        text-align: center;
+        padding: 0 0.75rem;
+        font-weight: 500;
     }
 `;
 
 export const MobileEmailContainer = styled.section`
-    h2 {
-        text-align: center;
-        font-size: 1.75rem;
-        letter-spacing: 0.15rem;
-        text-decoration: underline;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 82%;
 
     form {
-        padding: 0 0.75rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+
+        .label-container {
+            height: 90%;
+            padding: 1.5rem 0.75rem;
+        }
 
         label {
             display: flex;
             justify-content: space-between;
             align-items: center;
 
+            &:last-child {
+                height: 75%;
+            }
+
             input,
             textarea {
-                border: 0.02rem solid #c3c3c3;
+                border: 0.075rem solid #c3c3c3;
                 width: 100%;
                 outline: none;
                 border-radius: 5px;
@@ -319,7 +367,8 @@ export const MobileEmailContainer = styled.section`
             }
 
             textarea {
-                height: 16rem;
+                height: 100%;
+                margin-top: 1.5rem;
                 padding: 0.5rem;
                 font-size: 1rem;
                 resize: none;
@@ -327,10 +376,13 @@ export const MobileEmailContainer = styled.section`
         }
 
         .submit-container {
-            margin-top: 1.5rem;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10%;
 
             > input {
+                height: 3rem;
                 padding: 0.85rem 3rem;
                 font-size: 0.95rem;
                 font-weight: 600;
@@ -342,25 +394,4 @@ export const MobileEmailContainer = styled.section`
         }
     }
 
-`;
-
-export const MobileSwipeDown = styled.div`
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    bottom: 4rem;
-    line-height: 0.4rem;
-    color: grey;
-
-    span:first-child {
-        letter-spacing: 0.2rem;
-        font-size: 0.85rem;
-    }
-
-    span:last-child {
-        font-size: 1.5rem;
-    }
 `;

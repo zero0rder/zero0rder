@@ -1,43 +1,52 @@
-import { useState } from 'react';
-import { MobileAboutContainer } from '../styled';
-import { initialAboutState } from './templates/aboutTemplates';
+import { useState, useEffect } from 'react'
+import { fetchInfo } from '../../../utils/http/api'
+import { MobileAboutContainer } from '../styled'
 
 export const MobileAbout = () => {
-    const [aboutRow, setAboutRow] = useState(initialAboutState);
+    const [info, setInfo] = useState()
 
-    const handleRowStatus = e => {
-        const { target } = e;
-        const parentId = target.closest('li').id;
+    useEffect(() => {
+        const controller = new AbortController()
+        const getInfo = fetchInfo(process.env.REACT_APP_URI, controller.signal)
+        const unPkg = (async () => {
+            const res = await getInfo
+            setInfo(() => res)
+        })
 
-        setAboutRow(prev => {
-           let newState = [];
-           
-           prev?.map(c => {
-                c.title === parentId ? c.isActive = true : c.isActive = false;
-                return newState.push({...c});
-           });
+        unPkg()
+        return () => controller?.abort()
         
-           return newState;
+    }, [])
 
-        });
-    }
+    if(!info) return 'Loading...'
 
     return (
         <MobileAboutContainer>
-            <div>
-                <ul>
-                    {aboutRow?.map((c, i) => (
-                        <li id={`${c.title}`} className={`${c.isActive ? 'active-row' : ''}`} key={i}>
-                            <div className='about-row-container' onClick={(e) => handleRowStatus(e)}>
-                                <span>{c.title}</span>
-                                <span className="iconify" data-icon="ant-design:caret-up-filled"></span>
-                                <span className="iconify" data-icon="ph:caret-down-light"></span>
-                            </div>
-                            { c.view }
-                        </li>
-                    ))}
-                </ul>
+            <div className='bio-socials'>
+                <div>
+                    <span>
+                        <span className="iconify" data-icon="foundation:social-github"></span>
+                    </span>
+                    <span>
+                        <span className="iconify" data-icon="typcn:social-twitter"></span>
+                    </span>
+                    <span>
+                        <span className="iconify" data-icon="foundation:social-linkedin"></span>
+                    </span>
+                </div>
             </div>
+            <div className='avatar-wrap'>
+                <img alt='about' src={info.avatar_url}/>
+            </div>
+            <section className='bio-top'>
+                <h3>{ info.name }</h3>
+                <span className='bio-text'>{ info.bio }</span>
+                <span>{ info.location }</span>
+            </section>
+            <section className='bio-bottom'>
+                <p>Full stack engineer focused on building reusable, efficient and scalable next generation platforms. Five years of working experience in application development and testing.</p>
+                <span>Public Repositories: { info.public_repos }</span>
+            </section>
         </MobileAboutContainer>
     )
 }
