@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const MainHeader = styled.header`
     display: flex;
     justify-content: space-between;
-    background-color: #3776A1;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #DADAD3;
     color: #fff;
     overflow: hidden;
 `;
@@ -94,7 +93,7 @@ export const SvgIcon = styled.span`
         }
 
         path {
-            fill: #FFE54C;
+            fill: #DADAD3;
         }
 
         &[data-icon="icon-park:mail"] {

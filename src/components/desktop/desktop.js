@@ -14,7 +14,7 @@ const Desktop = () => {
         setModalState((prevState) => ({...prevState, [modalType]: !prevState[modalType]}))
         setIndexes(modalType)
     }
-    
+
     return (
         <ModalContext.Provider value={{ modalIndex, setIndexes }}>
             <DesktopContainer className='dsktp-container'>

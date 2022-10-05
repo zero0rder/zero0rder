@@ -29,7 +29,6 @@ export const DesktopItem = styled.div`
                 left: 6.5rem;
                 width: 100%;
                 height: 100%;
-                background-color: blue;
             }
         }
     }
@@ -45,7 +44,7 @@ export const DesktopItem = styled.div`
                 stroke-width: 2px;
 
                 path {
-                    fill: #FFE54C;
+                    fill: #DADAD3;
                     stroke: #000;
                 }
             }
@@ -111,26 +110,34 @@ export const DesktopModalHeader = styled.header`
     font-weight: 600;
     letter-spacing: 1px;
     text-align: center;
-    background-color: #DADAD3;
-    border: 2px solid #1d1e1c;
+    box-shadow: inset 0 0 300px rgb(255 255 255 / 50%);
+    border: 1px solid #DADAD3;
     z-index: 1;
     cursor: move;
     border-top-right-radius: 0.32rem;
     border-top-left-radius: 0.32rem;
     text-transform: capitalize;
+    color: #fff;
 `;
 
 export const DesktopModalCloseButton = styled.button`
     position: absolute;
-    width: 2rem;
-    height: 2rem;
+    width: 1.95rem;
+    height: 1.95rem;
     padding: 0.3rem;
-    border: 2px solid black;
-    background-color: #C1C1BF;
+    border: 1px solid #DADAD3;
     cursor: pointer;
     top: 0;
     border-bottom: 0;
     border-top-left-radius: 0.32rem;
+
+    &:hover {
+        background-color: #D15A5A;
+
+        g {
+            stroke: #fff;
+        }
+    }
 
     > svg {
         width: 100%;
@@ -139,21 +146,20 @@ export const DesktopModalCloseButton = styled.button`
 `;
 
 export const DesktopRepos = styled.section`
-    border: 2px solid #1d1e1c;
+    border: 1px solid #DADAD3;
     height: 25.8rem;
     border-top: 0;
-    background-color: #DADAD3;
     overflow-y: scroll;
     overflow-x: hidden;
     border-bottom-right-radius: 0.32rem;
     border-bottom-left-radius: 0.32rem;
+    box-shadow: inset 0 0 0 300px rgb(255 255 255 / 50%);
 
     > ul {
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-start;
         align-items: center;
-        gap: 1rem;
+        gap: 1.4rem;
         list-style: none;
         padding: 1rem;
         margin: 0;
@@ -166,12 +172,18 @@ export const DesktopRepos = styled.section`
             width: 30.3%;
             height: 8rem;
             cursor: pointer;
-            border: 1px solid #000;
-            background-color: #fff;
+            border: 1px solid #DADAD3;
+            background-color: #000F2B;
             border-radius: 0.32rem;
+            color: #fff;
 
             &:hover {
-                background-color: #f3f3f3;
+                background-color: #DADAD3;
+
+                span {
+                    color: #000;
+                }
+
             }
             
             > div {
@@ -206,21 +218,15 @@ export const DesktopRepos = styled.section`
     }
 
     &::-webkit-scrollbar {
-        width: 1rem;
-        background-color: #DADAD3;
+        width: 0.25rem;
     }
 
     &::-webkit-scrollbar-thumb {
-        border: 2px solid #1D1D1B;
-        border-right: none;
-        background-color: #C1C1BF;
+        background-color: #DADAD3;
+        border-radius: 5px;
     }
 
-    &::-webkit-scrollbar-track {
-        border: 2px solid #1D1D1B;
-        border-top: none;
-        border-right: none;
-    }
+    // &::-webkit-scrollbar-track {}
 `;
 
 export const DesktopModalAboutBody = styled.section`
@@ -234,6 +240,67 @@ export const DesktopModalAboutBody = styled.section`
     border-bottom-right-radius: 0.32rem;
     border-bottom-left-radius: 0.32rem;
 
+    > div {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        .about-modal-nav {
+            width: 20%;
+            border-right: 2px solid #000;
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                li {
+                    height: 25%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 500;
+                    cursor: pointer;
+
+                    > a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        width: 100%;
+                        text-decoration: none;
+                        color: #000;
+                    }
+
+                    &.active-tab, &:hover {
+                        font-weight: 700;
+                        box-shadow: inset 0px 0px 3px #000;
+                        background-color: #DADAD3;
+                        outline: none;
+                    }
+                    
+                    &:not(:last-child) {
+                        border-bottom: 2px solid #000;
+                    }
+                }
+            }
+        }
+        
+        .about-modal-content {
+            width: 80%;
+            padding: 0.5rem;
+
+            > div {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
 
     p {
         margin: 0;
@@ -244,6 +311,73 @@ export const DesktopModalAboutBody = styled.section`
         fill: #D15A5A;
     }
 
+`;
+
+export const DesktopModalAboutIntro = styled.div`
+    flex-direction: column;
+
+    > div:first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > img {
+            width: 21rem;
+            height: 9rem;
+            border-radius: 0.32rem;
+            border: 2px solid #000;
+        }
+    }
+
+    > div:last-child {
+        display: flex;
+        justify-content: center;
+        height: 8rem;
+        margin-top: 1rem;
+
+        ul {
+            line-height: 1.75rem;
+            list-style: none;
+            padding: 0;
+
+            li {
+                border-bottom: 2px solid #000;
+            }
+        }
+    }
+`;
+
+export const DesktopAboutWorkContainer = styled.div`
+    > ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        padding: 0px 5rem;
+
+        > li {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.75rem;
+            align-items: center;
+            margin: 0.75rem 0;
+            font-weight: 600;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.5rem;
+        }
+    }
+`;
+
+export const DesktopModalAboutHistory = styled.div`
+    > h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        margin: 2rem 0;
+        text-align: center;
+        color: red;
+        text-transform: uppercase;
+    }
 `;
 
 export const DockContainer = styled.div`
@@ -342,22 +476,22 @@ export const DesktopProjectCard = styled.section`
         font-weight: 600;
         letter-spacing: 1px;
         text-align: center;
-        background-color: #DADAD3;
-        border: 2px solid #1d1e1c;
+        border: 1px solid #DADAD3;
         z-index: 1;
         cursor: move;
         border-top-right-radius: 0.32rem;
         border-top-left-radius: 0.32rem;
+        color: #fff;
+        box-shadow: inset 0 0 300px rgb(255 255 255 / 50%);
     }
 
 
     button {
         position: absolute;
-        width: 1.64rem;
-        height: 1.64rem;
+        width: 1.55rem;
+        height: 1.55rem;
         padding: 0.3rem;
-        border: 2px solid black;
-        background-color: #C1C1BF;
+        border: 1px solid #DADAD3;
         cursor: pointer;
         top: 0;
         border-bottom: 0;
@@ -370,15 +504,15 @@ export const DesktopProjectCard = styled.section`
     }
 
     > section {
-        border: 2px solid #1d1e1c;
+        border: 1px solid #DADAD3;
         height: 15rem;
         text-align: center;
         border-top: 0;
-        background-color: #fff;
         overflow-y: scroll;
         overflow-x: hidden;
         border-bottom-right-radius: 0.32rem;
         border-bottom-left-radius: 0.32rem;
+        box-shadow: inset 0 0 300px rgb(255 255 255 / 50%);
 
         > img {
             width: 65%;
@@ -386,7 +520,7 @@ export const DesktopProjectCard = styled.section`
             display: block;
             margin: auto;
             margin-bottom: 0.5rem;
-            border: 2px solid #000;
+            border: 1px solid #DADAD3;
             border-top: none;
             border-bottom-right-radius: 5px;
             border-bottom-left-radius: 5px;
@@ -395,11 +529,13 @@ export const DesktopProjectCard = styled.section`
         > span {
             font-weight: 800;
             font-size: 1.25rem;
+            color: #fff;
         }
 
         > p {
             margin: 0.25rem 0.5rem 1rem;
             font-size: 0.85rem;
+            color: #fff;
         }
 
         section {
@@ -415,17 +551,17 @@ export const DesktopProjectCard = styled.section`
             .open-app-btn, div:last-child  {
                 span {
                     padding: 0.5rem 2rem;
-                    background-color: #FFE54C;
-                    color: #000;
+                    background-color: #000F2B;
+                    color: #fff;
                     border-radius: 5px;
-                    border: 2px solid #000;
+                    border: 1px solid #DADAD3;
                     font-weight: 600;
                     font-size: 0.7rem;
                     cursor: pointer;
 
                     &:hover {
-                        background-color: #D15A5A;
-                        color: #fff;
+                        background-color: #DADAD3;
+                        color: #000;
                     }
                 }
             }

@@ -1,14 +1,16 @@
-import { useState, useRef, useContext } from "react"
+import { useState, useRef, useContext, useEffect } from "react"
 import Draggable from 'react-draggable'
 import { DesktopModal, DesktopModalHeader, DesktopRepos } from '../styled'
 import DesktopModalCloseBtn from './desktopModalCloseBtn'
 import ProjectCard from './projectCard'
-import { repos } from '../../../utils/repos/repoData'
 import ModalContext from '../../../context/modalContext'
+import { fetchRepos } from '../../../utils/http/api'
+import { _repos } from '../../../utils/repos/repoData'
 
 const ProjectsModal = (props) => {
+    const [repos, setRepos] = useState(null)
     const [cardVisible, setCardVisible] = useState(true)
-    const [cardData, setCardData] = useState(repos[0])
+    const [cardData, setCardData] = useState(_repos[0])
     const { modalIndex, setIndexes } = useContext(ModalContext)
     const modalRef = useRef()
     const closeModal = () => props.toggle(`${props.title}`)
@@ -22,7 +24,22 @@ const ProjectsModal = (props) => {
         if (!cardVisible) setCardVisible(() => true)
         setIndexes('card')
     }
-    
+
+    useEffect(() => {
+        const controller = new AbortController()
+        const getRepos = fetchRepos(`${process.env.REACT_APP_URI}/repos?sort=updated&per_page=10&page=1`, controller.signal)
+        const unPkg = (async () => {
+            const res = await getRepos
+            setRepos(() => res)
+        })
+
+        unPkg()
+        return () => controller?.abort()
+
+    }, [])
+
+    if(!repos) return 'Loading...'
+
     return (
         <>
             <Draggable
@@ -42,7 +59,7 @@ const ProjectsModal = (props) => {
                             { repos.map((e, i) => (
                                 <li onClick={(evt) => openProjectCard(evt, e.id)} key={i}>
                                     <div>
-                                        <span className="iconify" data-icon={e.icon}></span>
+                                        <span className="iconify" data-icon='icon-park:bitcoin'></span>
                                     </div>
                                     <span>{e.name}</span>
                                 </li> 

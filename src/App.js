@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <AppContainer className='app'>
-        <ContentSection className='content-section' mobile={this.state.isMobile}>
+        <ContentSection className='content-section'>
           { this.state.isMobile ? <MobileLanding /> : <Desktop /> }
         </ContentSection>
       </AppContainer>

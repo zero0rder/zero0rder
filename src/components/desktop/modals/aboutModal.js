@@ -1,14 +1,31 @@
-import { useContext, useRef } from "react"
+import { useEffect, useState, useContext, useRef } from "react"
 import Draggable from 'react-draggable'
 import { DesktopModal, DesktopModalHeader } from '../styled'
 import DesktopModalCloseBtn from './desktopModalCloseBtn'
 import AboutModalContent from './aboutModalContent'
 import ModalContext from '../../../context/modalContext'
+import { fetchInfo } from '../../../utils/http/api'
 
 const AboutModal = (props) => {
     const { modalIndex, setIndexes } = useContext(ModalContext)
+    const [info, setInfo] = useState(null)
     const closeModal = () => props.toggle(`${props.title}`)
     const modalRef = useRef()
+
+    useEffect(() => {
+        const controller = new AbortController()
+        const getInfo = fetchInfo(process.env.REACT_APP_URI, controller.signal)
+        const unPkg = (async () => {
+            const res = await getInfo
+            setInfo(() => res)
+        })
+
+        unPkg()
+        return () => controller?.abort()
+        
+    }, [])
+
+    if(!info) return 'Loading...'
 
     return (
         <Draggable
