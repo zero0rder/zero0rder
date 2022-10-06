@@ -41,15 +41,15 @@ export const NavListItem = styled.li`
         display: none;
         width: 9rem;
         height: auto;
-        top: 2.3rem;
-        color: #000;
-        border: 2px solid #000;
-        background-color: #FFE54C;
+        top: 2.33rem;
+        color: #fff;
+        border: 1px solid #DADAD3;
         box-shadow: -0.4rem 0.4rem 0 rgb(29 30 28 / 26%);
         transition: all 0.3s;
-        border-bottom-right-radius: 0.32rem;
-        border-bottom-left-radius: 0.32rem;
+        border-bottom-right-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
         z-index: 3;
+        box-shadow: inset 0 0 300px rgb(255 255 255 / 50%);
     }
     
     &:hover {
@@ -75,8 +75,7 @@ export const NestedListItem = styled.li`
     }
     
     &:hover {
-        background-color: #D15A5A;
-        color: #fff;
+        background-color: #000F2B;
     }
 `;
 
@@ -148,11 +147,9 @@ export const EmailModalContent = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    color: #000;
     width: 55%;
     border-radius: 5px;
     height: auto;
-    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,10 +170,10 @@ export const EmailModalHeader = styled.header`
     border-radius: 5px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    background-color: #DADAD3;
-    border: 2px solid #000;
+    border: 1px solid #DADAD3;
     border-bottom: none;
-    color: #000;
+    color: #fff;
+    box-shadow: inset 0 0 300px rgb(255 255 255 / 50%);
 
     > span {
         padding: 0.25rem 0.5rem;
@@ -193,7 +190,7 @@ export const EmailModalHeader = styled.header`
 
         svg {
             path, g {
-                stroke: #000;
+                stroke: #fff;
                 stroke-width: 5;
             }
         }
@@ -207,9 +204,10 @@ export const EmailModalHeader = styled.header`
 
 export const EmailForm = styled.form`
     padding: 0 0.75rem;
-    border: 2px solid #000;
+    border: 1px solid #DADAD3;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    background-color: #fff;
 
     > label {
         display: flex;
@@ -248,14 +246,15 @@ export const EmailSubmitContainer = styled.div`
         padding: 0.5rem 1.5rem;
         font-weight: 600;
         color: #fff;
-        border: 0.02rem solid #D15A5A;
+        border: 0.02rem solid #DADAD3;
         border-radius: 0.25rem;
-        background-color: #D15A5A;
+        background-color: #000F2B;
         cursor: pointer;
 
         &:hover {
-            background-color: #3E9E9E;
-            border-color: #3E9E9E;
+            background-color: #DADAD3;
+            border-color: #DADAD3;
+            color: #000F2B;
         }
     }
 `;

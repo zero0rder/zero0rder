@@ -77,7 +77,6 @@ export const DesktopModal = styled.section`
     &.about-modal {
         height: 22rem;
         width: 38rem;
-        background-color: #DADAD3;
         right: 9rem;
         top: 5rem;
         border-radius: 0.32rem;
@@ -233,150 +232,44 @@ export const DesktopModalAboutBody = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 19.75rem;
-    border: 2px solid #1d1e1c;
+    flex-direction: column;
+    height: 19.95rem;
+    border: 1px solid #DADAD3;
     border-top: none;
-    background-color: #fff;
     border-bottom-right-radius: 0.32rem;
     border-bottom-left-radius: 0.32rem;
+    color: #fff;
+    background-color: #000F2B;
 
     > div {
-        display: flex;
-        width: 100%;
-        height: 100%;
+        position: relative;
+        height: 8.5rem;
+        border: 1px solid;
+        border-radius: 50%;
+        overflow: hidden;
 
-        .about-modal-nav {
-            width: 20%;
-            border-right: 2px solid #000;
-
-            ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-
-                li {
-                    height: 25%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-weight: 500;
-                    cursor: pointer;
-
-                    > a {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        height: 100%;
-                        width: 100%;
-                        text-decoration: none;
-                        color: #000;
-                    }
-
-                    &.active-tab, &:hover {
-                        font-weight: 700;
-                        box-shadow: inset 0px 0px 3px #000;
-                        background-color: #DADAD3;
-                        outline: none;
-                    }
-                    
-                    &:not(:last-child) {
-                        border-bottom: 2px solid #000;
-                    }
-                }
-            }
-        }
-        
-        .about-modal-content {
-            width: 80%;
-            padding: 0.5rem;
-
-            > div {
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
+        img {
+            width: 8.5rem;
+            height: 8.5rem;
         }
     }
 
-    p {
-        margin: 0;
-        font-weight: 700;
-    }
-
-    svg path {
-        fill: #D15A5A;
-    }
-
-`;
-
-export const DesktopModalAboutIntro = styled.div`
-    flex-direction: column;
-
-    > div:first-child {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        > img {
-            width: 21rem;
-            height: 9rem;
-            border-radius: 0.32rem;
-            border: 2px solid #000;
-        }
-    }
-
-    > div:last-child {
-        display: flex;
-        justify-content: center;
-        height: 8rem;
-        margin-top: 1rem;
-
-        ul {
-            line-height: 1.75rem;
-            list-style: none;
-            padding: 0;
-
-            li {
-                border-bottom: 2px solid #000;
-            }
-        }
-    }
-`;
-
-export const DesktopAboutWorkContainer = styled.div`
-    > ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        padding: 0px 5rem;
-
-        > li {
-            display: flex;
-            flex-direction: column;
-            font-size: 1.75rem;
-            align-items: center;
-            margin: 0.75rem 0;
-            font-weight: 600;
-            border-bottom: 2px solid #000;
-            padding-bottom: 0.5rem;
-        }
-    }
-`;
-
-export const DesktopModalAboutHistory = styled.div`
-    > h1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2.5rem;
-        margin: 2rem 0;
+    > section {
         text-align: center;
-        color: red;
-        text-transform: uppercase;
+
+        h3 {
+            margin: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .bio-text {
+            font-style: italic;
+        }
+
+        .bio-locale {
+            display: block;
+            padding-top: 0.5rem;
+        }
     }
 `;
 

@@ -23,13 +23,13 @@ const ProjectCard = ({ data, closeCard, title }) => {
                 <section>
                     <img alt={data.name} src={data.src}/>
                     <span>{data.name}</span>
-                    <p>{data.desc}</p>
+                    <p>{data.description}</p>
                     <section>
                         <div className='open-app-btn'>
-                            <a href={data.link} target='_blank' rel='noopener noreferrer'><span>Open App</span></a>
+                            <a href={data.homepage ?? ''} target='_blank' rel='noopener noreferrer'><span>Open App</span></a>
                         </div>
                         <div>
-                            <a href={data.repo} target='_blank' rel='noopener noreferrer'><span>More Info</span></a>
+                            <a href={data.html_url} target='_blank' rel='noopener noreferrer'><span>More Info</span></a>
                         </div>
                     </section>
                 </section>

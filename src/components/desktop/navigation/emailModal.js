@@ -1,14 +1,8 @@
-import { ModalOverlay, EmailModalContent, EmailContentSection, EmailModalHeader, EmailForm, EmailSubmitContainer } from './styled/index';
-import useEmailService from '../../../hooks/useEmailService';
-
-let initialState = {
-    name: '',
-    email: '',
-    message: ''
-};
+import { ModalOverlay, EmailModalContent, EmailContentSection, EmailModalHeader, EmailForm, EmailSubmitContainer } from './styled/index'
+import useEmailService from '../../../hooks/useEmailService'
 
 const EmailModal = ({ setEmailShow }) => {
-    const { handleChange, handleSubmit, emailData } = useEmailService(initialState);
+    const { handleChange, handleSubmit, emailData } = useEmailService({ name: '', email: '', message: '' })
     
     return (
         <>
@@ -46,4 +40,4 @@ const EmailModal = ({ setEmailShow }) => {
     )
 }
 
-export default EmailModal;
+export default EmailModal
