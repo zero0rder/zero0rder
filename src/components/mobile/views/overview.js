@@ -1,11 +1,14 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper';
-import { MobileOverviewContainer, SlideCard, SlideBanner } from '../styled';
-import { repos } from '../../../utils/repos/repoData';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper'
+import { MobileOverviewContainer, SlideCard, SlideBanner } from '../styled'
+import { top5Mobile, repoSrc } from '../../../utils/repos'
+import { useFetch } from '../../../hooks/useFetch'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 export const MobileOverview = () => {
+    const repos = useFetch(`${process.env.REACT_APP_URI}/repos?sort=updated&per_page=10&page=1`)
+    if(!repos) return 'Loading...'
 
     return (
         <MobileOverviewContainer>
@@ -18,35 +21,30 @@ export const MobileOverview = () => {
                 className='mobile-swiper'>
                 {
                     repos.map((e, i) => {
-                        if(i < 5)
+                        if(top5Mobile.includes(e.id)){
                             return (
                                 <SwiperSlide key={i}>
                                     <SlideCard className={`slide-${e.id}`}>
-                                        <SlideBanner source={e.src} />
+                                        <SlideBanner source={repoSrc.get(e.id) ?? repoSrc.get('default')} />
                                         <div className='slide-body'>
                                             <span>{e.name}</span>
-                                            <p>{e.desc}</p>
+                                            <p>{e.description}</p>
                                             <div className='open-app-btn'>
-                                                <a href={e.link}><span>Open App</span></a>
+                                                <a href={e.homepage} target='_blank' rel='noopener noreferrer'><span>Open App</span></a>
                                             </div>
                                             <div>
-                                                <a href={e.repo} target='_blank' rel='noopener noreferrer'><span>More Info</span></a>
+                                                <a href={e.html_url} target='_blank' rel='noopener noreferrer'><span>More Info</span></a>
                                             </div>
                                         </div>
                                     </SlideCard>
                                 </SwiperSlide>
-                            );
+                            )
+                        }
 
-                        return null;
+                        return null
                     })
                 }
             </Swiper>
-            {/* <MobileSwipeDown>
-                <span>Swipe Down</span>
-                <span>
-                    <span className="iconify" data-icon="ph:caret-down-thin"></span>
-                </span>
-            </MobileSwipeDown> */}
         </MobileOverviewContainer>
     )
 }

@@ -12,12 +12,13 @@ export const MobileHeaderContainer = styled.header`
     min-height: 2.5rem;
     align-items: center;
     padding: 0.5rem;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #DADAD3;
 
     > span {
         font-weight: bold;
         font-size: 1.25rem;
         text-transform: Capitalize;
+        color: #DADAD3;
     }
 
 `;
@@ -36,9 +37,8 @@ export const MobileNavUl = styled.ul`
     padding: 0;
     margin: 0 1rem;
     list-style: none;
-    background-color: #3E9E9E;
     border-radius: 5px;
-    border: 2px solid #000;
+    box-shadow: inset 0 0 300px rgb(255 255 255 / 50%)
 `;
 
 export const MobileNavLi = styled.li`
@@ -53,6 +53,10 @@ export const MobileNavLi = styled.li`
         display: flex;
         align-items: center;
         height: 1.75rem;
+    }
+
+    path {
+        stroke-width: 2;
     }
 
     &:nth-child(1){
@@ -127,7 +131,7 @@ export const MobileOverviewContainer = styled.section`
         .swiper-pagination-bullet-active {
             height: 2rem;
             border-radius: 0.75rem;
-            background: #D15A5A;
+            background: #DADAD3;
             transition: height 0.3s;
         }
     }
@@ -146,6 +150,7 @@ export const SlideCard = styled.div`
         justify-content: center;
         height: 50%;
         width: 100%;
+        color: #fff;
 
         > span {
             font-weight: 800;
@@ -166,11 +171,11 @@ export const SlideCard = styled.div`
                     text-decoration: none;
     
                     > span {
-                        color: #fff;
-                        background-color: #3E9E9E;
+                        color: #000;
+                        background-color: #DADAD3;
                         padding: 0.75rem 2rem;
                         border-radius: 5px;
-                        border: 2px solid #000;
+                        border: none;
                         font-weight: 600;
                         font-size: 0.95rem;
                     }
@@ -182,7 +187,7 @@ export const SlideCard = styled.div`
 
                 a {
                     margin-top: 2rem;
-                    color: #000;
+                    color: #fff;
                     font-weight: 600;
                 }
             }
@@ -205,15 +210,6 @@ export const MobileProjectContainer = styled.section`
     overflow-y: scroll;
     overflow-x: hidden;
 
-    &:after {
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 2rem;
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
-        bottom: 4rem;
-    }
-
     h2 {
         text-align: center;
         font-size: 1.75rem;
@@ -232,8 +228,8 @@ export const MobileProjectContainer = styled.section`
             width: 47.2%;
             cursor: pointer;
             border: 1px solid #000;
-            background-color: #f3f3f3;
             border-radius: 0.32rem;
+            box-shadow: inset 0 0 300px rgb(255 255 255 / 50%);
             
             a {
                 display: flex;
@@ -246,6 +242,7 @@ export const MobileProjectContainer = styled.section`
                 span {
                     font-size: 0.9rem;
                     font-weight: 600;
+                    color: #fff;
                 }
             }
 
@@ -261,6 +258,7 @@ export const MobileAboutContainer = styled.section`
     flex-direction: column;
     font-weight: 700;
     height: 82%;
+    color: #DADAD3;
 
     .bio-socials {
         width: 100%;
@@ -314,6 +312,7 @@ export const MobileAboutContainer = styled.section`
 
         .bio-text {
             margin-bottom: 0.25rem;
+            font-style: italic;
         }
     }
 
@@ -353,7 +352,7 @@ export const MobileEmailContainer = styled.section`
 
             input,
             textarea {
-                border: 0.075rem solid #c3c3c3;
+                border: 1px solid #000;
                 width: 100%;
                 outline: none;
                 border-radius: 5px;
@@ -386,10 +385,10 @@ export const MobileEmailContainer = styled.section`
                 padding: 0.85rem 3rem;
                 font-size: 0.95rem;
                 font-weight: 600;
-                color: #fff;
-                background-color: #3E9E9E;
+                color: #000;
+                background-color: #DADAD3;
                 border-radius: 5px;
-                border: 2px solid #000;
+                border: none;
             }
         }
     }

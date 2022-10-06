@@ -1,23 +1,8 @@
-import { useState, useEffect } from 'react'
-import { fetchInfo } from '../../../utils/http/api'
+import { useFetch } from '../../../hooks/useFetch'
 import { MobileAboutContainer } from '../styled'
 
 export const MobileAbout = () => {
-    const [info, setInfo] = useState()
-
-    useEffect(() => {
-        const controller = new AbortController()
-        const getInfo = fetchInfo(process.env.REACT_APP_URI, controller.signal)
-        const unPkg = (async () => {
-            const res = await getInfo
-            setInfo(() => res)
-        })
-
-        unPkg()
-        return () => controller?.abort()
-        
-    }, [])
-
+    const info = useFetch(process.env.REACT_APP_URI)
     if(!info) return 'Loading...'
 
     return (
@@ -44,7 +29,7 @@ export const MobileAbout = () => {
                 <span>{ info.location }</span>
             </section>
             <section className='bio-bottom'>
-                <p>Full stack engineer focused on building reusable, efficient and scalable next generation platforms. Five years of working experience in application development and testing.</p>
+                <p>Full stack engineer focused on building reusable and efficient next generation software. Five years of working experience in application development.</p>
                 <span>Public Repositories: { info.public_repos }</span>
             </section>
         </MobileAboutContainer>
