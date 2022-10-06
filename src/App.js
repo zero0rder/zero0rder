@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import Desktop from './components/desktop/desktop'
 import { MobileLanding } from './components/mobile/mobileLanding'
 import { AppContainer, ContentSection } from './styled'
-import { viewportQuery, isMobileViewport } from './index'
+
+const viewportQuery = window.matchMedia('(max-width: 448px)')
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { isMobile: isMobileViewport }
+    this.state = { isMobile: viewportQuery.matches }
   }
 
   componentDidMount(){
