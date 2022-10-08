@@ -55,13 +55,17 @@ export const MobileNavLi = styled.li`
         height: 1.75rem;
     }
 
+    svg g {
+        stroke: #000F2B;
+    }
+
     path {
-        stroke-width: 2;
+        stroke-width: 1;
     }
 
     &:nth-child(1){
         svg g path:first-child {
-            fill: #D15A5A;
+            fill: #DADAD3;
         }
     }
 
@@ -72,41 +76,34 @@ export const MobileNavLi = styled.li`
             }
 
             &:last-child {
-                fill: #D15A5A;
+                fill: #DADAD3;
             }
         }
     }
 
     &:nth-child(3) {
         svg path {
-            fill: #D15A5A;
+            stroke: #000F2B;
+            fill: #DADAD3;
         }
     }
 
     &:nth-child(4) {
         svg g path {
             &:first-child {
-                fill: #D15A5A;
+                stroke: #000F2B;
+                fill: #DADAD3;
             }
 
             &:nth-child(2) {
-                stroke: #000;
-            }
-        }
-    } 
-
-    &:nth-child(5) {
-        svg g path {
-            &:first-child {
-                fill: #D15A5A;
+                stroke: #000F2B;
             }
 
-            &:last-child {
-                fill: #D15A5A;
-                stroke: #000;
+            &:nth-child(n+3) {
+                stroke: none;
             }
         }
-    } 
+    }
 `;
 
 export const MobileOverviewContainer = styled.section`

@@ -156,6 +156,7 @@ export const EmailModalContent = styled.div`
     z-index: 5;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+    max-width: 650px;
 `;
 
 export const EmailContentSection = styled.section`
