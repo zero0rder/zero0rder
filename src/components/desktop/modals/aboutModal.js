@@ -1,6 +1,6 @@
 import { useContext, useRef } from 'react'
 import Draggable from 'react-draggable'
-import { DesktopModal, DesktopModalHeader } from '../styled'
+import { DesktopModal, DesktopModalHeader } from './styled'
 import DesktopModalCloseBtn from './desktopModalCloseBtn'
 import AboutModalContent from './aboutModalContent'
 import ModalContext from '../../../context/modalContext'

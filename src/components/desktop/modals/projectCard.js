@@ -1,6 +1,6 @@
 import { useContext, useRef } from 'react'
 import Draggable from 'react-draggable'
-import { DesktopProjectCard } from '../styled'
+import { DesktopProjectCard } from './styled'
 import DesktopModalCloseBtn from './desktopModalCloseBtn'
 import ModalContext from '../../../context/modalContext'
 

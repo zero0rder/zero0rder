@@ -1,4 +1,4 @@
-import { DesktopModalCloseButton } from '../styled'
+import { DesktopModalCloseButton } from './styled'
 
 const DesktopModalCloseBtn = ({ close }) => {
     return (

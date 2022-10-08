@@ -1,5 +1,5 @@
 import { useFetch } from '../../../hooks/useFetch'
-import { DesktopModalAboutBody } from '../styled'
+import { DesktopModalAboutBody } from './styled'
 
 const AboutModalContent = () => {
     const info = useFetch(process.env.REACT_APP_URI)
