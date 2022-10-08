@@ -26,3 +26,4 @@ node_modules
 
 # data
 /src/utils/repos
+/src/utils/email
