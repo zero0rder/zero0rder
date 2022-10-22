@@ -32,7 +32,7 @@ const ProjectsModal = (props) => {
         setIndexes('card')
     }
 
-    if(!repos) return 'Loading...'
+    if(!repos) return <iconify-icon icon="eos-icons:bubble-loading"></iconify-icon>
 
     return (
         <>

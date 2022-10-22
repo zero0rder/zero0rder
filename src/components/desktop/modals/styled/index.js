@@ -77,7 +77,7 @@ export const DesktopModalCloseButton = styled.button`
 
 export const DesktopRepos = styled.section`
     border: 1px solid #DADAD3;
-    height: 25.8rem;
+    height: 25.9rem;
     border-top: 0;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -260,7 +260,7 @@ export const DesktopProjectCard = styled.section`
         overflow-x: hidden;
         border-bottom-right-radius: 0.32rem;
         border-bottom-left-radius: 0.32rem;
-        box-shadow: inset 0 0 300px rgb(255 255 255 / 50%);
+        box-shadow: inset 0 0 300px rgb(255 255 255 / 85%);
 
         > img {
             width: 65%;

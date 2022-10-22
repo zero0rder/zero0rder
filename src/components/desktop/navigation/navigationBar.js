@@ -25,7 +25,6 @@ const NavigationBar = ({toggle}) => {
                         <div>
                             <NestedNavList>
                                 <NestedListItem onClick={() => setEmailShow(s => !s)}>Email</NestedListItem>
-                                <NestedListItem>Twitter</NestedListItem>
                                 <NestedListItem>LinkedIn</NestedListItem>
                             </NestedNavList>
                         </div>
@@ -33,10 +32,8 @@ const NavigationBar = ({toggle}) => {
                 </NavList>
                 <NavList className='right-nav-list'>
                     <NavListItem>
-                        <SvgIcon>
-                            <span onClick={() => setEmailShow(!emailShow)}>
-                                <span className="iconify" data-icon="icon-park:mail"></span>
-                            </span>
+                        <SvgIcon onClick={() => setEmailShow(!emailShow)}>
+                            <iconify-icon icon="fluent-emoji:incoming-envelope"></iconify-icon>
                         </SvgIcon>
                     </NavListItem>
                     <NavListItem>{datetime}</NavListItem>

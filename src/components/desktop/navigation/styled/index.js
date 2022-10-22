@@ -21,8 +21,29 @@ export const NavList = styled.ul`
         padding-right: 1.5rem;
     }
 
-    &.right-nav-list li:last-child {
-        line-height: 1.1rem;
+    &.right-nav-list li {
+
+        &:first-child {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.25rem;
+            
+            > span {
+                font-size: 1.25rem;
+                padding-bottom: 0.2rem;
+                transition: transform 0.3s;
+    
+                &:hover {
+                    transform: scale(1.1)
+                }
+            }
+        }
+
+        &:last-child {
+            cursor: none;
+        }
     }
 `;
 
@@ -41,7 +62,7 @@ export const NavListItem = styled.li`
         display: none;
         width: 9rem;
         height: auto;
-        top: 2.33rem;
+        top: 1.95rem;
         color: #fff;
         border: 1px solid #DADAD3;
         box-shadow: -0.4rem 0.4rem 0 rgb(29 30 28 / 26%);
@@ -50,6 +71,7 @@ export const NavListItem = styled.li`
         border-bottom-left-radius: 0.25rem;
         z-index: 3;
         box-shadow: inset 0 0 300px rgb(255 255 255 / 50%);
+        border-top: none;
     }
     
     &:hover {
@@ -81,52 +103,6 @@ export const NestedListItem = styled.li`
 
 export const SvgIcon = styled.span`
     position: relative;
-
-    svg {
-        width: 1.2rem;
-        height: 1.2rem;
-        transition: transform 0.3s;
-
-        &:hover {
-            transform: scale(1.25);
-        }
-
-        path {
-            fill: #DADAD3;
-        }
-
-        &[data-icon="icon-park:mail"] {
-            path:nth-child(2){
-                stroke: #000;
-            }
-        }
-    }
-    
-    .extended-searchbar {
-        position: absolute;
-        top: -0.5rem;
-        right: 0rem;
-        width: 13rem;
-        z-index: 2;
-        transform: translateY(3.5rem);
-        transition: transform .3s;
-
-        input {
-            width: 100%;
-            border-radius: 1.5rem;
-            padding-left: 1.35rem;
-            border-color: #000;
-            outline: none;
-        }
-
-        svg {
-            position: absolute;
-            left: 0.065rem;
-            top: 0.065rem;
-            transform: scale(1.2);
-        }
-    }
-
 `;
 
 export const ModalOverlay = styled.div`
@@ -224,6 +200,7 @@ export const EmailForm = styled.form`
         textarea {
             height: 12rem;
             padding: 0.5rem 0;
+            font-family: inherit;
         }
 
         input, textarea {
@@ -257,5 +234,27 @@ export const EmailSubmitContainer = styled.div`
             border-color: #DADAD3;
             color: #000F2B;
         }
+    }
+`;
+
+export const EmailSent = styled.section`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 13rem;
+    height: 7rem;
+    text-align: center;
+    color: green;
+
+    > h2 {
+        margin-bottom: 0.75rem;
+    }
+
+    [icon='bi:check-circle'] {
+        font-size: 2rem;
     }
 `;

@@ -1,72 +1,43 @@
 import styled from 'styled-components';
 
-export const DesktopContainer = styled.section``;
+export const DesktopContainer = styled.section`
+    [icon='eos-icons:bubble-loading']{
+        font-size: 5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #DADAD3;
+    }
+`;
 
 export const DesktopItem = styled.div`
     position: absolute;
     right: 0;
-    padding-right: 1rem;
+    padding-right: 1.5rem;
     transition: transform 0.3s;
+    font-size: 5rem;
+    cursor: pointer;
 
-    &.about-avatar {
-        top: 7rem;
-        height: 6.25rem;
-        
-        .about-inner-wrap {
-            position: relative;
-            border-radius: 3.125rem;
-            border: 2px solid;
-            overflow: hidden;
-            height: inherit;
-            
-            img {
-                width: 6.25rem;
-                cursor: pointer;
-            }
-
-            span {
-                position: absolute;
-                left: 6.5rem;
-                width: 100%;
-                height: 100%;
-            }
-        }
+    > div {
+        font-size: 0.75rem;
+        color: #fff;
+        text-align: center;
+        margin-top: -1rem;
+        font-weight: bold;
     }
 
-    &.projects-folder, 
-    &.clear-desktop {
-        svg {
-            width: 6rem;
-            height: 6rem;
-            cursor: pointer;
-
-            g {
-                stroke-width: 2px;
-
-                path {
-                    fill: #DADAD3;
-                    stroke: #000;
-                }
-            }
-        }
+    &.about-avatar {
+        top: 2rem;
     }
     
     &.projects-folder {
-        top: 15rem;
-    }
-
-    &.clear-desktop {
-        top: 23rem;
-
-        svg path:last-child {
-            fill: #fff;
-        }
+        top: 9rem;
     }
 
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
-
 `;
 
 export const DockContainer = styled.div`

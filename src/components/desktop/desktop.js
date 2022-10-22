@@ -20,16 +20,12 @@ const Desktop = () => {
             <DesktopContainer className='dsktp-container'>
                 <NavigationBar toggle={modalToggle}/>
                 <DesktopItem onClick={() => modalToggle('about')} name='about' className='about-avatar'>
-                    <div className='about-inner-wrap'>
-                        <img alt='about' src='https://avatars.githubusercontent.com/u/11478868?v=4'/>
-                        <span></span>
-                    </div>
+                    <iconify-icon icon="fluent-emoji:identification-card"></iconify-icon>
+                    <div>About</div>
                 </DesktopItem>
                 <DesktopItem onClick={() => modalToggle('projects')} className='projects-folder' name='projects'>
-                    <span className="iconify" data-icon="icon-park:folder-code"></span>
-                </DesktopItem>
-                <DesktopItem className='clear-desktop' name='trash'>
-                    <span className="iconify" data-icon="icon-park:delete-themes"></span>
+                    <iconify-icon icon="fluent-emoji:open-file-folder"></iconify-icon>
+                    <div>Projects</div>
                 </DesktopItem>
                 { modalState.about && <AboutModal title='about' toggle={modalToggle}/> }
                 { modalState.projects && <ProjectsModal title='projects' toggle={modalToggle}/> }
