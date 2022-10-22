@@ -4,6 +4,15 @@ export const MobileView = styled.section`
     width: 100%;
     height: 100%;
     overflow: hidden;
+
+    [icon='eos-icons:bubble-loading']{
+        font-size: 5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #DADAD3;
+    }
 `;
 
 export const MobileHeaderContainer = styled.header`
@@ -368,6 +377,7 @@ export const MobileEmailContainer = styled.section`
                 padding: 0.5rem;
                 font-size: 1rem;
                 resize: none;
+                font-family: inherit;
             }
         }
 
@@ -390,4 +400,26 @@ export const MobileEmailContainer = styled.section`
         }
     }
 
+`;
+
+export const MobileEmailSent = styled.section`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 13rem;
+    height: 7rem;
+    text-align: center;
+    color: green;
+
+    > h2 {
+        margin-bottom: 0.75rem;
+    }
+
+    [icon='bi:check-circle'] {
+        font-size: 2rem;
+    }
 `;

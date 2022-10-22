@@ -3,7 +3,7 @@ import { MobileAboutContainer } from '../styled'
 
 export const MobileAbout = () => {
     const info = useFetch(process.env.REACT_APP_URI)
-    if(!info) return 'Loading...'
+    if(!info) return <iconify-icon icon="eos-icons:bubble-loading"></iconify-icon>
 
     return (
         <MobileAboutContainer>

@@ -8,7 +8,7 @@ import 'swiper/css/pagination'
 
 export const MobileOverview = () => {
     const repos = useFetch(`${process.env.REACT_APP_URI}/repos?sort=updated&per_page=10&page=1`)
-    if(!repos) return 'Loading...'
+    if(!repos) return <iconify-icon icon="eos-icons:bubble-loading"></iconify-icon>
 
     return (
         <MobileOverviewContainer>
