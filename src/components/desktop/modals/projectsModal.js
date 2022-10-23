@@ -33,7 +33,7 @@ const ProjectsModal = (props) => {
     }
 
     if(!repos) return <iconify-icon icon="eos-icons:bubble-loading"></iconify-icon>
-
+    
     return (
         <>
             <Draggable
@@ -51,10 +51,7 @@ const ProjectsModal = (props) => {
                     <DesktopRepos>
                         <ul>
                             { repos.map((e, i) => (
-                                <li onClick={(evt) => openProjectCard(evt, e.id)} key={i}>
-                                    <div>
-                                        <span className="iconify" data-icon='icon-park:bitcoin'></span>
-                                    </div>
+                                <li onClick={(evt) => openProjectCard(evt, e.id)} key={i} style={{ backgroundImage: `url(${repoSrc.get(e.id) ?? repoSrc.get('default')})`}}>
                                     <span>{e.name}</span>
                                 </li> 
                             ))}

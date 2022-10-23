@@ -95,10 +95,6 @@ export const DesktopRepos = styled.section`
         margin: 0;
 
         li {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             width: 30.3%;
             height: 8rem;
             cursor: pointer;
@@ -106,43 +102,23 @@ export const DesktopRepos = styled.section`
             background-color: #000F2B;
             border-radius: 0.32rem;
             color: #fff;
-
-            &:hover {
-                background-color: #DADAD3;
-
-                span {
-                    color: #000;
-                }
-
-            }
+            background-repeat: no-repeat;
+            background-size: cover;
             
-            > div {
+            span {
+                font-weight: 600;
+                background-color: rgba(0,0,0,0.5);
+                width: 100%;
+                height: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 3rem;
+                opacity: 1;
+                transition: 0.5 ease;
 
-                svg {
-                    path, circle {
-                        stroke-width: 2px;
-                    }
-                   
-                    &[data-icon='icon-park:bitcoin'] g,
-                    &[data-icon='icon-park:bitcoin'] circle,
-                    &[data-icon='icon-park:handle-x'] circle, 
-                    &[data-icon='icon-park:plan'] path:first-child,
-                    &[data-icon='icon-park:planet'] path:first-child,
-                    &[data-icon='icon-park:database-code'] path:nth-child(2),
-                    &[data-icon='icon-park:database-code'] path:nth-child(5) {
-                        fill: #D15A5A;
-                    }
+                &:hover {
+                    opacity: 0;
                 }
-            }
-            
-            span {
-                font-size: 0.75rem;
-                font-weight: 600;
-                padding-top: 1rem;
             }
         }
     }
