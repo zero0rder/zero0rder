@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { ModalOverlay, EmailModalContent, EmailContentSection, EmailModalHeader, EmailForm, EmailSubmitContainer, EmailSent } from './styled/index'
+import { ModalOverlay, EmailModalContent, EmailContentSection, EmailModalHeader, EmailForm, EmailSubmitContainer, EmailSent } from './styled'
 import useEmailService from '../../../hooks/useEmailService'
 
 const EmailModal = ({ setEmailShow }) => {

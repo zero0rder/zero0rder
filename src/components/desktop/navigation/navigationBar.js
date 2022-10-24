@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDateTimeHook } from '../../../hooks/useDateTime'
 import { MainHeader, NavList, NavListItem, NestedNavList, NestedListItem, SvgIcon } from './styled'
-import EmailModal from './emailModal'
+import EmailModal from '../modals/emailModal'
 
 const NavigationBar = ({toggle}) => {
     const datetime = useDateTimeHook()
