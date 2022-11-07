@@ -1,36 +1,17 @@
-import React, { Component } from 'react'
-import Desktop from './components/desktop/desktop'
-import { MobileLanding } from './components/mobile/mobileLanding'
-import { AppContainer, ContentSection } from './styled'
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+import { AppContainer } from './styled'
+import Header from './components/header'
+import Footer from './components/footer'
 
-const viewportQuery = window.matchMedia('(max-width: 448px)')
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isMobile: viewportQuery.matches }
-  }
-
-  componentDidMount(){
-    viewportQuery.onchange = () => this.setState(state => ({...state, isMobile: viewportQuery.matches}))
-
-  }
-
-  componentWillUnmount(){
-    viewportQuery.removeEventListener('change', viewportQuery.onchange)
-  }
-
-  // componentDidUpdate(){}
-
-  render() {
-    return (
-      <AppContainer className='app'>
-        <ContentSection className='content-section' mobile={this.state.isMobile}>
-          { this.state.isMobile ? <MobileLanding /> : <Desktop /> }
-        </ContentSection>
+const App = () => {
+  return (
+      <AppContainer>
+        <Header/>
+        <Outlet/>
+        <Footer/>
       </AppContainer>
     )
-  }
 }
 
 export default App
