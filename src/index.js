@@ -7,6 +7,7 @@ import Archives from './components/archives'
 import Blog from './components/pages/blog'
 import About from './components/pages/about'
 import Contact from './components/pages/contact'
+import Email from './components/pages/email'
 import './index.less'
 
 ReactDOM.render(
@@ -18,7 +19,8 @@ ReactDOM.render(
             <Route path='/archives' element={<Archives/>}/>
             <Route path='/blog' element={<Blog/>}/>
             <Route path='/about' element={<About/>}/>
-            <Route path='/contact' element={<Contact/>}/> {/*gonna be a nested parent route for contact methods*/}
+            <Route path='/email' element={<Email/>}/>
+            <Route path='/contact' element={<Contact/>}/>
           </Route>
       </Routes>
     </Router>
