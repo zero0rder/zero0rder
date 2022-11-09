@@ -20,9 +20,9 @@ const menuItems = [
     getItem('Services', 'services', <AppstoreOutlined />, [ getItem('App Development', 'appDev'), getItem('Misc', 'misc')]),
     getItem('Blog', 'blog', <ReadOutlined />),
     getItem('Contact', 'contact', <CommentOutlined />, [getItem('Email', 'email', <MailOutlined />), 
-    getItem(<a href='https://www.linkedin.com/feed/' target='_blank' rel='noopener noreferrer'>LinkedIn</a>, 'linkedin', <LinkedinOutlined />),
-    getItem(<a href='https://twitter.com/zero0rder' target='_blank' rel='noopener noreferrer'>Twitter</a>, 'twitter', <TwitterOutlined />)]),
-    getItem(<a href='https://github.com/zero0rder/zero0rder' target='_blank' rel='noopener noreferrer'>Contribute</a>, '', <BranchesOutlined />),
+    getItem(<a href='https://www.linkedin.com/feed/' target='_blank' rel='noopener noreferrer'>LinkedIn</a>, null, <LinkedinOutlined />),
+    getItem(<a href='https://twitter.com/zero0rder' target='_blank' rel='noopener noreferrer'>Twitter</a>, null, <TwitterOutlined />)]),
+    getItem(<a href='https://github.com/zero0rder/zero0rder' target='_blank' rel='noopener noreferrer'>Contribute</a>, null, <BranchesOutlined />),
 ]
 
 const Drawer = ({ isOpen, setOpen }) => {
@@ -30,7 +30,7 @@ const Drawer = ({ isOpen, setOpen }) => {
     const navigate = useNavigate()
     const datetime = useDateTimeHook()
     const handleClick = (url) => {
-        navigate(url)
+        if(!url.startsWith('tmp')){ navigate(url) }
         onClose()
     }
     
