@@ -69,3 +69,26 @@ export const Result404 = styled(Result)`
     height: 100%;
     padding: 2rem 3rem;
 `;
+
+export const EmailContainer = styled(Col)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    padding: 0 2rem;
+
+    > div.ant-card {
+        width: 100%;
+        max-width: 825px;
+    }
+
+    form {
+        textarea.ant-input {
+            resize: none;
+        }
+
+        div.ant-form-item:last-child {
+            text-align: center;
+        }
+    }
+`;

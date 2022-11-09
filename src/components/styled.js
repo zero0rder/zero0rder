@@ -74,11 +74,17 @@ export const DashSocialWrapper = styled.div`
 `;
 
 export const MainHeader = styled(Header)`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 3rem;
     width: 100%;
-    text-align: right;
     background: none;
     padding: 0 2rem;
+
+    nav.ant-breadcrumb {
+        display: inline-block;
+    }
 `;
 
 export const BurgerIcon = styled(MenuOutlined)`
@@ -152,4 +158,5 @@ export const FooterContainer = styled(Footer)`
     width: 100%;
     height: 125px;
     margin-top: 2rem;
+    font-weight: 900;
 `;
