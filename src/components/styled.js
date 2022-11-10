@@ -9,6 +9,7 @@ export const LandingContainer = styled(Col)`
     flex-direction: column;
     gap: 35px;
     padding-top: 1.75rem;
+    max-width: 1175px;
 `;
 
 export const DashContainer = styled(Row)`

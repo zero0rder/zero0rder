@@ -3,23 +3,14 @@ import{ init, send } from '@emailjs/browser'
 import { emailVARS } from '../utils/email/emailData'
 init(emailVARS.UserID)
 
-const useEmailService = (initialState) => {
-    const [emailData, setEmailData] = useState(initialState)
+const useEmailService = () => {
     const [status, setStatus] = useState(null)
-
-    const handleChange = (e) => {
-        e.preventDefault()
-        const { name, value } = e.target
-        setEmailData({...emailData, [name]: value})
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = (data) => {
         send(emailVARS.ServiceID, emailVARS.TemplateID, {
-            from_name: emailData.name,
-            to_name: emailData.ToName,
-            message: emailData.message,
-            reply_to: emailData.email,
+            from_name: data.subject,
+            to_name: emailVARS.ToName,
+            message: data.message,
+            reply_to: data.sender,
         }, emailVARS.UserID).then((result) => {
             setStatus(() => result.status)
         }, (error) => {
@@ -27,7 +18,7 @@ const useEmailService = (initialState) => {
         })
     }
 
-    return { handleChange, handleSubmit, emailData, status }
+    return { handleSubmit, status }
 }
 
 export default useEmailService
