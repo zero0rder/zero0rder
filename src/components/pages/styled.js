@@ -3,7 +3,7 @@ import { Col, Card, Row, Result } from 'antd'
 
 
 export const AboutContainer = styled(Col)`
-    padding: 0 2rem;
+    padding: ${props => props.vpmd === 'false' ? '0 1rem' : '0 2rem'};
 `;
 
 export const AboutSocialWrapper = styled.div`
@@ -23,15 +23,17 @@ export const DetailsContent = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    ${props => props.vpmd === 'false' ? 'flex-direction: column' : 'height: 38rem'};
 
     div.ant-divider {
-        height: 34rem;
+        height: inherit;
     }
 `;
 
 export const TimelineWrapper = styled.div`
-    width: 49%;
-
+    width: ${props => props.vpmd === 'false' ? '100%' : '49%'};
+    height: inherit;
+    
     h1.ant-typography {
         text-align: center;
         margin-bottom: 2rem;
@@ -39,8 +41,8 @@ export const TimelineWrapper = styled.div`
 `;
 
 export const AboutMeta = styled.div`
-    width: 49%;
-    min-height: 35rem;
+    width: ${props => props.vpmd === 'false' ? '100%' : '49%'};
+    height: inherit;
 `;
 
 export const AboutMetaWrapper = styled(Row)``;
@@ -75,7 +77,7 @@ export const EmailContainer = styled(Col)`
     align-items: center;
     justify-content: center;
     height: inherit;
-    padding: 0 2rem;
+    padding: ${props => props.vpmd === 'false' ? '0 1rem' : '0 2rem'};
 
     > div.ant-card {
         width: 100%;

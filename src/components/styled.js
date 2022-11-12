@@ -13,13 +13,13 @@ export const LandingContainer = styled(Col)`
 `;
 
 export const DashContainer = styled(Row)`
-    height: 260px;
+    min-height: 260px;
     justify-content: center;
 
     > div.ant-card {
         width: 100%;
-        margin: 0 2.3rem;
-
+        margin: ${props => props.vpmd === 'false' ? '0 1rem' : '0 2.3rem'};
+        
         > .ant-card-body {
             display: flex;
             flex-flow: row wrap;
@@ -30,7 +30,7 @@ export const DashContainer = styled(Row)`
 
 export const DashImage = styled(Col)`
     display: flex;
-    justify-content: start;
+    justify-content: ${props => props.vplg === 'true' ? 'start' : 'center'};
     align-items: center;
 
     div.ant-image {
@@ -46,24 +46,26 @@ export const DashImage = styled(Col)`
 export const DashText = styled(Col)`
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: ${props => props.vplg === 'true' ? 'start' : 'center'};
+    ${props => props.vplg === 'true' ? '' : 'align-items: center'};
+
 `;
 
 export const DashName = styled(Title)`
     &.ant-typography {
-        font-size: 5rem;
-        margin: 0.5rem 0;
+        font-size: ${props => props.vplg === 'true' ? '5rem' : props.vpmd === 'true' ? '3.75rem' : '2.75rem'};
+        margin: ${props => props.vpmd === 'false' ? '1rem 0 0.5rem' : '0.5rem 0' };
         text-transform: uppercase;
-        letter-spacing: 2px;
         line-height: 1;
     }
 `;
 
 export const DashTitle = styled(Title)`
     &.ant-typography {
-        font-size: 2.5rem;
+        font-size: ${props => props.vpmd === 'false' ? '2rem' : '2.5rem'};
         margin: 0 !important;
         letter-spacing: 1px;
+        font-style: italic;
     }
 `;
 
@@ -72,6 +74,7 @@ export const DashSocialWrapper = styled.div`
     margin-top: 2rem;
     font-size: 2.75rem;
     gap: 2rem;
+    ${props => props.vpmd === 'false' ? 'margin: 1.5rem 0' : ''};
 `;
 
 export const MainHeader = styled(Header)`
@@ -81,7 +84,7 @@ export const MainHeader = styled(Header)`
     height: 3rem;
     width: 100%;
     background: none;
-    padding: 0 2rem;
+    padding: ${props => props.mobile === 'true' ? '0 1rem' : '0 2rem'};
 
     nav.ant-breadcrumb {
         display: inline-block;
@@ -123,7 +126,7 @@ export const ArchivesContainer = styled(Row)`
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-top: 1rem;
-    padding: 0 2rem;
+    padding: ${props => props.vpmd === 'false' ? '0 1rem' : '0 2rem'};
 
     div.ant-card-extra {
         font-size: 0.65rem;

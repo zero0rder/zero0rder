@@ -17,7 +17,7 @@ const menuItems = [
     getItem('Home', '/', <HomeOutlined />),
     getItem('About', 'about', <UserOutlined />),
     getItem('Archives', 'archives', <FolderOpenOutlined />),
-    getItem('Services', 'services', <AppstoreOutlined />, [ getItem('App Development', 'appDev'), getItem('Misc', 'misc')]),
+    getItem('Services', 'services', <AppstoreOutlined />, [getItem('Misc', 'misc')]),
     getItem('Blog', 'blog', <ReadOutlined />),
     getItem('Contact', 'contact', <CommentOutlined />, [getItem('Email', 'email', <MailOutlined />), 
     getItem(<a href='https://www.linkedin.com/feed/' target='_blank' rel='noopener noreferrer'>LinkedIn</a>, null, <LinkedinOutlined />),
@@ -25,7 +25,7 @@ const menuItems = [
     getItem(<a href='https://github.com/zero0rder/zero0rder' target='_blank' rel='noopener noreferrer'>Contribute</a>, null, <BranchesOutlined />),
 ]
 
-const Drawer = ({ isOpen, setOpen }) => {
+const Drawer = ({ isOpen, setOpen, viewports }) => {
     const onClose = () => setOpen(false)
     const navigate = useNavigate()
     const datetime = useDateTimeHook()
@@ -39,7 +39,10 @@ const Drawer = ({ isOpen, setOpen }) => {
             placement='left' 
             onClose={onClose} 
             open={isOpen} 
-            width='30%'
+            width={viewports.xl || viewports.xxl  ? '20%' 
+            : viewports.md || viewports.lg ? '35%' 
+            : viewports.xs || viewports.sm ? '70%' 
+            : '50%'}
             title={datetime}>
             <DrawerMenu 
             mode='inline'

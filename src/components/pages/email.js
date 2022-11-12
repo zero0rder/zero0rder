@@ -1,4 +1,5 @@
 import React from 'react'
+import { useOutletContext } from 'react-router-dom'
 import { EmailContainer } from './styled'
 import useEmailService from '../../hooks/useEmailService'
 import { Button, Form, Input, Card, Result } from 'antd'
@@ -6,8 +7,9 @@ const { TextArea } = Input
 
 const Email = () => {
     const { handleSubmit, status } = useEmailService()
+    const screens = useOutletContext()
     return (
-        <EmailContainer span={24}>
+        <EmailContainer vpmd={`${screens.md}`} span={24}>
             {  status === 200 
                     ? <Result
                         status='success'

@@ -17,7 +17,7 @@ const BreadCrumb = () => {
     const breadcrumbItems = [
         <Breadcrumb.Item key='home'>
             <Link to='/'>
-                <HomeOutlined/>
+                <HomeOutlined style={{ fontSize: '1.2rem' }}/>
             </Link>
         </Breadcrumb.Item>,
     ].concat(extraBreadcrumbItems)
