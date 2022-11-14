@@ -1,13 +1,13 @@
 import React from 'react'
 import Dashboard from './dashboard'
 import { LandingContainer } from './styled'
-import Archives from './archives'
+import OpenSource from './opensource'
 
 const Landing = () => {
     return (
         <LandingContainer span={24}>
             <Dashboard/>
-            <Archives isLanding={true}/>
+            <OpenSource isLanding={true}/>
         </LandingContainer>
     )
 }

@@ -16,12 +16,12 @@ import { HomeOutlined,
 const menuItems = [
     getItem('Home', '/', <HomeOutlined />),
     getItem('About', 'about', <UserOutlined />),
-    getItem('Archives', 'archives', <FolderOpenOutlined />),
-    getItem('Services', 'services', <AppstoreOutlined />, [getItem('Misc', 'misc')]),
-    getItem('Blog', 'blog', <ReadOutlined />),
+    getItem('Open Source', 'opensource', <FolderOpenOutlined />),
     getItem('Contact', 'contact', <CommentOutlined />, [getItem('Email', 'email', <MailOutlined />), 
     getItem(<a href='https://www.linkedin.com/feed/' target='_blank' rel='noopener noreferrer'>LinkedIn</a>, null, <LinkedinOutlined />),
     getItem(<a href='https://twitter.com/zero0rder' target='_blank' rel='noopener noreferrer'>Twitter</a>, null, <TwitterOutlined />)]),
+    getItem('Blog', 'blog', <ReadOutlined />),
+    getItem('Services', 'services', <AppstoreOutlined />, [getItem('Misc', 'misc')]),
     getItem(<a href='https://github.com/zero0rder/zero0rder' target='_blank' rel='noopener noreferrer'>Contribute</a>, null, <BranchesOutlined />),
 ]
 
@@ -40,7 +40,7 @@ const Drawer = ({ isOpen, setOpen, viewports }) => {
             onClose={onClose} 
             open={isOpen} 
             width={viewports.xl || viewports.xxl  ? '20%' 
-            : viewports.md || viewports.lg ? '35%' 
+            : viewports.md || viewports.lg ? '30%' 
             : viewports.xs || viewports.sm ? '70%' 
             : '50%'}
             title={datetime}>

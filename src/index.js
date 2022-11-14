@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import App from './App'
 import Landing from './components/landing'
-import Archives from './components/archives'
+import OpenSource from './components/opensource'
 import Blog from './components/pages/blog'
 import About from './components/pages/about'
 import Contact from './components/pages/contact'
@@ -16,7 +16,7 @@ ReactDOM.render(
       <Routes>
           <Route path='/' element={<App/>}>
             <Route index element={<Landing/>}/>
-            <Route path='/archives' element={<Archives/>}/>
+            <Route path='/opensource' element={<OpenSource/>}/>
             <Route path='/blog' element={<Blog/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/email' element={<Email/>}/>
