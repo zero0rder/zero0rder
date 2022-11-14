@@ -71,7 +71,7 @@ export const DashTitle = styled(Title)`
 
 export const DashSocialWrapper = styled.div`
     display: flex;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 2.75rem;
     gap: 2rem;
     ${props => props.vpmd === 'false' ? 'margin: 1.5rem 0' : ''};
@@ -122,10 +122,10 @@ export const DrawerMenu = styled(Menu)`
     
 `;
 
-export const ArchivesContainer = styled(Row)`
+export const OpenSourceContainer = styled(Row)`
     margin-left: 0 !important;
     margin-right: 0 !important;
-    margin-top: 1rem;
+    margin-top: ${props => props.vpmd === 'false' && props.landing === 'true' ? '0' : '1rem'};
     padding: ${props => props.vpmd === 'false' ? '0 1rem' : '0 2rem'};
 
     div.ant-card-extra {

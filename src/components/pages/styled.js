@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Col, Card, Row, Result } from 'antd'
-
+import { Col, Card, Row, Result, Typography } from 'antd'
+const { Title, Paragraph, Text } = Typography
 
 export const AboutContainer = styled(Col)`
     padding: ${props => props.vpmd === 'false' ? '0 1rem' : '0 2rem'};
@@ -33,11 +33,38 @@ export const DetailsContent = styled.section`
 export const TimelineWrapper = styled.div`
     width: ${props => props.vpmd === 'false' ? '100%' : '49%'};
     height: inherit;
-    
-    h1.ant-typography {
+
+    div.ant-timeline-item-head {
+        background: transparent;
+    }
+`;
+
+export const TimelineTitle = styled(Title)`
+    &.ant-typography {
         text-align: center;
         margin-bottom: 2rem;
     }
+`;
+
+export const ExpName = styled(Text)`
+    font-size: 1rem;
+    font-weight: 700;
+`;
+
+export const ExpTitle = styled(Text)`
+    font-style: italic;
+    font-weight: 600;
+`;
+
+export const ExpDate = styled(Text)`
+    font-size: 0.7rem;
+    font-weight: 500;
+`;
+
+export const ExpDesc = styled(Paragraph)`
+    font-size: 0.7rem;
+    line-height: 15px;
+    margin-top: 0.5rem;
 `;
 
 export const AboutMeta = styled.div`
@@ -91,6 +118,15 @@ export const EmailContainer = styled(Col)`
 
         div.ant-form-item:last-child {
             text-align: center;
+        }
+
+        button.ant-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            padding: 1rem 2rem;
+            font-weight: 700;
         }
     }
 `;
