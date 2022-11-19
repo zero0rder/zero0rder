@@ -160,7 +160,7 @@ export const FooterContainer = styled(Footer)`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 125px;
+    height: 115px;
     margin-top: 2rem;
     font-weight: 900;
 `;

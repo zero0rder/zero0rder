@@ -3,22 +3,22 @@ import { useNavigate } from 'react-router-dom'
 import { useDateTimeHook } from '../hooks/useDateTime'
 import { HeaderDrawer, DrawerMenu } from './styled'
 import { HomeOutlined, 
-    BranchesOutlined, 
-    CommentOutlined,
-    ReadOutlined,
-    AppstoreOutlined,
-    UserOutlined,
-    FolderOpenOutlined,
-    LinkedinOutlined,
-    TwitterOutlined ,
-    MailOutlined } from '@ant-design/icons'
+BranchesOutlined, 
+CommentOutlined,
+ReadOutlined,
+AppstoreOutlined,
+UserOutlined,
+FolderOpenOutlined,
+LinkedinOutlined,
+TwitterOutlined ,
+MailOutlined } from '@ant-design/icons'
 
 const menuItems = [
     getItem('Home', '/', <HomeOutlined />),
     getItem('About', 'about', <UserOutlined />),
     getItem('Open Source', 'opensource', <FolderOpenOutlined />),
     getItem('Contact', 'contact', <CommentOutlined />, [getItem('Email', 'email', <MailOutlined />), 
-    getItem(<a href='https://www.linkedin.com/feed/' target='_blank' rel='noopener noreferrer'>LinkedIn</a>, null, <LinkedinOutlined />),
+    getItem(<a href='https://www.linkedin.com/in/elismth' target='_blank' rel='noopener noreferrer'>LinkedIn</a>, null, <LinkedinOutlined />),
     getItem(<a href='https://twitter.com/zero0rder' target='_blank' rel='noopener noreferrer'>Twitter</a>, null, <TwitterOutlined />)]),
     getItem('Blog', 'blog', <ReadOutlined />),
     getItem('Services', 'services', <AppstoreOutlined />, [getItem('Misc', 'misc')]),

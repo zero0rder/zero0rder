@@ -32,7 +32,8 @@ export const DetailsContent = styled.section`
 
 export const TimelineWrapper = styled.div`
     width: ${props => props.vpmd === 'false' ? '100%' : '49%'};
-    height: inherit;
+    ${props => props.vpmd === 'true' ? 'padding-top: 1.5rem' : ''};
+    height: 100%;
 
     div.ant-timeline-item-head {
         background: transparent;
@@ -95,7 +96,6 @@ export const AboutMetaCol = styled(Col)`
 
 export const Result404 = styled(Result)`
     width: 100%;
-    height: 100%;
     padding: 2rem 3rem;
 `;
 
@@ -103,8 +103,7 @@ export const EmailContainer = styled(Col)`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: inherit;
-    padding: ${props => props.vpmd === 'false' ? '0 1rem' : '0 2rem'};
+    padding: ${props => props.vpmd === 'false' ? '0 1rem' : '2rem'};
 
     > div.ant-card {
         width: 100%;
