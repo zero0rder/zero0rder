@@ -21,7 +21,6 @@ const menuItems = [
     getItem(<a href='https://www.linkedin.com/in/elismth' target='_blank' rel='noopener noreferrer'>LinkedIn</a>, null, <LinkedinOutlined />),
     getItem(<a href='https://twitter.com/zero0rder' target='_blank' rel='noopener noreferrer'>Twitter</a>, null, <TwitterOutlined />)]),
     getItem('Blog', 'blog', <ReadOutlined />),
-    getItem('Services', 'services', <AppstoreOutlined />, [getItem('Misc', 'misc')]),
     getItem(<a href='https://github.com/zero0rder/zero0rder' target='_blank' rel='noopener noreferrer'>Contribute</a>, null, <BranchesOutlined />),
 ]
 
