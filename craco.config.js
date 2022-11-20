@@ -9,12 +9,12 @@ module.exports = {
         lessLoaderOptions: {
           lessOptions: {
             modifyVars: { 
-              '@primary-color': '#1260e7',
+              '@primary-color': '#539bf5',
               '@body-background': '#121212',
               '@layout-footer-background': '#121212',
               '@component-background': '#4343433b',
               // '@text-color': '',
-              // '@text-color-secondary': '',
+              // '@text-color-secondary': '#1260e7',
               // '@text-color-secondary-dark': '',
               // '@border-color-base': '',
             },
