@@ -1,28 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { MemoryRouter, Routes, Route } from "react-router-dom"
-import App from './App'
-import { MobileOverview } from './components/mobile/views/overview'
-import { MobileProjects } from './components/mobile/views/projects'
-import { MobileAbout } from './components/mobile/views/about'
-import { MobileEmail } from './components/mobile/views/email'
-import reportWebVitals from './reportWebVitals'
-import './index.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import App from './app'
+import Landing from './components/landing'
+import OpenSource from './components/pages/opensource'
+import Blog from './components/pages/blog'
+import About from './components/pages/about'
+import Email from './components/pages/email'
+import './index.less'
 
 ReactDOM.render(
   <React.StrictMode>
-    <MemoryRouter initialEntries={['/overview']}>
+    <Router>
       <Routes>
           <Route path='/' element={<App/>}>
-            <Route path='overview' element={<MobileOverview />} />
-            <Route path='projects' element={<MobileProjects />} />
-            <Route path='about' element={<MobileAbout />} />
-            <Route path='email' element={<MobileEmail />} />
+            <Route index element={<Landing/>}/>
+            <Route path='/opensource' element={<OpenSource/>}/>
+            <Route path='/blog' element={<Blog/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/email' element={<Email/>}/>
           </Route>
       </Routes>
-    </MemoryRouter>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 )
-
-reportWebVitals()

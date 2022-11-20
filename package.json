@@ -4,27 +4,29 @@
   "private": true,
   "homepage": "https://zero0rder.com",
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@craco/craco": "^6.4.5",
     "@emailjs/browser": "^3.4.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "antd": "^4.24.0",
+    "craco-less": "^2.0.0",
     "gh-pages": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-draggable": "^4.4.5",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.5",
-    "swiper": "^8.2.4",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject"
+    "eject": "craco eject"
   },
   "eslintConfig": {
     "extends": [
