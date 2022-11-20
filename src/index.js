@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import App from './App'
+import App from './app'
 import Landing from './components/landing'
-import OpenSource from './components/opensource'
+import OpenSource from './components/pages/opensource'
 import Blog from './components/pages/blog'
 import About from './components/pages/about'
 import Email from './components/pages/email'

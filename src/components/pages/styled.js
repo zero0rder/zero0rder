@@ -129,3 +129,35 @@ export const EmailContainer = styled(Col)`
         }
     }
 `;
+
+export const OpenSourceContainer = styled(Row)`
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: ${props => props.vpmd === 'false' && props.landing === 'true' ? '0' : '1rem'};
+    padding: ${props => props.vpmd === 'false' ? '0 1rem' : '0 2rem'};
+
+    div.ant-card-extra {
+        font-size: 0.65rem;
+        margin-left: 0;
+
+        span:last-child {
+            margin-left: 0.25rem;
+        }   
+    }
+`;
+
+export const CardBodyContainer = styled.div`
+    height: 7.5rem;
+
+    > section, div {
+        text-align: center;
+    }
+
+    > div {
+        padding-top: 0.5rem;
+    }
+
+    > section h1.ant-typography {
+        margin-bottom: 0.25rem;
+    }
+`;

@@ -1,7 +1,7 @@
 import React from 'react'
-import Dashboard from './dashboard'
+import Dashboard from './feature/dashboard'
+import OpenSource from './pages/opensource'
 import { LandingContainer } from './styled'
-import OpenSource from './opensource'
 
 const Landing = () => {
     return (
