@@ -1,22 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.f1d7d2e0.css",
-    "main.js": "/static/js/main.a5c36296.js",
-    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
-    "static/media/default.jpg": "/static/media/default.cde0eb27bbebbcca6f2b.jpg",
-    "static/media/code.jpg": "/static/media/code.e82ceadd91ab5d76f1a2.jpg",
-    "static/media/portfolio.jpg": "/static/media/portfolio.aa0f88df4b8e60be62f1.jpg",
-    "static/media/interstellar.jpg": "/static/media/interstellar.7ed4666dd08297ee840d.jpg",
-    "static/media/artpiece.jpg": "/static/media/artpiece.acc5bb383e731c5bd804.jpg",
-    "static/media/reserved.jpg": "/static/media/reserved.33c56c60cf3341c74bdc.jpg",
-    "static/media/crypto-sm.jpg": "/static/media/crypto-sm.5e9b7e6895364eeea270.jpg",
+    "main.css": "/static/css/main.eb69619d.css",
+    "main.js": "/static/js/main.28ff6283.js",
     "index.html": "/index.html",
-    "main.f1d7d2e0.css.map": "/static/css/main.f1d7d2e0.css.map",
-    "main.a5c36296.js.map": "/static/js/main.a5c36296.js.map",
-    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+    "main.eb69619d.css.map": "/static/css/main.eb69619d.css.map",
+    "main.28ff6283.js.map": "/static/js/main.28ff6283.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1d7d2e0.css",
-    "static/js/main.a5c36296.js"
+    "static/css/main.eb69619d.css",
+    "static/js/main.28ff6283.js"
   ]
 }
