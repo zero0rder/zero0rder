@@ -6,7 +6,6 @@ import Landing from './components/landing'
 import OpenSource from './components/opensource'
 import Blog from './components/pages/blog'
 import About from './components/pages/about'
-import Contact from './components/pages/contact'
 import Email from './components/pages/email'
 import './index.less'
 
@@ -20,7 +19,6 @@ ReactDOM.render(
             <Route path='/blog' element={<Blog/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/email' element={<Email/>}/>
-            <Route path='/contact' element={<Contact/>}/>
           </Route>
       </Routes>
     </Router>
