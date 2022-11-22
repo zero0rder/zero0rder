@@ -17,7 +17,7 @@ const Dashboard = () => {
                     <DashTitle vpmd={`${screens.md}`} level={3}>Software Engineer</DashTitle>
                     <DashSocialWrapper vpmd={`${screens.md}`}>
                         <a href='https://github.com/zero0rder/zero0rder'><GithubOutlined /></a>
-                        <a href='https://www.linkedin.com/feed/'><LinkedinOutlined /></a>
+                        <a href='https://www.linkedin.com/in/elismth'><LinkedinOutlined /></a>
                         <a href='https://twitter.com/zero0rder'><TwitterOutlined /></a>
                     </DashSocialWrapper>
                 </DashText>
