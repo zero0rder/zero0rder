@@ -69,12 +69,10 @@ ${props => props.vpmd === 'false' ? 'margin: 1.5rem 0' : ''};
 
 export const HeaderDrawer = styled(Drawer)`
     .ant-drawer-header-title {
-        justify-content: end;
 
         button.ant-drawer-close {
-            order: 2;
             margin: 0;
-            padding-right: 0;
+            padding: 0;
         }
 
         > div.ant-drawer-title {

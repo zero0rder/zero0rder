@@ -34,7 +34,7 @@ const Drawer = ({ isOpen, setOpen, viewports }) => {
     
     return (
         <HeaderDrawer
-            placement='left' 
+            placement='right' 
             onClose={onClose} 
             open={isOpen} 
             width={viewports.xl || viewports.xxl  ? '20%' 
