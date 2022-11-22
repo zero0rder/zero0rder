@@ -131,6 +131,7 @@ export const EmailContainer = styled(Col)`
 `;
 
 export const OpenSourceContainer = styled(Row)`
+    max-width: 1175px;
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-top: ${props => props.vpmd === 'false' && props.landing === 'true' ? '0' : '1rem'};
