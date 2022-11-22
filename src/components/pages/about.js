@@ -54,23 +54,21 @@ const About = () => {
                                 <br/>
                                 <ExpTitle>Software Developer</ExpTitle>
                                 <br/>
-                                <ExpDate>Aug 2017 - Oct 2022</ExpDate>
+                                <ExpDate>2017 - 2022</ExpDate>
                                 <ExpDesc>
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                                beatae vitae dicta sunt explicabo.
+                                    Launched core features for high traffic website using React.js, TypeScript and other front-end technologies 
+                                    while providing code reviews, QA testing and deployment support across transnational teams
                                 </ExpDesc>
                             </Timeline.Item>
                             <Timeline.Item dot={<HistoryOutlined style={{ background: 'transparent' }}/>}>
                                 <ExpName>Focus Camera</ExpName>
                                 <br/>
-                                <ExpTitle>Ecommerce Analyst</ExpTitle>
+                                <ExpTitle>Ecommerce Manager</ExpTitle>
                                 <br/>
-                                <ExpDate>May 2015 - Jun 2017</ExpDate>
+                                <ExpDate>2015 - 2017</ExpDate>
                                 <ExpDesc>
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                                beatae vitae dicta sunt explicabo.
+                                    Produced and managed online content for various e-commerce platforms by providing HTML and CSS support. Collaborating 
+                                    closely with software developers and designers to deliver quality experiences for end users
                                 </ExpDesc>
                             </Timeline.Item>
                         </Timeline>
