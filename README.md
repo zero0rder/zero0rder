@@ -6,11 +6,13 @@
 
 ### About myself
 
-- 📍&nbsp;&nbsp;Zero0rder HQ. [Here](https://zero0rder.com)
+- 📍&nbsp;&nbsp;Zero0rder HQ. | [click here](https://zero0rder.com)
 
-- 🌱&nbsp;&nbsp;I’m currently working and learning everyday! **(grind grind grind)**
+- 🌱&nbsp;&nbsp;Currently working and learning everyday! **(grind grind grind)**
 
-- 🤝&nbsp;&nbsp;I’m open to collaborating with other developers and building exciting nextgen projects
+- 🤝&nbsp;&nbsp;I’m open to collaborating with developers to build exciting new projects
+
+- 💬&nbsp;&nbsp;Feel free to reachout! **programming tips, daily hacks, productivity, etc...**
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=zero0rder&theme=onedark&title=Commits,Followers,Repositories,PullRequest)](https://github.com/ryo-ma/github-profile-trophy)
 
