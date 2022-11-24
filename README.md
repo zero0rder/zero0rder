@@ -1,4 +1,4 @@
-<h2 align="center">Hi 👋, I'm Zero0rder (AKA "Dwight Smith" IRL)</h2>
+<h2 align="center">Hi 👋, I'm Zero0rder</h2>
 
 <p align="left">
   <img src="https://komarev.com/ghpvc/?username=zero0rder" alt="zero0rder" />
@@ -6,7 +6,7 @@
 
 ### About myself
 
-- 📍&nbsp;&nbsp;Zero0rder HQ. | [click here](https://zero0rder.com)
+- 📍&nbsp;&nbsp;New York, NY, USA | [Zero0rder HQ.](https://zero0rder.com)
 
 - 🌱&nbsp;&nbsp;Currently working and learning everyday! **(grind grind grind)**
 
