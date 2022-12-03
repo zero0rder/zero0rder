@@ -37,7 +37,7 @@ const Drawer = ({ isOpen, setOpen, viewports }) => {
             placement='right' 
             onClose={onClose} 
             open={isOpen} 
-            width={viewports.xl || viewports.xxl  ? '20%' 
+            width={viewports.xl || viewports.xxl  ? '25%' 
             : viewports.md || viewports.lg ? '30%' 
             : viewports.xs || viewports.sm ? '70%' 
             : '50%'}
