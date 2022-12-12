@@ -14,7 +14,7 @@ export const FooterText = tw.p`
     flex
     justify-center
     items-center
-    gap-3
+    gap-1
     font-medium
 `
 
