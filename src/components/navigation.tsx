@@ -65,7 +65,7 @@ const MenuItems: React.FC<MenuItemProps> = ({}) => {
       {...liAttrs }>
         <ItemWrap onClick={() => openResume()}>
           <ListIcon><AiFillFilePdf/></ListIcon>
-          <ListText>Resume/CV</ListText>
+          <ListText>Resume</ListText>
         </ItemWrap>
       </motion.li>
       <motion.li
