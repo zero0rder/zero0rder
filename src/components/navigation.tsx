@@ -56,7 +56,7 @@ const MenuItems: React.FC<MenuItemProps> = ({}) => {
       </motion.li>
       <motion.li
       {...liAttrs }>
-        <AnchorWrap href='https://github.com/zero0rder/zero0rder' target='_blank' rel='noopener noreferrer'>
+        <AnchorWrap href='https://github.com/zero0rder' target='_blank' rel='noopener noreferrer'>
           <ListIcon><AiFillGithub/></ListIcon>
           <ListText>Github</ListText>
         </AnchorWrap>
