@@ -92,8 +92,10 @@ export const EmailSent = tw.div`
     gap-8
     rounded-2xl
     text-8xl
-    bg-gray-200
-    text-violet-800
+    text-emerald-300
+    bg-gradient-to-br from-violet-800 to-fuchsia-700
+    shadow-xl
+    shadow-emerald-300
 `
 
 export const SentText = tw.span`

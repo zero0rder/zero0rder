@@ -62,6 +62,7 @@ export const RightPanel = tw.div`
     md:p-8
     rounded-2xl
     shadow-2xl
+    shadow-emerald-300
 `
 
 export const RightPanelButton = tw.button`

@@ -30,5 +30,8 @@ export const ScrollBtn = tw.div`
   border-violet-800
   bg-emerald-300
   cursor-pointer
-  shadow-xl
+  shadow-lg
+  hover:bg-violet-800
+  hover:text-emerald-300
+  hover:border-emerald-300
 `
