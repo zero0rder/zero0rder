@@ -1,5 +1,3 @@
-<h2 align="center">Hi 👋, I'm Zero0rder</h2>
-
 <p align="left">
   <img src="https://komarev.com/ghpvc/?username=zero0rder" alt="zero0rder" />
 </p>
@@ -8,11 +6,11 @@
 
 - 📍&nbsp;&nbsp;New York, NY, USA | [Zero0rder HQ.](https://zero0rder.com)
 
-- 🌱&nbsp;&nbsp;Currently working and learning everyday! **(grind grind grind)**
+- 💻&nbsp;&nbsp;OSS Contributor - Never not working **the grind continues**
 
-- 🤝&nbsp;&nbsp;I’m open to collaborating with developers to build exciting new projects
+- 🤝&nbsp;&nbsp;I’m open to collaborating and building exciting new projects
 
-- 💬&nbsp;&nbsp;Feel free to reachout! **regarding programming tips, daily hacks, productivity, etc...**
+- 💬&nbsp;&nbsp;Hit me up! **programming questions, daily hacks, productivity tips, etc...**
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=zero0rder&theme=onedark&title=Commits,Followers,Repositories,PullRequest)](https://github.com/ryo-ma/github-profile-trophy)
 
