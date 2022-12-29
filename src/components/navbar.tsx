@@ -6,6 +6,7 @@ import { Overlay } from './styled'
 import { Header, BurgerWrap, NavTitle, ImageWrap, Image } from './styled/navbar'
 import { DrawerContext } from '../contexts'
 import { sidebarVariant } from '../utils/framer-motion/motion'
+import { TypingText } from '../utils/framer-motion/customText'
 
 interface NavbarProps {}
 
@@ -30,7 +31,9 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                         <Navigation/>
                     </DrawerContext.Provider>
                 </motion.div>
-                <NavTitle>zero0rder</NavTitle>
+                <NavTitle>
+                    <TypingText title='zero0rder'/>
+                </NavTitle>
                 <ImageWrap>
                     <Image src='https://avatars.githubusercontent.com/u/11478868?v=4' />
                 </ImageWrap>

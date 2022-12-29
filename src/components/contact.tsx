@@ -2,6 +2,7 @@ import React, { useState, forwardRef } from 'react'
 import { useForm } from 'react-hook-form'
 import{ init, send } from '@emailjs/browser'
 import { motion } from 'framer-motion'
+import { TypingText } from '../utils/framer-motion/customText'
 import { AiOutlineCheckCircle } from 'react-icons/ai'
 import{ ContactWrap, 
 SectionTitle, 
@@ -32,7 +33,9 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = forwardRef(({}, ref: React.Ref<HTMLDivElement>) => {
     return (
         <ContactWrap ref={ref}>
-            <SectionTitle>Contact</SectionTitle>
+            <SectionTitle>
+                <TypingText title='Contact'/>
+            </SectionTitle>
             <ContactForm/>
         </ContactWrap>
     )

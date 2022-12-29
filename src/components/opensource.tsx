@@ -4,6 +4,7 @@ import { useFetch } from '../hooks/useFetch'
 import { FiLink } from 'react-icons/fi'
 import { AiFillGithub } from 'react-icons/ai'
 import { fadeIn } from '../utils/framer-motion/motion'
+import { TypingText } from '../utils/framer-motion/customText'
 import { OSContainer, 
 SectionTitle, 
 CardWrapper, 
@@ -53,11 +54,13 @@ const OpenSource: React.FC<OpenSourceProps> = forwardRef(({}, ref: React.Ref<HTM
 
     return (
         <OSContainer ref={ref}>
-            <SectionTitle>Open Source</SectionTitle>
+            <SectionTitle>
+                <TypingText title='Open Source'/>
+            </SectionTitle>
             <CardWrapper ref={wrapperRef} className='card-wrapper'>
                 { repos && repos.map((r, i) => (
                     <motion.div 
-                        variants={fadeIn('right', 'spring', i * 0.20, 0.65)}
+                        variants={fadeIn('up', 'spring', i * 0.20, 0.65)}
                         initial='hidden'
                         whileInView='show'
                         whileHover={{ scale: 1.05 }}

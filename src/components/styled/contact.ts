@@ -78,7 +78,6 @@ export const SectionTitle = tw.h2`
     text-4xl
     font-medium
     text-center
-    underline
 `
 export const EmailSent = tw.div`
     w-10/12
