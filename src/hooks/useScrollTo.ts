@@ -2,7 +2,7 @@ import { useLayoutEffect } from 'react'
 import { useSpring } from 'framer-motion'
 
 export function useScrollTo(){
-  const spring = useSpring(0, { damping: 300, stiffness: 200 })
+  const spring = useSpring(0, { damping: 275, stiffness: 75 })
 
   useLayoutEffect(() => {
     spring.onChange(latest => {
@@ -12,12 +12,11 @@ export function useScrollTo(){
   }, [spring])
   
   const moveTo = (to: number) => {
-    spring.set(window.pageYOffset, false)
+    spring.set(window.scrollY, false)
     setTimeout(() => {
       spring.set(to)
     }, 50)
   }
 
   return { moveTo }
-
 }
