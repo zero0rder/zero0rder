@@ -19,11 +19,14 @@ RightPanelButton } from './styled/hero'
 interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = ({}) => {
-    const scales = {hover: { scale: 1.05}, tap: {scale: 0.95}}
     const { setIsResume } = useContext(ResumeContext)
     const { element: contactElem } = useContext(ContactWrapperContext)
     const { element: osElem } = useContext(OSWrapperContext)
     const { moveTo } = useScrollTo()
+    const panelAttrs = {
+        hover: { scale: 1.05}, 
+        tap: {scale: 0.95}
+    }
 
     return (
         <motion.div
@@ -67,18 +70,15 @@ const Hero: React.FC<HeroProps> = ({}) => {
                 <RightSection>
                     <RightPanel>
                         <motion.div
-                            whileHover={scales.hover}
-                            whileTap={scales.tap}>
+                            {...panelAttrs}>
                             <RightPanelButton onClick={() => setIsResume(true)}>Resume</RightPanelButton>    
                         </motion.div>
                         <motion.div
-                             whileHover={scales.hover}
-                             whileTap={scales.tap}>
+                             {...panelAttrs}>
                             <RightPanelButton onClick={() => moveTo(osElem?.offsetTop ?? 0)}>Open Source</RightPanelButton>    
                         </motion.div>
                         <motion.div
-                             whileHover={scales.hover}
-                             whileTap={scales.tap}>
+                             {...panelAttrs}>
                             <RightPanelButton onClick={() => moveTo(contactElem?.offsetTop ?? 0)}>Contact</RightPanelButton>    
                         </motion.div>
                     </RightPanel>

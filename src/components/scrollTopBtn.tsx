@@ -10,23 +10,11 @@ const ScrollTopBtn: React.FC<ScrollTopBtnProps> = ({}) => {
     const [showToTop, setShowToTop] = useState<boolean>(false)
     const { scrollYProgress } = useScroll()
     const { moveTo } = useScrollTo()
-  
-    const handleScrollBtn = (percent: number) => {
-      if(percent > 0.50){
-        setShowToTop(true)
-      } else {
-        setShowToTop(false)
-      }
-    }
-  
-    useEffect(() => {
-      return scrollYProgress.onChange(pos => handleScrollBtn(pos))
-    }, [])
+    const handleScrollBtn = (percent: number) => setShowToTop(percent > 0.45 ? true : false)
+    useEffect(() => scrollYProgress.onChange(pos => handleScrollBtn(pos)), [])
   
     return (
-      <>
-        { showToTop && <ScrollBtn onClick={() => moveTo(0)}><ImArrowUp2/></ScrollBtn> }
-      </>
+      <>{ showToTop && <ScrollBtn onClick={() => moveTo(0)}><ImArrowUp2/></ScrollBtn> }</>
     )
 }
 

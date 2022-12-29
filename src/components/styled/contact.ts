@@ -17,7 +17,7 @@ export const ContactWrap = tw.div`
 `
 
 export const FormWrap = tw.div`
-    w-3/4
+    w-full
     sm:w-7/12
     max-w-2xl
     relative
@@ -78,11 +78,11 @@ export const SectionTitle = tw.h2`
     text-4xl
     font-medium
     text-center
-    underline
 `
 export const EmailSent = tw.div`
-    w-8/12
-    md:w-1/2
+    w-10/12
+    md:w-3/4
+    m-auto
     h-60
     flex
     flex-col

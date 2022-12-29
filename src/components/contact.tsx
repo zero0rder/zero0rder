@@ -1,6 +1,8 @@
 import React, { useState, forwardRef } from 'react'
 import { useForm } from 'react-hook-form'
 import{ init, send } from '@emailjs/browser'
+import { motion } from 'framer-motion'
+import { TypingText } from '../utils/framer-motion/customText'
 import { AiOutlineCheckCircle } from 'react-icons/ai'
 import{ ContactWrap, 
 SectionTitle, 
@@ -31,7 +33,9 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = forwardRef(({}, ref: React.Ref<HTMLDivElement>) => {
     return (
         <ContactWrap ref={ref}>
-            <SectionTitle>Contact</SectionTitle>
+            <SectionTitle>
+                <TypingText title='Contact'/>
+            </SectionTitle>
             <ContactForm/>
         </ContactWrap>
     )
@@ -66,25 +70,29 @@ const ContactForm: React.FC<{}> = ({}) => {
     }
 
     return (
-        <>
+        <FormWrap>
             { status 
-                ? <EmailSent>
+                ? <motion.div
+                    initial={{scale:0.5, opacity:0}}
+                    animate={{scale: 1, opacity:1}}
+                    transition={{delay: 0.25, stiffness: 125, bounce: 0.75, damping: 50}}
+                    style={{ width: '100%'}}>
+                    <EmailSent>
                         <AiOutlineCheckCircle/>
                         <SentText>Email Sent!</SentText>
-                  </EmailSent>
-                : <FormWrap>
-                    <MainForm onSubmit={handleSubmit(s => sendEmail(s), e => console.error('error sending email: ', e))}>
-                        <FormInput autoComplete='off' {...register('email', { required: true })} placeholder='reply email'/>
-                        {errors.email && <ValidationMsg>email is required.</ValidationMsg>}
-                        <FormInput autoComplete='off' {...register('subject', { required: true })} placeholder='subject'/>
-                        {errors.subject && <ValidationMsg>subject is required.</ValidationMsg>}
-                        <FormTextArea autoComplete='off' {...register('message', { required: true })} placeholder='message...' />
-                        {errors.message && <ValidationMsg>please enter message.</ValidationMsg>}
-                        <FormButton type='submit' />
-                    </MainForm>
-                </FormWrap>
+                    </EmailSent>
+                  </motion.div>
+                : <MainForm onSubmit={handleSubmit(s => sendEmail(s), e => console.error('error sending email: ', e))}>
+                    <FormInput autoComplete='off' {...register('email', { required: true })} placeholder='reply email'/>
+                    {errors.email && <ValidationMsg>email is required.</ValidationMsg>}
+                    <FormInput autoComplete='off' {...register('subject', { required: true })} placeholder='subject'/>
+                    {errors.subject && <ValidationMsg>subject is required.</ValidationMsg>}
+                    <FormTextArea autoComplete='off' {...register('message', { required: true })} placeholder='message...' />
+                    {errors.message && <ValidationMsg>please enter message.</ValidationMsg>}
+                    <FormButton type='submit' />
+                  </MainForm>
             }
-        </>
+        </FormWrap>
     )
 }
 
