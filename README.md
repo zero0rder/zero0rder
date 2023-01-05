@@ -6,11 +6,11 @@
 
 - 📍&nbsp;&nbsp;New York, NY, USA | [Zero0rder HQ.](https://zero0rder.com)
 
-- 💻&nbsp;&nbsp;OSS Contributor - Never not working **the grind continues**
+- 💻&nbsp;&nbsp;OSS Contributor - **the grind never stops**
 
-- 🤝&nbsp;&nbsp;I’m open to collaborating and building exciting new projects
+- 🤝&nbsp;&nbsp;Open to collaborating and building exciting new projects!
 
-- 💬&nbsp;&nbsp;Hit me up! **programming questions, daily hacks, productivity tips, etc...**
+- 💬&nbsp;&nbsp;Hit me up! **regarding programming questions, daily productivity tips, etc...**
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=zero0rder&theme=onedark&title=Commits,Followers,Repositories,PullRequest)](https://github.com/ryo-ma/github-profile-trophy)
 
