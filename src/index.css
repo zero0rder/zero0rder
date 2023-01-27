@@ -98,6 +98,15 @@ canvas.react-pdf__Page__canvas {
   overflow: scroll !important;
 }
 
+.parallax-scroller {
+  font-weight: 600;
+  font-size: 0.75rem;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 @keyframes float {
     0% {
       transform: translatey(0px);
