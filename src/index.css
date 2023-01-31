@@ -14,6 +14,7 @@
     -webkit-text-size-adjust: 100%;
     --lightGray: #e5e7eb;
     --lightEmerald: #6ee7b7;
+    --baseColor: #111827;
 }
 
 html, 
@@ -43,11 +44,13 @@ div.arrow {
   display: flex;
   justify-content: center;
   position: absolute;
-  width: 300px;
+  width: 17rem;
   top: 0;
   left: 0;
   bottom: 0;
-  background: var(--lightGray);
+  background: var(--baseColor);
+  border-right: 1px solid var(--lightEmerald);
+  z-index: 51;
 }
 
 ul,
@@ -98,6 +101,50 @@ canvas.react-pdf__Page__canvas {
   overflow: scroll !important;
 }
 
+.parallax-scroller {
+  font-weight: 600;
+  font-size: 0.75rem;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.next,
+.prev {
+  top: calc(50% - 20px);
+  position: absolute;
+  background: white;
+  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev {
+  left: 10px;
+  transform: scale(-1);
+}
+
+.active-tab {
+  background-size: 100% 0.1rem !important
+}
+
+.motion-div {
+  width: 100%;
+}
+
 @keyframes float {
     0% {
       transform: translatey(0px);
@@ -114,13 +161,9 @@ canvas.react-pdf__Page__canvas {
   div.infolist-div ul svg {
     font-size: 2rem;
   }
-
-  .motion-div {
-    width: 90%;
-  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 698px) {
   .motion-div {
     width: 50%;
   }
@@ -136,4 +179,4 @@ canvas.react-pdf__Page__canvas {
  .nav-background {
     width: 240px;
   }
-} 
+}

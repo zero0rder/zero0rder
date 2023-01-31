@@ -1,99 +1,161 @@
-import React, { useState, forwardRef } from 'react'
-import { useForm } from 'react-hook-form'
-import{ init, send } from '@emailjs/browser'
-import { motion } from 'framer-motion'
-import { TypingText } from '../utils/framer-motion/customText'
-import { AiOutlineCheckCircle } from 'react-icons/ai'
-import{ ContactWrap, 
-SectionTitle, 
-EmailSent, 
-SentText, 
-FormWrap, 
-MainForm, 
-FormInput, 
-ValidationMsg, 
-FormTextArea, 
-FormButton } from './styled/contact'
+import React, { useState, forwardRef } from "react";
+// import tw from "twin.macro";
+import { useForm } from "react-hook-form";
+import { init, send } from "@emailjs/browser";
+import { motion } from "framer-motion";
+import { TypingText } from "../utils/framer-motion/customText";
+import { AiOutlineCheckCircle } from "react-icons/ai";
+import {
+  ContactWrap,
+  EmailSent,
+  SentText,
+  FormWrap,
+  MainForm,
+  FormInput,
+  ValidationMsg,
+  FormTextArea,
+  FormButton,
+  FormDivider,
+  FormItemContainer,
+  InputValidationMsg,
+} from "./styled/contact";
+import { GlobalSectionTitle } from "./styled";
 
 const email_vars = {
-    UserID: import.meta.env.VITE_USER_ID,
-    TemplateID: import.meta.env.VITE_TEMPLATE_ID,
-    ServiceID: import.meta.env.VITE_SERVICE_ID,
-    ToName: import.meta.env.VITE_NAME
-}
+  UserID: import.meta.env.VITE_USER_ID,
+  TemplateID: import.meta.env.VITE_TEMPLATE_ID,
+  ServiceID: import.meta.env.VITE_SERVICE_ID,
+  ToName: import.meta.env.VITE_NAME,
+};
 
-init(email_vars.UserID)
+init(email_vars.UserID);
 
 interface ContactProps {
-    ref: React.Ref<HTMLDivElement | null>
+  ref?: React.Ref<HTMLDivElement | null>;
 }
 
 //todo: fix type error
-// @ts-ignore 
-const Contact: React.FC<ContactProps> = forwardRef(({}, ref: React.Ref<HTMLDivElement>) => {
+// @ts-ignore
+const Contact: React.FC<ContactProps> = forwardRef(
+  ({}, ref: React.Ref<HTMLDivElement>) => {
     return (
-        <ContactWrap ref={ref}>
-            <SectionTitle>
-                <TypingText title='Contact'/>
-            </SectionTitle>
-            <ContactForm/>
-        </ContactWrap>
-    )
-})
+      <ContactWrap ref={ref}>
+        <GlobalSectionTitle>
+          <TypingText title="Email" />
+        </GlobalSectionTitle>
+        <ContactForm />
+      </ContactWrap>
+    );
+  }
+);
 
 interface EmailInterface {
-    email: string;
-    message: string;
-    subject: string;
+  email: string;
+  message: string;
+  subject: string;
 }
 
 const ContactForm: React.FC<{}> = ({}) => {
-    const [status, setStatus] = useState<number | null>(null)
-    const { 
-        register, 
-        handleSubmit, 
-        formState: { errors } } = useForm({
-        defaultValues: {
-        email: '',
-        subject: '',
-        message: ''
-    }})
+  const [status, setStatus] = useState<number | null>(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      email: "",
+      subject: "",
+      message: "",
+    },
+  });
 
-    function sendEmail(data: EmailInterface){
-        send(email_vars.ServiceID, email_vars.TemplateID, {
-            reply_to: data.email,
-            from_name: data.subject,
-            message: data.message,
-            to_name: email_vars.ToName,
-        }, email_vars.UserID).then(res => setStatus(res.status),
-        (error) => console.error('error sending email: ', error.text))
-    }
+  function sendEmail(data: EmailInterface) {
+    send(
+      email_vars.ServiceID,
+      email_vars.TemplateID,
+      {
+        reply_to: data.email,
+        from_name: data.subject,
+        message: data.message,
+        to_name: email_vars.ToName,
+      },
+      email_vars.UserID
+    ).then(
+      (res) => setStatus(res.status),
+      (error) => console.error("error sending email: ", error.text)
+    );
+  }
 
-    return (
-        <FormWrap>
-            { status 
-                ? <motion.div
-                    initial={{scale:0.5, opacity:0}}
-                    animate={{scale: 1, opacity:1}}
-                    transition={{delay: 0.25, stiffness: 125, bounce: 0.75, damping: 50}}
-                    style={{ width: '100%'}}>
-                    <EmailSent>
-                        <AiOutlineCheckCircle/>
-                        <SentText>Email Sent!</SentText>
-                    </EmailSent>
-                  </motion.div>
-                : <MainForm onSubmit={handleSubmit(s => sendEmail(s), e => console.error('error sending email: ', e))}>
-                    <FormInput autoComplete='off' {...register('email', { required: true })} placeholder='reply email'/>
-                    {errors.email && <ValidationMsg>email is required.</ValidationMsg>}
-                    <FormInput autoComplete='off' {...register('subject', { required: true })} placeholder='subject'/>
-                    {errors.subject && <ValidationMsg>subject is required.</ValidationMsg>}
-                    <FormTextArea autoComplete='off' {...register('message', { required: true })} placeholder='message...' />
-                    {errors.message && <ValidationMsg>please enter message.</ValidationMsg>}
-                    <FormButton type='submit' />
-                  </MainForm>
-            }
-        </FormWrap>
-    )
-}
+  return (
+    <FormWrap>
+      {status ? (
+        <motion.div
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{
+            delay: 0.25,
+            stiffness: 125,
+            bounce: 0.75,
+            damping: 50,
+          }}
+          style={{ width: "100%" }}
+        >
+          <EmailSent>
+            <AiOutlineCheckCircle />
+            <SentText>Email Sent!</SentText>
+          </EmailSent>
+        </motion.div>
+      ) : (
+        <MainForm
+          onSubmit={handleSubmit(
+            (s) => sendEmail(s),
+            (e) => console.error("error sending email: ", e)
+          )}
+        >
+          <FormDivider>
+            <FormItemContainer>
+              {errors.email && (
+                <InputValidationMsg>email is required.</InputValidationMsg>
+              )}
+              <FormInput
+                autoComplete="off"
+                {...register("email", { required: true })}
+                placeholder="reply email"
+              />
+            </FormItemContainer>
+            <FormItemContainer>
+              {errors.subject && (
+                <InputValidationMsg>subject is required.</InputValidationMsg>
+              )}
+              <FormInput
+                // tw={"shadow-lg border-red-700 shadow-red-700"}
+                autoComplete="off"
+                {...register("subject", { required: true })}
+                placeholder="subject"
+              />
+            </FormItemContainer>
+          </FormDivider>
+          <FormItemContainer>
+            {errors.message && (
+              <ValidationMsg>please enter message.</ValidationMsg>
+            )}
+            <FormTextArea
+              autoComplete="off"
+              {...register("message", { required: true })}
+              placeholder="message..."
+            />
+          </FormItemContainer>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={{ margin: "auto" }}
+          >
+            <FormButton type="submit" />
+          </motion.div>
+        </MainForm>
+      )}
+    </FormWrap>
+  );
+};
 
-export default Contact
+export default Contact;

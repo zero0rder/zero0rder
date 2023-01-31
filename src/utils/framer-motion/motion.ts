@@ -85,7 +85,6 @@ export const sidebarVariant = {
   },
   closed: {
       x: '-100%',
-      zIndex: -1,
       opacity: 1,
       transition: {
           delay: 0.05,

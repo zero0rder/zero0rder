@@ -1,13 +1,11 @@
 import tw from 'twin.macro'
 
 export const FooterWrap = tw.footer`
-    h-28
-    md:h-40
+    h-10
     flex
-    justify-center
+    justify-between
     items-center
-    flex-col
-    p-4
+    p-2
 `
 
 export const FooterText = tw.p`
@@ -16,14 +14,13 @@ export const FooterText = tw.p`
     items-center
     gap-1
     font-medium
+    text-[0.75rem]
 `
 
 export const SocialIcons = tw.div`
-    w-full
     flex
     justify-center
     items-center
-    mt-4
-    text-2xl
+    text-xl
     gap-2
 `

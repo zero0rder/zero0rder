@@ -35,3 +35,13 @@ export const ScrollBtn = tw.div`
   hover:text-emerald-300
   hover:border-emerald-300
 `
+
+export const GlobalSectionTitle = tw.h2`
+    text-[2.5rem]
+    font-medium
+    text-center
+`
+
+export const GlobalIconAnchors = tw.a`
+    hover:text-emerald-300
+`
