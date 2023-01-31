@@ -1,12 +1,19 @@
 import tw from 'twin.macro'
 
 export const OSContainer = tw.div`
+    flex
+    flex-col
+    justify-center
+    items-center
     relative
     m-auto
     max-w-[1150px]
     px-4
     py-8
     md:px-8
+    h-full
+    w-full
+    gap-y-8
 `
 
 export const CardWrapper = tw.div`
@@ -17,10 +24,10 @@ export const CardWrapper = tw.div`
     flex-wrap
     justify-center
     items-center
-    gap-y-6
-    overflow-hidden
+    gap-y-8
+    overflow-scroll
     w-full
-    text-violet-800
+    grow
 `
 
 export const OSCard = tw.div`
@@ -29,9 +36,11 @@ export const OSCard = tw.div`
     justify-center
     items-center
     flex-col
-    w-full
     h-48
     px-4
+    w-full
+    // w-1/2
+    // sm:w-1/3
 `
     
 export const CardBody = tw.div`
@@ -40,18 +49,19 @@ export const CardBody = tw.div`
     max-w-md
     flex
     flex-col
-    justify-center
+    justify-start
     items-center
     p-3
-    rounded-2xl
     border
-    bg-gray-200
+    rounded-2xl
+    shadow-lg
+    border-emerald-300
+    shadow-emerald-300
+    gap-y-4
 `
 
 export const TitleWrap = tw.div`
     py-2
-    min-h-[4.35rem]
-    sm:min-h-[5rem]
     flex
     justify-center
     items-center
@@ -65,21 +75,13 @@ export const CardTitle = tw.h2`
 `
 
 export const CardData = tw.div`
-    text-[1.25rem]
     flex
-    justify-center
-    items-center
-    gap-3
+    justify-end
+    items-start
+    gap-x-1
     w-full
-    px-2
 `
 
-export const SectionTitle = tw.h2`
-    my-10
-    text-4xl
-    font-medium
-    text-center
-`
 export const CardText = tw.p`
     text-center
     py-2
