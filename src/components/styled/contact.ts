@@ -52,7 +52,8 @@ export const FormInput = tw.input`
 `
 
 export const FormTextArea = tw.textarea`
-    h-48
+    h-72
+    md:h-64
     w-full
     p-2
     text-black
