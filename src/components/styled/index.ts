@@ -26,14 +26,6 @@ export const ScrollBtn = tw.div`
   justify-center
   text-3xl
   border-2
-  text-violet-800
-  border-violet-800
-  bg-emerald-300
-  cursor-pointer
-  shadow-lg
-  hover:bg-violet-800
-  hover:text-emerald-300
-  hover:border-emerald-300
 `
 
 export const GlobalSectionTitle = tw.h2`
@@ -43,5 +35,28 @@ export const GlobalSectionTitle = tw.h2`
 `
 
 export const GlobalIconAnchors = tw.a`
-    hover:text-emerald-300
+    hover:text-gray-300
+`
+
+export const GlobalImage = tw.img`
+    w-full
+`
+
+export const GlobalParallaxWrap = tw.div`
+    w-full
+`
+
+export const GlobalParallax = tw.div`
+    m-0
+    flex
+    flex-nowrap
+    [letter-spacing: -0.06rem]
+    [line-height: 0.8rem]
+    whitespace-nowrap
+    overflow-hidden
+`
+
+export const GlobalParallaxItem = tw.span`
+    block
+    mr-2
 `
