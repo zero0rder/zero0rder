@@ -6,13 +6,13 @@ export const HeroContainer = tw.div`
     m-auto
     flex
     flex-col
-    justify-start
+    justify-center
     items-center
-    px-4
+    px-8
     h-[inherit]
     overflow-auto
     md:flex-row
-    sm:justify-center
+    sm:px-16
     md:px-8
 `
 
@@ -43,12 +43,14 @@ export const HeroName = tw.h1`
 `
 
 export const LeftSection = tw.div`
-    flex
+    hidden
     justify-center
     items-center
     h-full
     w-full
-    md:w-3/5
+    md:flex
+    md:w-[55%]
+    lg:w-3/5
    
 `
 
@@ -62,8 +64,9 @@ export const LeftContent = tw.div`
 
 export const RightSection = tw.div`
     w-full
-    sm:w-3/4
-    md:w-2/5
+    // sm:w-3/4
+    md:w-[45%]
+    lg:w-2/5
 `
 
 // Right Panel Box
@@ -82,6 +85,10 @@ export const RightPanel = tw.div`
 
 export const RightPanelTop = tw.div`
     flex
+    truncate
+    flex-col
+    gap-y-4
+    md:flex-row
 `
 
 export const RightPanelText = tw.p`
@@ -102,28 +109,57 @@ export const RightPanelBottom = tw.div`
 
 export const ImageContainer = tw.div`
     flex
-    pr-6
-    border-r
+    items-center
+    justify-center
+    md:justify-end
+    md:pr-6
+    md:border-r
     border-gray-300
 `
 
 export const ImageWrap = tw.span`
-    w-[4.5rem]
-    h-[4.5rem]
+    w-[6.5rem]
+    h-[6.5rem]
     rounded-full
     overflow-hidden
     border
     border-black
+    sm:w-[8.5rem]
+    sm:h-[8.5rem]
+    md:w-[6.5rem]
+    md:h-[6.5rem]
 `
 export const HeroMeta = tw.div`
+    flex
+    items-center
+    justify-center
+    flex-col
+    gap-y-2
     grow
-    pl-6
+    md:pl-6
     italic
     font-medium
 `
 export const HeroUL = tw.ul``
-
 export const HeroLI = tw.li``
+
+export const HeroSpan = tw.span`
+    pr-2
+    font-bold
+`
+
+export const MobileName = tw.span`
+  font-bold
+  text-4xl
+  pb-2
+  underline
+  tracking-[0.12rem]
+  sm:text-5xl
+  sm:pb-4
+  md:hidden
+`
+
+
 
 export const AnchorWrap = tw.a`
     cursor-pointer

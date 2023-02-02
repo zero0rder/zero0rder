@@ -29,6 +29,8 @@ import {
   HeroMeta,
   HeroUL,
   HeroLI,
+  HeroSpan,
+  MobileName,
 } from "./styled/hero";
 import { GlobalImage } from "./styled";
 import MainImage from "../assets/images/maskon.jpg";
@@ -79,10 +81,17 @@ const Hero: React.FC<HeroProps> = ({}) => {
                 </ImageWrap>
               </ImageContainer>
               <HeroMeta>
+                <MobileName>Dwight Smith</MobileName>
                 <HeroUL>
-                  <HeroLI>Position: Fullstack Developer</HeroLI>
-                  <HeroLI>Experience: 7 Years</HeroLI>
-                  <HeroLI>Location: New York, NY, USA</HeroLI>
+                  <HeroLI>
+                    <HeroSpan>Position:</HeroSpan> Fullstack Developer
+                  </HeroLI>
+                  <HeroLI>
+                    <HeroSpan>Experience:</HeroSpan> 7 Years
+                  </HeroLI>
+                  <HeroLI>
+                    <HeroSpan>Location:</HeroSpan> New York, NY
+                  </HeroLI>
                 </HeroUL>
               </HeroMeta>
             </RightPanelTop>
