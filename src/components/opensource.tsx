@@ -7,6 +7,7 @@ import { fadeIn } from "../utils/framer-motion/motion";
 import { TypingText } from "../utils/framer-motion/customText";
 import { whitelistedURLS } from "../utils/misc/whitelist";
 import { GlobalIconAnchors, GlobalSectionTitle } from "./styled";
+import { IMGHash } from "../utils/misc/app.data";
 import {
   OSContainer,
   CardWrapper,
@@ -16,6 +17,8 @@ import {
   CardTitle,
   CardText,
   CardData,
+  CardBottom,
+  CardImage,
 } from "./styled/opensource";
 
 interface OpenSourceProps {
@@ -58,31 +61,36 @@ const OpenSource: React.FC<OpenSourceProps> = forwardRef(
               >
                 <OSCard>
                   <CardBody>
-                    <CardData>
-                      <span>
-                        <GlobalIconAnchors
-                          href={r.html_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ display: "flex" }}
-                        >
-                          <AiFillGithub />
-                        </GlobalIconAnchors>
-                      </span>
-                      <span>
-                        <GlobalIconAnchors
-                          href={r.homepage ?? ""}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FiLink />
-                        </GlobalIconAnchors>
-                      </span>
-                    </CardData>
-                    <TitleWrap>
-                      <CardTitle>{r.name.toLowerCase()}</CardTitle>
-                    </TitleWrap>
-                    <CardText>{r.description}</CardText>
+                    <CardImage
+                      style={{ backgroundImage: `url(${IMGHash.get(r.id)})` }}
+                    ></CardImage>
+                    <CardBottom>
+                      <CardData>
+                        <span>
+                          <GlobalIconAnchors
+                            href={r.html_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ display: "flex" }}
+                          >
+                            <AiFillGithub />
+                          </GlobalIconAnchors>
+                        </span>
+                        <span>
+                          <GlobalIconAnchors
+                            href={r.homepage ?? ""}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <FiLink />
+                          </GlobalIconAnchors>
+                        </span>
+                      </CardData>
+                      <TitleWrap>
+                        <CardTitle>{r.name.toLowerCase()}</CardTitle>
+                      </TitleWrap>
+                      <CardText>{r.description}</CardText>
+                    </CardBottom>
                   </CardBody>
                 </OSCard>
               </motion.div>

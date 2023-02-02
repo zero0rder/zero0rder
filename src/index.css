@@ -12,9 +12,13 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
-    --lightGray: #e5e7eb;
     --lightEmerald: #6ee7b7;
-    --baseColor: #111827;
+    --darkEmerald: #34d399;
+    --baseColor: #f1f5f9;
+    --baseBlue: #38bdf8;
+    --baseBlack: #000;
+    --baseGray: #d1d5db;
+
 }
 
 html, 
@@ -49,7 +53,7 @@ div.arrow {
   left: 0;
   bottom: 0;
   background: var(--baseColor);
-  border-right: 1px solid var(--lightEmerald);
+  border-right: 1px solid var(--baseBlack);
   z-index: 51;
 }
 
@@ -71,18 +75,23 @@ ul.nav-list {
   top: 100px;
   width: 230px;
   font-size: 1.5rem;
-  color: #000;
+  color: var(--baseColor);
 }
 
 ul.nav-list li {
   margin-bottom: 30px;
+  justify-content: center;
   cursor: pointer;
 }
 
 div.infolist-div ul svg {
   font-size: 3rem;
-  color: var(--lightEmerald);
+  color: var(--darkEmerald);
 }
+
+/* div.infolist-div ul li{
+  text-shadow: var(--baseGray) 1px 0 10px;
+} */
 
 .react-pdf__Document {
   display: flex;
@@ -178,5 +187,10 @@ canvas.react-pdf__Page__canvas {
 @media (max-width: 400px){
  .nav-background {
     width: 240px;
+  }
+
+  .hero-name-div > h1 {
+    font-size: 4.5rem;
+    line-height: 5rem;
   }
 }

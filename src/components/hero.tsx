@@ -2,7 +2,12 @@ import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { RxCaretRight } from "react-icons/rx";
 import { staggerContainer, textVariant } from "../utils/framer-motion/motion";
-import { AiFillLinkedin } from "react-icons/ai";
+import {
+  AiFillLinkedin,
+  AiFillGithub,
+  AiFillMediumCircle,
+  // AiOutlineTwitter,
+} from "react-icons/ai";
 import { MdPictureAsPdf } from "react-icons/md";
 import { ResumeContext } from "../contexts";
 import { MissionParagraph } from "../utils/misc/app.data";
@@ -19,7 +24,14 @@ import {
   RightPanelText,
   AnchorWrap,
   RightPanelBottom,
+  ImageContainer,
+  ImageWrap,
+  HeroMeta,
+  HeroUL,
+  HeroLI,
 } from "./styled/hero";
+import { GlobalImage } from "./styled";
+import MainImage from "../assets/images/maskon.jpg";
 
 interface HeroProps {}
 
@@ -37,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({}) => {
       <HeroContainer>
         <LeftSection>
           <LeftContent>
-            <motion.div variants={textVariant(0.25)}>
+            <motion.div className="hero-name-div" variants={textVariant(0.25)}>
               <HeroName>Dwight Smith</HeroName>
             </motion.div>
             <motion.div variants={textVariant(0.35)} className="infolist-div">
@@ -52,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({}) => {
                 </InfoListItem>
                 <InfoListItem>
                   <RxCaretRight />
-                  New York, NY
+                  Curious Human
                 </InfoListItem>
               </InfoList>
             </motion.div>
@@ -61,19 +73,58 @@ const Hero: React.FC<HeroProps> = ({}) => {
         <RightSection>
           <RightPanel>
             <RightPanelTop>
-              <AnchorWrap onClick={() => setIsResume(true)}>
-                <MdPictureAsPdf />
+              <ImageContainer>
+                <ImageWrap>
+                  <GlobalImage src={MainImage} />
+                </ImageWrap>
+              </ImageContainer>
+              <HeroMeta>
+                <HeroUL>
+                  <HeroLI>Position: Fullstack Developer</HeroLI>
+                  <HeroLI>Experience: 7 Years</HeroLI>
+                  <HeroLI>Location: New York, NY, USA</HeroLI>
+                </HeroUL>
+              </HeroMeta>
+            </RightPanelTop>
+            <RightPanelText>{MissionParagraph}</RightPanelText>
+            {/* <div>Row</div> */}
+            <RightPanelBottom>
+              <AnchorWrap
+                href="https://github.com/zero0rder"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="github account"
+              >
+                <AiFillGithub />
               </AnchorWrap>
               <AnchorWrap
                 href="https://www.linkedin.com/in/dwightsmth"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="linkedin profile"
               >
                 <AiFillLinkedin />
               </AnchorWrap>
-            </RightPanelTop>
-            <RightPanelText>{MissionParagraph}</RightPanelText>
-            <RightPanelBottom></RightPanelBottom>
+              {/* <AnchorWrap
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="twitter profile"
+              >
+                <AiOutlineTwitter />
+              </AnchorWrap> */}
+              <AnchorWrap
+                href="https://medium.com/@dwightsmth"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="medium profile"
+              >
+                <AiFillMediumCircle />
+              </AnchorWrap>
+              <AnchorWrap onClick={() => setIsResume(true)}>
+                <MdPictureAsPdf />
+              </AnchorWrap>
+            </RightPanelBottom>
           </RightPanel>
         </RightSection>
       </HeroContainer>

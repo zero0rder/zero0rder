@@ -18,53 +18,69 @@ export const AboutMe = tw.section`
 `
 
 export const AboutText = tw.p`
-    w-8/12
+    w-full
+    md:w-8/12
     p-2
 `
 
 export const AboutCards = tw.div`
     flex
-    gap-12
+    gap-4
+    sm:gap-12
     flex-wrap
     justify-center
     items-center
     grow
     overflow-auto
+    pb-4
 `
 
 export const AboutAnchors = tw.a`
     underline
-    text-emerald-300
+    text-sky-400
 `
 
 export const CardContainer = tw.div`
+    flex
+    flex-col
     w-full
     sm:w-1/2
     md:w-1/4
     border
     min-h-[15rem]
     max-w-[17rem]
-    p-4
+    p-3
+    gap-y-4
     rounded-2xl
     shadow-lg
-    border-emerald-300
-    shadow-emerald-300
+    border-gray-300
+    shadow-gray-300
+    bg-white
 `
 
 export const CardTitle = tw.h3`
     underline
     font-medium
-    mb-2
     text-xl
-    text-emerald-300
+    text-center
 `
 
 export const CardList = tw.ul`
     flex
+    justify-center
+    items-center
     flex-wrap
-    gap-[0.25rem_0.75rem]
+    gap-3
 `
 
 export const CardItem = tw.li`
-
+    flex
+    flex-col
+    text-2xl
+    w-1/4
+`
+export const CardItemTitle = tw.span`
+    text-[.75rem]
+    font-medium
+    truncate
 `
