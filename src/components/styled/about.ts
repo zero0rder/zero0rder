@@ -25,7 +25,8 @@ export const AboutText = tw.p`
 
 export const AboutCards = tw.div`
     flex
-    gap-12
+    gap-4
+    sm:gap-12
     flex-wrap
     justify-center
     items-center
