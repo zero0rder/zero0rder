@@ -1,5 +1,9 @@
 import { useRef } from "react";
-import { ParallaxWrap, Parallax, ParallaxItem } from "./styled/navbar";
+import {
+  GlobalParallaxWrap,
+  GlobalParallax,
+  GlobalParallaxItem,
+} from "./styled";
 import {
   motion,
   useScroll,
@@ -65,16 +69,16 @@ const ParallaxText: React.FC<ParallaxProps> = ({
    * dynamically generated number of children.
    */
   return (
-    <ParallaxWrap>
-      <Parallax>
+    <GlobalParallaxWrap>
+      <GlobalParallax>
         <motion.div className="parallax-scroller" style={{ x }}>
-          <ParallaxItem>{children}</ParallaxItem>
-          <ParallaxItem>{children}</ParallaxItem>
-          <ParallaxItem>{children}</ParallaxItem>
-          <ParallaxItem>{children}</ParallaxItem>
+          <GlobalParallaxItem>{children}</GlobalParallaxItem>
+          <GlobalParallaxItem>{children}</GlobalParallaxItem>
+          <GlobalParallaxItem>{children}</GlobalParallaxItem>
+          <GlobalParallaxItem>{children}</GlobalParallaxItem>
         </motion.div>
-      </Parallax>
-    </ParallaxWrap>
+      </GlobalParallax>
+    </GlobalParallaxWrap>
   );
 };
 

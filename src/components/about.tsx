@@ -10,17 +10,17 @@ import {
   AboutCards,
   AboutText,
   AboutAnchors,
+  CardItemTitle,
 } from "./styled/about";
 import { GlobalSectionTitle } from "./styled";
 import { SkillSet, AboutParagraph } from "../utils/misc/app.data";
+import { IconType } from "react-icons";
 
 interface AboutProps {}
 
 type CardProps = {
-  data: {
-    type: string;
-    payload: string[];
-  };
+  type: string;
+  payload: { title: string; icon: IconType }[];
 };
 
 const About: React.FC<AboutProps> = () => {
@@ -52,20 +52,23 @@ const About: React.FC<AboutProps> = () => {
       </AboutMe>
       <AboutCards>
         {SkillSet.map((e, i) => (
-          <Card key={i} data={e} />
+          <Card key={i} type={e.type} payload={e.payload} />
         ))}
       </AboutCards>
     </AboutContainer>
   );
 };
 
-const Card: React.FC<CardProps> = ({ data }) => {
+const Card: React.FC<CardProps> = ({ type, payload }) => {
   return (
     <CardContainer>
-      <CardTitle>{data.type}</CardTitle>
+      <CardTitle>{type}</CardTitle>
       <CardList>
-        {data.payload.map((e, i) => (
-          <CardItem key={i}>{e}</CardItem>
+        {payload.map((e, i) => (
+          <CardItem key={i}>
+            {<e.icon />}
+            <CardItemTitle>{e.title}</CardItemTitle>
+          </CardItem>
         ))}
       </CardList>
     </CardContainer>

@@ -18,6 +18,7 @@ import {
   FormDivider,
   FormItemContainer,
   InputValidationMsg,
+  EmailSentIcon,
 } from "./styled/contact";
 import { GlobalSectionTitle } from "./styled";
 
@@ -41,7 +42,7 @@ const Contact: React.FC<ContactProps> = forwardRef(
     return (
       <ContactWrap ref={ref}>
         <GlobalSectionTitle>
-          <TypingText title="Email" />
+          <TypingText title="Get in touch!" />
         </GlobalSectionTitle>
         <ContactForm />
       </ContactWrap>
@@ -101,7 +102,9 @@ const ContactForm: React.FC<{}> = ({}) => {
           style={{ width: "100%" }}
         >
           <EmailSent>
-            <AiOutlineCheckCircle />
+            <EmailSentIcon>
+              <AiOutlineCheckCircle />
+            </EmailSentIcon>
             <SentText>Email Sent!</SentText>
           </EmailSent>
         </motion.div>
@@ -137,7 +140,7 @@ const ContactForm: React.FC<{}> = ({}) => {
           </FormDivider>
           <FormItemContainer>
             {errors.message && (
-              <ValidationMsg>please enter message.</ValidationMsg>
+              <ValidationMsg>message is required.</ValidationMsg>
             )}
             <FormTextArea
               autoComplete="off"
