@@ -8,7 +8,7 @@ export const HeroContainer = tw.div`
     flex-col
     justify-center
     items-center
-    px-8
+    px-4
     h-[inherit]
     overflow-auto
     md:flex-row
@@ -33,9 +33,9 @@ export const HeroName = tw.h1`
     text-transparent
     bg-clip-text 
     bg-black
-    // bg-gradient-to-r from-black to-gray-300
+    // hover:bg-gradient-to-r from-black to-emerald-400
     md:text-left
-    md:text-[7.5rem]
+    md:text-[7rem]
     md:[line-height: 8rem]
     lg:text-[9.5rem]
     lg:[line-height: 10rem]
@@ -73,6 +73,7 @@ export const RightSection = tw.div`
 export const RightPanel = tw.div`
     flex
     flex-col
+    // gap-y-3
     gap-y-6
     p-6
     rounded-2xl
@@ -94,6 +95,7 @@ export const RightPanelTop = tw.div`
 export const RightPanelText = tw.p`
     text-sm
     border-b
+    // pb-4
     pb-8
     grow
     border-gray-300

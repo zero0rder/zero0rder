@@ -10,7 +10,8 @@ import {
 } from "react-icons/ai";
 import { MdPictureAsPdf } from "react-icons/md";
 import { ResumeContext } from "../contexts";
-import { MissionParagraph } from "../utils/misc/app.data";
+import { AboutParagraph } from "../utils/misc/app.data";
+import Carousel from "./carousel";
 import {
   HeroContainer,
   LeftSection,
@@ -39,7 +40,6 @@ interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = ({}) => {
   const { setIsResume } = useContext(ResumeContext);
-
   return (
     <motion.div
       variants={staggerContainer()}
@@ -95,8 +95,8 @@ const Hero: React.FC<HeroProps> = ({}) => {
                 </HeroUL>
               </HeroMeta>
             </RightPanelTop>
-            <RightPanelText>{MissionParagraph}</RightPanelText>
-            {/* <div>Row</div> */}
+            <RightPanelText>{AboutParagraph}</RightPanelText>
+            <Carousel />
             <RightPanelBottom>
               <AnchorWrap
                 href="https://github.com/zero0rder"

@@ -19,7 +19,8 @@ export const CardWrapper = tw.div`
     justify-center
     items-center
     gap-y-8
-    p-8
+    p-4
+    md:p-8
     flex
     overflow-scroll
     w-full
@@ -33,10 +34,8 @@ export const OSCard = tw.div`
     items-center
     flex-col
     h-64
-    px-4
+    md:px-4
     w-full
-    // w-1/2
-    // sm:w-1/3
 `
     
 export const CardBody = tw.div`

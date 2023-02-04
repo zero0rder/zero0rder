@@ -150,10 +150,6 @@ canvas.react-pdf__Page__canvas {
   background-size: 100% 0.1rem !important
 }
 
-.motion-div {
-  width: 100%;
-}
-
 @keyframes float {
     0% {
       transform: translatey(0px);
@@ -166,21 +162,25 @@ canvas.react-pdf__Page__canvas {
     }
 }
 
-@media (max-width: 768px){
-  div.infolist-div ul svg {
-    font-size: 2rem;
+@media (min-width: 940px) {
+  .motion-div {
+    width: 33.333333%;
   }
 }
 
-@media (min-width: 698px) {
+@media (max-width: 940px) {
   .motion-div {
     width: 50%;
   }
 }
 
-@media (min-width: 940px) {
+@media (max-width: 768px){
+  div.infolist-div ul svg {
+    font-size: 2rem;
+  }
+
   .motion-div {
-    width: 33.333333%;
+    width: 100%;
   }
 }
 
