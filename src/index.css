@@ -89,10 +89,6 @@ div.infolist-div ul svg {
   color: var(--darkEmerald);
 }
 
-/* div.infolist-div ul li{
-  text-shadow: var(--baseGray) 1px 0 10px;
-} */
-
 .react-pdf__Document {
   display: flex;
   align-items: center;

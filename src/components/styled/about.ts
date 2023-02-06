@@ -21,6 +21,7 @@ export const AboutText = tw.p`
     w-full
     md:w-8/12
     p-2
+    text-center
 `
 
 export const AboutCards = tw.div`

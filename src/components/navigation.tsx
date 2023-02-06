@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
+import tw from "twin.macro";
 import MenuItems from "./menuItems";
 import { DrawerContext } from "../contexts";
 import { navListVariant } from "../utils/framer-motion/motion";
@@ -17,7 +18,7 @@ const Navigation: React.FC<NavigationProps> = ({}) => {
         <NavSliderLeftContent>
           <ParallaxText baseVelocity={5}>Open For Work</ParallaxText>
         </NavSliderLeftContent>
-        <AiOutlineClose onClick={() => setIsOpen(false)} />
+        <AiOutlineClose tw="cursor-pointer" onClick={() => setIsOpen(false)} />
       </NavSliderHeader>
       <motion.ul
         variants={navListVariant}

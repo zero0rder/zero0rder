@@ -1,35 +1,37 @@
 import tw from 'twin.macro'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FaChevronRight, FaChevronLeft } from 'react-icons/fa'
 
-export const CarouselWrap = tw.div`
+export const CarouselWrap = tw(AnimatePresence)`
     relative
     border-b
     pb-8
-    // md:pb-8
     grow
     border-gray-300
 `
 
-export const CardWrap = tw.div` //row
-    
-`
-
-export const CardUL = tw.ul` //container
+export const CardWrap = tw.div`
     flex
     justify-center
     items-center
     gap-x-4
-    // relative
-    // h-24
-    h-auto
-    // overflow-hidden
+    w-full
+    h-full
     flex-nowrap
+    
 `
 
-export const CardContent = tw.li`
-    w-1/2
+export const MotionBox = tw(motion.div)`
+    w-full
+    h-full
+`
+
+export const CardContent = tw.div`
     flex
+    justify-center
+    items-center
+    h-full
     flex-col
-    // border
     flex-wrap
     text-center
     p-1
@@ -42,7 +44,24 @@ export const CardTitle = tw.span`
 `
 
 export const CardBody = tw.span`
+    h-full
+    w-full
+    bg-contain
+    bg-center
+    bg-no-repeat
     text-[0.75rem]
     [line-height: 1.2rem]
-    h-32
+`
+
+export const LeftArrow = tw(FaChevronLeft)`
+    absolute
+    text-sm
+    left-[-1rem]
+    cursor-pointer
+`
+export const RightArrow = tw(FaChevronRight)`
+    absolute
+    text-sm
+    right-[-1rem]
+    cursor-pointer
 `

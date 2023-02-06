@@ -1,6 +1,7 @@
 import tw from 'twin.macro'
+import { motion } from "framer-motion";
 
-export const HeroContainer = tw.div`
+export const HeroContainer = tw(motion.div)`
     relative
     max-w-[1150px]
     m-auto
@@ -21,7 +22,6 @@ export const ArrowWrap = tw.div`
     text-2xl
     bottom-20
     left-1/2
-    // text-emerald-400
 `
 
 export const HeroName = tw.h1`
@@ -38,8 +38,7 @@ export const HeroName = tw.h1`
     md:text-[7rem]
     md:[line-height: 8rem]
     lg:text-[9.5rem]
-    lg:[line-height: 10rem]
-    
+    lg:[line-height: 10rem]   
 `
 
 export const LeftSection = tw.div`
@@ -51,7 +50,6 @@ export const LeftSection = tw.div`
     md:flex
     md:w-[55%]
     lg:w-3/5
-   
 `
 
 export const LeftContent = tw.div`
@@ -64,7 +62,6 @@ export const LeftContent = tw.div`
 
 export const RightSection = tw.div`
     w-full
-    // sm:w-3/4
     md:w-[45%]
     lg:w-2/5
 `
@@ -73,7 +70,6 @@ export const RightSection = tw.div`
 export const RightPanel = tw.div`
     flex
     flex-col
-    // gap-y-3
     gap-y-6
     p-6
     rounded-2xl
@@ -86,19 +82,17 @@ export const RightPanel = tw.div`
 
 export const RightPanelTop = tw.div`
     flex
-    truncate
     flex-col
     gap-y-4
     md:flex-row
 `
 
 export const RightPanelText = tw.p`
+    flex
+    items-center
+    text-center
     text-sm
-    border-b
-    // pb-4
-    pb-8
     grow
-    border-gray-300
 `
 
 export const RightPanelBottom = tw.div`
@@ -107,6 +101,24 @@ export const RightPanelBottom = tw.div`
     items-center
     gap-x-2
     text-2xl
+`
+
+export const RightPanelMediaContainer = tw.section`
+    relative
+    border-b
+    grow
+    border-gray-300
+`
+
+export const RightPanelCarouselWrap = tw.div`
+    flex
+    justify-center
+    items-center
+    gap-x-4
+    h-56
+    flex-nowrap
+    p-4
+    overflow-hidden
 `
 
 export const ImageContainer = tw.div`
@@ -140,14 +152,6 @@ export const HeroMeta = tw.div`
     grow
     md:pl-6
     italic
-    font-medium
-`
-export const HeroUL = tw.ul``
-export const HeroLI = tw.li``
-
-export const HeroSpan = tw.span`
-    pr-2
-    font-bold
 `
 
 export const MobileName = tw.span`
@@ -160,8 +164,6 @@ export const MobileName = tw.span`
   sm:pb-4
   md:hidden
 `
-
-
 
 export const AnchorWrap = tw.a`
     cursor-pointer
