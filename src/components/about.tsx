@@ -9,7 +9,7 @@ import {
   AboutMe,
   AboutCards,
   AboutText,
-  AboutAnchors,
+  // AboutAnchors,
   CardItemTitle,
 } from "./styled/about";
 import { GlobalSectionTitle } from "./styled";
@@ -30,25 +30,7 @@ const About: React.FC<AboutProps> = () => {
         <TypingText title="A bit about me..." />
       </GlobalSectionTitle>
       <AboutMe>
-        <AboutText>
-          {AboutParagraph}{" "}
-          <AboutAnchors
-            href="https://github.com/zero0rder"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            here
-          </AboutAnchors>
-          ! Or my blog posts over at{" "}
-          <AboutAnchors
-            href="https://medium.com/@dwightsmth"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            medium
-          </AboutAnchors>
-          ...
-        </AboutText>
+        <AboutText>{AboutParagraph}</AboutText>
       </AboutMe>
       <AboutCards>
         {SkillSet.map((e, i) => (

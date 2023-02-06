@@ -14,6 +14,6 @@ export const FooterText = tw.p`
     items-center
     gap-1
     font-medium
-    text-[0.75rem]
+    text-[0.65rem]
     italic
 `

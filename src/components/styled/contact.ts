@@ -82,7 +82,7 @@ export const FormItemContainer = tw.div`
     relative
 `
 
-export const FormButton = tw.input`
+export const FormButton = tw.button`
     py-2
     px-8
     rounded-lg
@@ -92,7 +92,10 @@ export const FormButton = tw.input`
     text-gray-200
     border-black
     !bg-black
+    hover:shadow-md
+    hover:shadow-gray-500
     hover:!bg-emerald-400
+    hover:!border-emerald-400
     hover:text-black
 `
 export const EmailSent = tw.div`

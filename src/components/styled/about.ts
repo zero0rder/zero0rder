@@ -21,6 +21,7 @@ export const AboutText = tw.p`
     w-full
     md:w-8/12
     p-2
+    text-center
 `
 
 export const AboutCards = tw.div`
@@ -48,7 +49,7 @@ export const CardContainer = tw.div`
     md:w-1/4
     border
     min-h-[15rem]
-    max-w-[17rem]
+    md:max-w-[17rem]
     p-3
     gap-y-4
     rounded-2xl

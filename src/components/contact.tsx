@@ -153,7 +153,7 @@ const ContactForm: React.FC<{}> = ({}) => {
             whileTap={{ scale: 0.95 }}
             style={{ margin: "auto" }}
           >
-            <FormButton type="submit" />
+            <FormButton type="submit">Submit</FormButton>
           </motion.div>
         </MainForm>
       )}

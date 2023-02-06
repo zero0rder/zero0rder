@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 // @ts-ignore
 import { Document, Page } from "react-pdf/dist/esm/entry.vite";
-import Pdf from "../assets/resume-dev.pdf";
+import Pdf from "../assets/resume1.pdf";
 import { Overlay } from "./styled";
 import { ResumeContext } from "../contexts";
 import { DocWrapper } from "./styled/resume";
