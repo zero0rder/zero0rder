@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import tw from "twin.macro";
 import MenuItems from "./menuItems";
-import { DrawerContext } from "../contexts";
-import { navListVariant } from "../utils/framer-motion/motion";
+import { DrawerContext } from "../../../contexts";
+import { navListVariant } from "../../../utils/framer-motion/motion";
 import { AiOutlineClose } from "react-icons/ai";
-import { NavSliderHeader, NavSliderLeftContent } from "./styled/navbar";
-import ParallaxText from "./parallax";
+import { NavSliderHeader, NavSliderLeftContent } from "../../styled/navbar";
+import ParallaxText from "../../shared/parallax";
 
 interface NavigationProps {}
 

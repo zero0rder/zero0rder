@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from "react";
+import React, { useState } from "react";
 // import tw from "twin.macro";
 import { useForm } from "react-hook-form";
 import { init, send } from "@emailjs/browser";
@@ -31,24 +31,20 @@ const email_vars = {
 
 init(email_vars.UserID);
 
-interface ContactProps {
-  ref?: React.Ref<HTMLDivElement | null>;
-}
+interface ContactProps {}
 
 //todo: fix type error
 // @ts-ignore
-const Contact: React.FC<ContactProps> = forwardRef(
-  ({}, ref: React.Ref<HTMLDivElement>) => {
-    return (
-      <ContactWrap ref={ref}>
-        <GlobalSectionTitle>
-          <TypingText title="Get in touch!" />
-        </GlobalSectionTitle>
-        <ContactForm />
-      </ContactWrap>
-    );
-  }
-);
+const Contact: React.FC<ContactProps> = ({}) => {
+  return (
+    <ContactWrap>
+      <GlobalSectionTitle>
+        <TypingText title="Get in touch!" />
+      </GlobalSectionTitle>
+      <ContactForm />
+    </ContactWrap>
+  );
+};
 
 interface EmailInterface {
   email: string;

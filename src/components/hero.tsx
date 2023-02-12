@@ -6,7 +6,7 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { MdPictureAsPdf } from "react-icons/md";
 import { SiMedium } from "react-icons/si";
 import { ResumeContext } from "../contexts";
-import Carousel from "./carousel";
+import Carousel from "./shared/carousel";
 import {
   HeroContainer,
   LeftSection,

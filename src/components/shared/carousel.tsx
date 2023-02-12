@@ -8,7 +8,7 @@ import {
   CardBody,
   LeftArrow,
   RightArrow,
-} from "./styled/carousel";
+} from "../styled/carousel";
 
 interface CarouselProps {
   content: { title: string; src: string; id: number }[];

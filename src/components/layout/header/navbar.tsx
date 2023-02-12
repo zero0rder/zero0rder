@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import ParallaxText from "./parallax";
+import ParallaxText from "../../shared/parallax";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navigation from "./navigation";
 import { HiMenuAlt2 } from "react-icons/hi";
-import { Overlay, GlobalImage } from "./styled";
+import { Overlay, GlobalImage } from "../../styled";
 import {
   Header,
   BurgerWrap,
@@ -14,10 +14,10 @@ import {
   TabsListItem,
   ImageContainer,
   LeftNavBarContent,
-} from "./styled/navbar";
-import { DrawerContext } from "../contexts";
-import { sidebarVariant } from "../utils/framer-motion/motion";
-import { menuData } from "../utils/misc/app.data";
+} from "../../styled/navbar";
+import { DrawerContext } from "../../../contexts";
+import { sidebarVariant } from "../../../utils/framer-motion/motion";
+import { menuData } from "../../../utils/misc/app.data";
 // import { TypingText } from "../utils/framer-motion/customText";
 
 interface NavbarProps {}

@@ -1,6 +1,6 @@
 import React from "react";
 import { BiCopyright } from "react-icons/bi";
-import { FooterWrap, FooterText } from "./styled/footer";
+import { FooterWrap, FooterText } from "../styled/footer";
 
 interface FooterProps {}
 

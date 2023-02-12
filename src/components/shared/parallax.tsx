@@ -3,7 +3,7 @@ import {
   GlobalParallaxWrap,
   GlobalParallax,
   GlobalParallaxItem,
-} from "./styled";
+} from "../styled";
 import {
   motion,
   useScroll,

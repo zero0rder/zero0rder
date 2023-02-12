@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { DrawerContext } from "../contexts";
-import { ListText } from "./styled/menuItems";
-import { navItemsVariant } from "../utils/framer-motion/motion";
-import { menuData } from "../utils/misc/app.data";
+import { DrawerContext } from "../../../contexts";
+import { ListText } from "../../styled/menuItems";
+import { navItemsVariant } from "../../../utils/framer-motion/motion";
+import { menuData } from "../../../utils/misc/app.data";
 
 interface MenuItemProps {}
 
