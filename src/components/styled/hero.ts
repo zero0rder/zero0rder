@@ -9,7 +9,7 @@ export const HeroContainer = tw(motion.div)`
     flex-col
     justify-center
     items-center
-    px-4
+    px-6
     h-[inherit]
     overflow-auto
     md:flex-row
@@ -37,7 +37,7 @@ export const HeroName = tw.h1`
     md:text-left
     md:text-[7rem]
     md:[line-height: 8rem]
-    lg:text-[9.5rem]
+    lg:text-[9rem]
     lg:[line-height: 10rem]   
 `
 
@@ -160,6 +160,7 @@ export const MobileName = tw.span`
   pb-2
   underline
   tracking-[0.12rem]
+  text-center
   sm:text-5xl
   sm:pb-4
   md:hidden

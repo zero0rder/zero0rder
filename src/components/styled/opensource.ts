@@ -9,7 +9,7 @@ export const OSContainer = tw.div`
     relative
     m-auto
     max-w-[1150px]
-    py-8
+    p-6
     h-full
     w-full
     gap-y-8
@@ -20,7 +20,7 @@ export const CardWrapper = tw.div`
     justify-center
     items-center
     gap-y-8
-    p-4
+    py-4
     flex
     overflow-scroll
     w-full
@@ -28,7 +28,7 @@ export const CardWrapper = tw.div`
 `
 
 export const CardMotion = tw(motion.div)`
-    basis-[23.25rem]
+    basis-[22.5rem]
 `
 
 export const OSCard = tw.div`
