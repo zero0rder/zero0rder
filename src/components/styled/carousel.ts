@@ -18,7 +18,7 @@ export const CardWrap = tw.div`
     w-full
     h-full
     flex-nowrap
-    
+    overflow-hidden
 `
 
 export const MotionBox = tw(motion.div)`
@@ -56,12 +56,12 @@ export const CardBody = tw.span`
 export const LeftArrow = tw(FaChevronLeft)`
     absolute
     text-sm
-    left-[-1rem]
+    left-0
     cursor-pointer
 `
 export const RightArrow = tw(FaChevronRight)`
     absolute
     text-sm
-    right-[-1rem]
+    right-0
     cursor-pointer
 `
