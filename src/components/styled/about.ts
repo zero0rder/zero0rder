@@ -45,11 +45,9 @@ export const CardContainer = tw.div`
     flex
     flex-col
     w-full
-    sm:w-1/2
-    md:w-1/4
+    basis-[17rem]
     border
     min-h-[15rem]
-    md:max-w-[17rem]
     p-3
     gap-y-4
     rounded-2xl
