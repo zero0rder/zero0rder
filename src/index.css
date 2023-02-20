@@ -158,30 +158,14 @@ canvas.react-pdf__Page__canvas {
     }
 }
 
-@media (min-width: 940px) {
-  .motion-div {
-    width: 33.333333%;
-  }
-}
-
-@media (max-width: 940px) {
-  .motion-div {
-    width: 50%;
-  }
-}
-
 @media (max-width: 768px){
   div.infolist-div ul svg {
     font-size: 2rem;
   }
-
-  .motion-div {
-    width: 100%;
-  }
 }
 
 @media (max-width: 400px){
- .nav-background {
+  .nav-background {
     width: 240px;
   }
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { useFetch } from "../hooks/useFetch";
 import { FiLink } from "react-icons/fi";
 import { AiFillGithub } from "react-icons/ai";
@@ -19,6 +18,7 @@ import {
   CardData,
   CardBottom,
   CardImage,
+  CardMotion,
 } from "./styled/opensource";
 
 interface OpenSourceProps {}
@@ -31,7 +31,6 @@ interface RepositoryProps {
   homepage: string;
 }
 
-//todo: fix type error
 // @ts-ignore
 const OpenSource: React.FC<OpenSourceProps> = ({}) => {
   const repos = useFetch<RepositoryProps[]>(
@@ -46,18 +45,19 @@ const OpenSource: React.FC<OpenSourceProps> = ({}) => {
       </GlobalSectionTitle>
       <CardWrapper className="card-wrapper">
         {filteredRepos?.map((r, i) => (
-          <motion.div
+          <CardMotion
             variants={fadeIn("up", "spring", i * 0.2, 0.7)}
             initial="hidden"
             animate="show"
             whileHover={{ scale: 1.05 }}
             key={r.id}
-            className="motion-div"
           >
             <OSCard>
               <CardBody>
                 <CardImage
-                  style={{ backgroundImage: `url(${IMGHash.get(r.id)})` }}
+                  style={{
+                    backgroundImage: `url(${IMGHash.get(r.id)})`,
+                  }}
                 ></CardImage>
                 <CardBottom>
                   <CardData>
@@ -88,7 +88,7 @@ const OpenSource: React.FC<OpenSourceProps> = ({}) => {
                 </CardBottom>
               </CardBody>
             </OSCard>
-          </motion.div>
+          </CardMotion>
         ))}
       </CardWrapper>
     </OSContainer>

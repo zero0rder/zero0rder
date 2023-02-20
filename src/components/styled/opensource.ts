@@ -1,4 +1,5 @@
 import tw from 'twin.macro'
+import { motion } from 'framer-motion'
 
 export const OSContainer = tw.div`
     flex
@@ -20,11 +21,14 @@ export const CardWrapper = tw.div`
     items-center
     gap-y-8
     p-4
-    md:p-8
     flex
     overflow-scroll
     w-full
     grow
+`
+
+export const CardMotion = tw(motion.div)`
+    basis-[23.25rem]
 `
 
 export const OSCard = tw.div`
