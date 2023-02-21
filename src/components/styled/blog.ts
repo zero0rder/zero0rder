@@ -10,12 +10,3 @@ export const BlogContainer = tw.div`
     py-8
     md:px-8
 `
-
-export const BlogContent = tw.div`
-    flex
-    grow
-    justify-center
-    items-center
-    text-[2.5rem]
-    italic
-`

@@ -41,18 +41,18 @@ const swipePower = (offset: number, velocity: number) => {
 
 const Carousel: React.FC<CarouselProps> = ({ content }) => {
   const [[page, direction], setPage] = useState([0, 0]);
-  const [activeBullet, setActiveBullet] = useState(0);
+  // const [activeBullet, setActiveBullet] = useState(0);
   const i = wrap(0, content.length, page);
   const paginate = (newDirection: number) => {
     if (page + newDirection < content.length && page + newDirection >= 0) {
       setPage([page + newDirection, 0]);
-      setActiveBullet(page + newDirection);
+      // setActiveBullet(page + newDirection);
     } else if (page + newDirection === content.length) {
       setPage([0, 0]);
-      setActiveBullet(0);
+      // setActiveBullet(0);
     } else if (page + newDirection === -1) {
       setPage([content.length - 1, 0]);
-      setActiveBullet(content.length - 1);
+      // setActiveBullet(content.length - 1);
     }
   };
 
