@@ -8,7 +8,7 @@ export interface RepositoryProps {
     homepage: string;
 }
 
-export interface BlogProps extends RepositoryProps {}
+export interface BlogProps {}
 
 export interface CardProps {
     data: RepositoryProps[] | undefined;
