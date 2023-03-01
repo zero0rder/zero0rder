@@ -36,7 +36,7 @@ export const GlobalSectionTitle = tw.h2`
 `
 
 export const GlobalIconAnchors = tw.a`
-    hover:text-gray-300
+    hover:text-emerald-300
 `
 
 export const GlobalImage = tw.img`
@@ -68,6 +68,7 @@ export const GlobalParallaxItem = tw.span`
  */
 
 export const CardWrapper = tw.div`
+    w-full
     flex-wrap
     justify-center
     items-center
@@ -75,54 +76,52 @@ export const CardWrapper = tw.div`
     py-4
     flex
     overflow-scroll
-    w-full
-    grow
 `
 
 export const CardMotion = tw(motion.div)`
-    basis-[22.5rem]
+    basis-[17.5rem]
 `
 
 export const OSCard = tw.div`
+    w-full
     relative
     flex
     justify-center
     items-center
     flex-col
-    h-64
+    h-56
     md:px-4
-    w-full
 `
     
 export const CardBody = tw.div`
     w-full
     h-full
-    max-w-md
+    max-w-[17rem]
     flex
     flex-col
     justify-start
     items-center
     border
-    rounded-2xl
-    shadow-lg
+    rounded-full
     border-gray-300
-    shadow-gray-300
     overflow-hidden
-    bg-white
 `
 
 export const CardBottom = tw.div`
+    relative
     flex
     flex-col
     items-center
-    gap-y-2
-    h-[63%]
+    gap-y-1
+    h-[58%]
     w-full
+    text-lg
+    p-2
 `
 
 export const CardImage = tw.div`
     w-full
-    h-[37%]
+    h-[42%]
     bg-no-repeat
     bg-cover
     bg-center
@@ -130,11 +129,9 @@ export const CardImage = tw.div`
     border-gray-300
 `
 export const TitleWrap = tw.div`
-    px-3
     flex
     justify-center
     items-center
-
 `
 
 export const CardTitle = tw.h2`
@@ -144,16 +141,20 @@ export const CardTitle = tw.h2`
 `
 
 export const CardData = tw.div`
+    absolute
+    p-1
+    text-lg
+    bottom-3
     flex
-    justify-end
+    justify-center
     items-start
     gap-x-1
     w-full
-    p-3
 `
 
 export const CardText = tw.p`
-    text-sm
+    text-[0.75rem]
+    [line-height: 1.2rem]
     text-center
     pb-2
     px-3
