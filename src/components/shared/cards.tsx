@@ -37,6 +37,10 @@ const Cards: React.FC<CardProps> = ({ data }) => {
                 }}
               ></CardImage>
               <CardBottom>
+                <TitleWrap>
+                  <CardTitle>{r.name.toLowerCase()}</CardTitle>
+                </TitleWrap>
+                <CardText>{r.description}</CardText>
                 <CardData>
                   <span>
                     <GlobalIconAnchors
@@ -58,10 +62,6 @@ const Cards: React.FC<CardProps> = ({ data }) => {
                     </GlobalIconAnchors>
                   </span>
                 </CardData>
-                <TitleWrap>
-                  <CardTitle>{r.name.toLowerCase()}</CardTitle>
-                </TitleWrap>
-                <CardText>{r.description}</CardText>
               </CardBottom>
             </CardBody>
           </OSCard>
