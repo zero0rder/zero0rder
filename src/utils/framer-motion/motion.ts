@@ -75,7 +75,7 @@ export const textVariant2 = {
 
 export const sidebarVariant = {
   open: {
-      x: 0,
+      x: '-65%',
       opacity: 1,
       transition: {
           type: "tween",
@@ -84,8 +84,8 @@ export const sidebarVariant = {
       }
   },
   closed: {
-      x: '-100%',
-      opacity: 1,
+      x: '300%',
+      opacity: 0,
       transition: {
           delay: 0.05,
           type: "tween",
@@ -114,17 +114,17 @@ export const navListVariant = {
 
 export const navItemsVariant = {
   open: {
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 900, velocity: -100 }
+      x: { stiffness: 900, velocity: -100 }
     }
   },
   closed: {
-    y: 50,
+    x: 50,
     opacity: 0,
     transition: {
-      y: { stiffness: 900 }
+      x: { stiffness: 700 }
     }
   }
 }

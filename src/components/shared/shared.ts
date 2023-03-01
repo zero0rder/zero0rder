@@ -2,6 +2,27 @@ import tw from 'twin.macro'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa'
 
+export const IconWrap = tw.div`
+    absolute
+    text-gray-200
+    text-center
+    z-10
+    left-8
+    top-8
+`
+export const Icon = tw.p`
+    text-5xl
+    font-['Barriecito']
+`
+
+export const IconText = tw.span`
+    font-mono
+    text-sm
+`
+
+/**
+ *  Carousel
+ */
 export const CarouselWrap = tw(AnimatePresence)`
     relative
     border-b
@@ -64,4 +85,15 @@ export const RightArrow = tw(FaChevronRight)`
     text-sm
     right-0
     cursor-pointer
+`
+
+/**
+ *  Resume
+ */
+export const DocWrapper = tw.div`
+    h-full
+    max-w-[515px]
+    flex
+    m-auto
+    px-4
 `

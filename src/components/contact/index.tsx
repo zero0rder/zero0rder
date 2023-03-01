@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { init, send } from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { TypingText } from "../utils/framer-motion/customText";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import {
   ContactWrap,
@@ -19,8 +18,7 @@ import {
   FormItemContainer,
   InputValidationMsg,
   EmailSentIcon,
-} from "./styled/contact";
-import { GlobalSectionTitle } from "./styled";
+} from "./contact";
 
 const email_vars = {
   UserID: import.meta.env.VITE_USER_ID,
@@ -38,9 +36,6 @@ interface ContactProps {}
 const Contact: React.FC<ContactProps> = ({}) => {
   return (
     <ContactWrap>
-      <GlobalSectionTitle>
-        <TypingText title="Get in touch!" />
-      </GlobalSectionTitle>
       <ContactForm />
     </ContactWrap>
   );

@@ -3,7 +3,10 @@ import tw from 'twin.macro'
 export const AboutContainer = tw.div`
     flex
     flex-col
-    p-6
+    justify-center
+    pt-24
+    pb-10
+    md:px-8
     gap-8
     h-full
 `
@@ -11,27 +14,29 @@ export const AboutContainer = tw.div`
 export const AboutMe = tw.section`
     flex
     italic
-    gap-x-8
     justify-center
     items-center
-    grow
+    font-mono
+    border-b
+    pb-4
 `
 
 export const AboutText = tw.p`
     w-full
-    md:w-8/12
+    text-[1rem]
+    md:w-3/4
     p-2
     text-center
+    font-normal
 `
 
 export const AboutCards = tw.div`
     flex
     gap-4
-    sm:gap-12
+    sm:gap-8
     flex-wrap
     justify-center
     items-center
-    grow
     overflow-auto
     pb-4
 `
@@ -45,16 +50,12 @@ export const CardContainer = tw.div`
     flex
     flex-col
     w-full
-    basis-[17rem]
+    basis-60
     border
-    min-h-[15rem]
+    min-h-[13rem]
     p-3
     gap-y-4
     rounded-2xl
-    shadow-lg
-    border-gray-300
-    shadow-gray-300
-    bg-white
 `
 
 export const CardTitle = tw.h3`

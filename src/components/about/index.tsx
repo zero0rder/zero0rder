@@ -1,5 +1,4 @@
 import React from "react";
-import { TypingText } from "../utils/framer-motion/customText";
 import {
   AboutContainer,
   CardContainer,
@@ -9,11 +8,9 @@ import {
   AboutMe,
   AboutCards,
   AboutText,
-  // AboutAnchors,
   CardItemTitle,
-} from "./styled/about";
-import { GlobalSectionTitle } from "./styled";
-import { SkillSet, AboutParagraph } from "../utils/misc/app.data";
+} from "./about";
+import { SkillSet, AboutParagraph } from "../../utils/misc/app.data";
 import { IconType } from "react-icons";
 
 interface AboutProps {}
@@ -26,9 +23,6 @@ type CardProps = {
 const About: React.FC<AboutProps> = () => {
   return (
     <AboutContainer>
-      <GlobalSectionTitle>
-        <TypingText title="A bit about me..." />
-      </GlobalSectionTitle>
       <AboutMe>
         <AboutText>{AboutParagraph}</AboutText>
       </AboutMe>

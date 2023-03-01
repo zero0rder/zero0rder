@@ -1,34 +1,61 @@
 import tw from 'twin.macro'
+import { motion } from 'framer-motion'
 
 export const Header = tw.header`
-    h-16
+    absolute
+    right-0
+    text-gray-200
+    z-10
     flex
     justify-between
     items-center
-    py-4
+    pt-6
     px-4
     md:px-8
+`
+export const NavBackground = tw(motion.div)`
+    flex
+    justify-center
+    items-center
+    absolute
+    top-24
+    h-24
+    w-36
+    border-l-2
+    border-emerald-300
+`
+
+export const NavList = tw(motion.ul)`
+    flex
+    flex-col
+    justify-center
+    gap-y-[0.2rem]
+    pl-2
+    absolute
+    w-full
+    h-full
+    text-xl
 `
 
 export const TabsList = tw.ul`
     hidden
     sm:flex
-    w-[70%]
     justify-center
     items-center
-    gap-x-5 
+    gap-x-[0.65rem]
     font-medium 
-    text-[1.2rem]
+    text-lg
+    font-mono
 `
 export const TabsListItem = tw.li`
-    bg-[linear-gradient(#000, #000)]
+    pb-[0.15rem]
+    bg-[linear-gradient(#6ee7b7, #6ee7b7)]
     bg-[length:0%_0.1rem]
     [background-position-y: 100%]
     [background-position-x: 0%]
     bg-no-repeat
     transition-[background-size_0.2s_ease-in-out]
     [transition-duration: 0.2s]
-    pb-1
     cursor-pointer
     active:bg-[length:100%_0.1rem]
     focus:bg-[length:100%_0.1rem]

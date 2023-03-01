@@ -1,6 +1,8 @@
 import tw from 'twin.macro'
 
 export const OSContainer = tw.div`
+    h-full
+    w-full
     flex
     flex-col
     justify-center
@@ -8,8 +10,8 @@ export const OSContainer = tw.div`
     relative
     m-auto
     max-w-[1150px]
-    p-6
-    h-full
-    w-full
+    pt-24
+    pb-10
+    md:px-8
     gap-y-8
 `

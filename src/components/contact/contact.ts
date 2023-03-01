@@ -10,8 +10,8 @@ export const ContactWrap = tw.div`
     justify-center
     items-center
     flex-col
-    px-4
-    py-8
+    pt-24
+    pb-8
     md:px-8
     gap-y-8
 `
@@ -24,7 +24,6 @@ export const FormWrap = tw.div`
     grow
     justify-center
     items-center
-    px-6
 `
 
 export const FormDivider = tw.div` 
@@ -35,6 +34,7 @@ export const FormDivider = tw.div`
 `
 
 export const MainForm = tw.form`
+    text-lg
     w-full
     flex
     flex-col
@@ -89,14 +89,13 @@ export const FormButton = tw.button`
     cursor-pointer
     font-bold
     border
-    text-gray-200
-    border-black
-    !bg-black
-    hover:shadow-md
-    hover:shadow-gray-500
-    hover:!bg-emerald-400
-    hover:!border-emerald-400
-    hover:text-black
+    text-emerald-300
+    border-emerald-300
+    // hover:shadow-sm
+    // hover:shadow-gray-200
+    hover:!bg-emerald-500
+    hover:!border-emerald-500
+    hover:text-gray-200
 `
 export const EmailSent = tw.div`
     w-full
@@ -111,20 +110,19 @@ export const EmailSent = tw.div`
     gap-8
     rounded-2xl
     text-8xl
-    text-black
     border
-    border-gray-300
+    border-emerald-300
     shadow-lg
-    shadow-gray-300
-    bg-white
+    shadow-emerald-300
 `
 
 export const SentText = tw.span`
-    text-3xl
+    text-[2rem]
     text-center
     font-medium
+    text-gray-200
 `
 
 export const EmailSentIcon = tw.div`
-    text-emerald-400
+    text-emerald-300
 `
