@@ -91,6 +91,8 @@ export const FormButton = tw.button`
     border
     text-emerald-300
     border-emerald-300
+    backdrop-blur-sm 
+    bg-white/10
     // hover:shadow-sm
     // hover:shadow-gray-200
     hover:!bg-emerald-500
