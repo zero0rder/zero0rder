@@ -22,6 +22,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.40.0",
     "react-icons": "^4.7.1",
+    "react-parallax-tilt": "^1.7.110",
     "react-pdf": "^6.2.0",
     "styled-components": "^5.3.6",
     "three": "^0.150.1"
