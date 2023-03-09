@@ -23,6 +23,8 @@ export const NavBackground = tw(motion.div)`
     w-36
     border-l-2
     border-emerald-300
+    backdrop-blur-sm 
+    bg-white/10
 `
 
 export const NavList = tw(motion.ul)`

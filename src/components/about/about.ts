@@ -56,6 +56,8 @@ export const CardContainer = tw.div`
     p-3
     gap-y-4
     rounded-2xl
+    backdrop-blur-sm 
+    bg-white/10
 `
 
 export const CardTitle = tw.h3`
@@ -76,6 +78,7 @@ export const CardList = tw.ul`
 export const CardItem = tw.li`
     flex
     flex-col
+    items-center
     text-2xl
     w-1/4
 `

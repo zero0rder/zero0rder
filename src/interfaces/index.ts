@@ -6,6 +6,7 @@ export interface RepositoryProps {
     description: string;
     html_url: string;
     homepage: string;
+    image: string;
 }
 
 export interface BlogProps {}
