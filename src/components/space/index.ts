@@ -94,12 +94,12 @@ export default class SpaceContainer {
     this.setCamPosByCountryIndex(0) //set default cam position
 
     // this.canvasRef.current!.addEventListener(
-    //   CONST.EVENT.MOUSE_MOVE,
+    //   'mousemove',
     //   this.handleMouseMove,
     // )
 
     // this.canvasRef.current!.addEventListener(
-    //   CONST.EVENT.TOUCH_START,
+    //   'touchstart',
     //   this.handleMouseMove,
     // ) //for smartphone
     
@@ -112,7 +112,7 @@ export default class SpaceContainer {
    * @param {number} countryIndex
    */
   private setCamPosByCountryIndex(countryIndex: number): void {
-    const center = new THREE.Vector3() //center position (地核)
+    const center = new THREE.Vector3() //center position
     const city = this.globe.countryPoints[countryIndex].position
 
     //tokyo - center
@@ -174,7 +174,7 @@ export default class SpaceContainer {
     this.renderer.render(this.scene, this.camera)
   }
 
-  // private handleMouseMove = (event:MouseEvent): void => {
+  // private handleMouseMove = (event:MouseEvent|TouchEvent): void => {
   //   if (this.isOnCountryPoint || this.isClosingCountryInfo) return
 
   //   const initializedMousePos = Common.getInitializedMousePosByMouseEvent(event)
@@ -234,12 +234,12 @@ export default class SpaceContainer {
   //   let onCountryPointTmp = false
   //   this.globe.countryPoints.map((city) => {
   //     if (city === intersects[0].object.parent) {
-  //       const { screenX, screenY } = this.calcCenterOfCountryPoint(intersects)
-  //       this.showCountryInfo(city.name, screenY, screenX)
+  //       // const { screenX, screenY } = this.calcCenterOfCountryPoint(intersects)
+  //       // this.showCountryInfo(city.name, screenY, screenX)
   //       onCountryPointTmp = true
   //       this.isMoveGlobe = false
   //     }
-  //     this.isOnCountryPoint = onCountryPointTmp
+  //     // this.isOnCountryPoint = onCountryPointTmp
   //   })
   // }
 
