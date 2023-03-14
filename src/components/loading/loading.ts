@@ -17,15 +17,21 @@ export const LoadingWrapper = styled.div(({ isLoading }: {isLoading: boolean}) =
         opacity: 0;
         visibility: hidden;
     `,
-    isLoading && tw`opacity-[1] visible`, 
+    isLoading && tw`opacity-100 visible`, 
 
 ]);
 
-export const LoadingText = tw.div`
-  text-5xl
-  md:text-7xl
-  font-medium
-`;
+export const LoadingText = styled.div(({ delay }: {delay: boolean}) => [
+  `
+  font-size: 3rem;
+  font-weight: 500;
+  transition: all 2s;
+  opacity: 0;
+  visibility: hidden;
+`,
+  delay && tw`opacity-100 visible md:text-7xl`
+
+]);
 
 const BlurTextKeyframe = keyframes`
   0% {filter: blur(0px);}
