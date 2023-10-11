@@ -1,7 +1,3 @@
-<p align="left">
-  <img src="https://komarev.com/ghpvc/?username=zero0rder" alt="zero0rder" />
-</p>
-
 ### About myself
 
 - 📍&nbsp;&nbsp;New York, NY, USA | [Zero0rder HQ.](https://zero0rder.com)
